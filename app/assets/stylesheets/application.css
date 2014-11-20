@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*				Page CSS				*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.margins {
+	margin-left: 130px;
+	margin-right: 130px;
+}
+
+/*				Header / Nav				*/
+
+header {
+/*	background: pink;*/
+	min-height: 80px;
+}
+nav {
+	display: block;
+	position: relative;
+	top: 10px;
+	padding-right: 10px;
+}
+.navbar-form {
+	/*border: 1px solid #003056;*/
+}
+#search::-webkit-input-placeholder {
+/*   color: #47D9BF;*/
+}
+#search {
+	color: #00A1D9;
+	width: 250px;
+}
+.navbar-brand {
+	background: #F2D03B;
+}
+nav ul li a {
+	color: black;
+}
+nav ul li#sign-in {
+	border: 1px solid #003056;
+	border-radius: 5px;
+}
+#browse { /*Browse Drop Down*/
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+/*				Footer				*/
+footer {
+	height: 200px;
+	background: #47D9BF;
+}

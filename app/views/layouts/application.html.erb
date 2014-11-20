@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SpendYourSavings</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+
+</head>
+	
+<body>
+	<header>
+		<nav class="nav margins">
+			<ul class='nav navbar-nav'>
+				<li class='left-nav-list-item navbar-brand'> Logo </li>
+				<li class='left-nav-list-item'>
+					<form class='navbar-form navbar-left' role='search'>
+						<div class='form-group'>
+							<input type='text' id='search' class='form-control' name='search[text]' placeholder='Search for all the things!'>
+						</div>
+						<button type='submit' class='btn btn-default'>Search</button>
+					</form>
+				</li>
+				<li class='dropdown'>
+					<a href="#" class='dropdown-toggle' id='browse' data-toggle="dropdown" aria-expanded='false'>
+						Browse
+						<span class='caret'></span>
+					</a>
+							<ul class='dropdown-menu'>
+								<li><a href='#'>Holidays</a></li>
+								<li><a href='#'>Gift Ideas</a></li>
+								<li class="divider"></li>
+								<li><a href='#'>Yachts</a></li>
+								<li><a href='#'>Cars</a></li>
+								<li><a href='#'>Homes</a></li>
+								<li><a href='#'>Really Really Expensive Things</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class='nav navbar-nav navbar-right'>
+						<li><a href="#">Register</a></li>
+						<li id='sign-in'><a href="#">Sign In</a></li>
+						<li><a href="#"><span class="glyphicons shopping_bag"></span>Cart</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<%= yield %>
+	
+			<footer>
+				<div class='margins'>
+					<p>Hello! I'm a footer</p>
+				</div>
+			</footer>
+
+		</body>
+		</html>
