@@ -32,11 +32,15 @@
 	text-align: center;
 }
 
+body {
+	background: #efefeb;
+}
+
 /*				Header / Nav				*/
 
 header {
-/*	background: pink;*/
 	min-height: 70px;
+	background: white;
 }
 nav {
 	display: block;
@@ -84,11 +88,6 @@ nav {
 	border: 1px solid black;
 }
 
-//#sign-in {
-//	border-radius: 3px;
-//	border: 1px solid black;
-//}
-
 /*				Footer				*/
 footer {
 	height: 200px;
@@ -98,9 +97,10 @@ footer {
 /*				Home Page			*/
 #welcoming-display {
 	min-height: 500px;
-	background-image: image-url("island.jpeg");	
+	background-image: image-url("island-optimized.jpg");	
 	background-size: 100%;
 	background-width: 100%;
+	margin-top: -9px;
 }
 #right-text {
 	float: right;
@@ -117,16 +117,47 @@ footer {
 #catch-phrase {
 	color: #707070;
 }
+//.favorite-item {
+////	min-height: 485px;
+//	height: 100%;
+//	width: 340px;
+//	border: 1px solid black;
+//	border-radius: 4px;
+//}
+//img#ocelot {
+//	background-image: image-url("ocelot.jpeg");
+//	background-repeat: no-repeat;
+//	background-size: 100%;
+//	margin-top: 5px;
+//	width: 100%;
+//	height: 253px;
+//}
 .favorite-item {
+	width: 340px;
 	height: 500px;
-	border: 1px solid black;
-	border-radius: 4px;
+	background: white;
 }
-img#ocelot {
-	background-image: image-url("ocelot.jpeg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	margin-top: 20px;
-	width: 100%;
-	height: 300px;
+.favorite-item-img {
+	width: 330px;
+	height: 250px;
+	background: black;
+	margin-top: 5px;
+}
+.product-link {
+//	display: inline-block;
+}
+.product-money {
+	float: right;
+	color: green;
+}
+.product-price {
+}
+.product-currency {
+	font-size: 11px;
+}
+.other-seller-product {
+//	width: 90px;
+	height: 85px;
+	background: black;
+	border: 1px solid white;
 }
