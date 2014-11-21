@@ -22,36 +22,36 @@
 					</form>
 				</li>
 				<li class='dropdown'>
-					<a href="#" class='dropdown-toggle' id='browse' data-toggle="dropdown" aria-expanded='false'>
+					<button href="#" class='dropdown-toggle' id='browse' data-toggle="dropdown" aria-expanded='false' type='button'>
 						Browse
 						<span class='caret'></span>
-					</a>
-							<ul class='dropdown-menu'>
-								<li><a href='#'>Holidays</a></li>
-								<li><a href='#'>Gift Ideas</a></li>
-								<li class="divider"></li>
-								<li><a href='#'>Yachts</a></li>
-								<li><a href='#'>Cars</a></li>
-								<li><a href='#'>Homes</a></li>
-								<li><a href='#'>Really Really Expensive Things</a></li>
-							</ul>
-						</li>
+					</button>
+					<ul class='dropdown-menu'>
+						<li><a href='#'>Holidays</a></li>
+						<li><a href='#'>Gift Ideas</a></li>
+						<li class="divider"></li>
+						<li><a href='#'>Yachts</a></li>
+						<li><a href='#'>Cars</a></li>
+						<li><a href='#'>Homes</a></li>
+						<li><a href='#'>Really Really Expensive Things</a></li>
 					</ul>
-					<ul class='nav navbar-nav navbar-right'>
-						<li><a href="#">Register</a></li>
-						<li id='sign-in'><a href="#">Sign In</a></li>
-						<li><a href="#"><span class="glyphicons shopping_bag"></span>Cart</a></li>
-					</ul>
-				</nav>
-			</header>
+				</li>
+			</ul>
+			<ul class='nav navbar-nav navbar-right'>
+				<li><button class="btn">Register</button></li>
+				<li><button id='sign-in' class="btn">Sign In</button></li>
+				<li><button class="btn"><span class="glyphicons shopping_bag"></span>Cart</button></li>
+			</ul>
+		</nav>
+	</header>
 
-			<%= yield %>
+	<%= yield %>
 	
-			<footer>
-				<div class='margins'>
-					<p>Hello! I'm a footer</p>
-				</div>
-			</footer>
+	<footer>
+		<div class='margins'>
+			<p>Hello! I'm a footer</p>
+		</div>
+	</footer>
 
-		</body>
-		</html>
+</body>
+</html>
