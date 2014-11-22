@@ -90,6 +90,7 @@ nav {
 
 /*				Footer				*/
 footer {
+	margin-top: 20px;
 	height: 200px;
 	background: #47D9BF;
 }
@@ -134,14 +135,19 @@ footer {
 //}
 .favorite-item {
 	width: 340px;
-	height: 500px;
-	background: white;
+}
+.favorite-item .panel-heading {
+	background-color: white;
+	padding: 5px 0;
 }
 .favorite-item-img {
+	margin-top: 5px;
+	margin-left: 4px;
+	margin-right: 4px;
 	width: 330px;
 	height: 250px;
 	background: black;
-	margin-top: 5px;
+	border-radius: 4px;
 }
 .product-link {
 //	display: inline-block;
@@ -158,6 +164,16 @@ footer {
 .other-seller-product {
 //	width: 90px;
 	height: 85px;
+	padding: 0 10px;
 	background: black;
 	border: 1px solid white;
 }
+.seller-image img{
+	height: 80px;
+	width: 80px;
+	background: black;
+}
+
+//.panel-footer {
+//	margin-bottom: 10px;
+//}
