@@ -92,7 +92,18 @@ nav {
 footer {
 	margin-top: 20px;
 	height: 200px;
-	background: #47D9BF;
+	background: #003056;
+	color: white;
+}
+.footer-title {
+	text-decoration: underline;
+}
+footer li {
+	list-style: none;
+	padding-bottom: 10px;
+}
+footer li a {
+	color: #47D9BF;
 }
 
 /*				Home Page			*/
@@ -118,21 +129,6 @@ footer {
 #catch-phrase {
 	color: #707070;
 }
-//.favorite-item {
-////	min-height: 485px;
-//	height: 100%;
-//	width: 340px;
-//	border: 1px solid black;
-//	border-radius: 4px;
-//}
-//img#ocelot {
-//	background-image: image-url("ocelot.jpeg");
-//	background-repeat: no-repeat;
-//	background-size: 100%;
-//	margin-top: 5px;
-//	width: 100%;
-//	height: 253px;
-//}
 .favorite-item {
 	width: 340px;
 }
@@ -148,9 +144,6 @@ footer {
 	height: 250px;
 	background: black;
 	border-radius: 4px;
-}
-.product-link {
-//	display: inline-block;
 }
 .product-money {
 	float: right;
@@ -173,7 +166,3 @@ footer {
 	width: 80px;
 	background: black;
 }
-
-//.panel-footer {
-//	margin-bottom: 10px;
-//}
