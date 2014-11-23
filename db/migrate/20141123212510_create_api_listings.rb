@@ -1,6 +1,6 @@
-class CreateListings < ActiveRecord::Migration
+class CreateApiListings < ActiveRecord::Migration
   def change
-    create_table :listings do |t|
+    create_table :api_listings do |t|
       t.string :name,       null: false
       t.integer :price,     null: false
       t.integer :available, null: false
@@ -8,7 +8,7 @@ class CreateListings < ActiveRecord::Migration
       t.integer :shop_id,   null: false
       t.text :description,  null: false
       t.text :policies,     null: false
-
+      
       t.timestamps
     end
   end
