@@ -3,89 +3,154 @@
 <head>
 	<title>SpendYourSavings</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
 
-</head>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+
+	</head>
 	
-<body>
-	<header>
-		<nav class="nav margins">
-			<ul class='nav navbar-nav'>
-				<li class='left-nav-list-item navbar-brand'> Logo </li>
-				<li class='left-nav-list-item'>
-					<form class='navbar-form navbar-left' role='search'>
-						<div class='form-group'>
-							<input type='text' id='search' class='form-control' name='search[text]' placeholder='Search for all the things!'>
+	<body>
+		<header>
+			<nav class="nav margins">
+				<ul class='nav navbar-nav'>
+					<li class='left-nav-list-item navbar-brand'> Logo </li>
+					<li class='left-nav-list-item'>
+						<form class='navbar-form navbar-left' role='search'>
+							<div class='form-group'>
+								<input type='text' id='search' class='form-control' name='search[text]' placeholder='Search for all the things!'>
+							</div>
+							<button type='submit' class='btn btn-default'>Search</button>
+						</form>
+					</li>
+					<li class='dropdown'>
+						<button href="#" class='dropdown-toggle' id='browse' data-toggle="dropdown" aria-expanded='false' type='button'>
+							Browse
+							<span class='caret'></span>
+						</button>
+						<ul class='dropdown-menu'>
+							<li><a href='#'>Holidays</a></li>
+							<li><a href='#'>Gift Ideas</a></li>
+							<li class="divider"></li>
+							<li><a href='#'>Yachts</a></li>
+							<li><a href='#'>Cars</a></li>
+							<li><a href='#'>Homes</a></li>
+							<li><a href='#'>Really Really Expensive Things</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class='nav navbar-nav navbar-right'>
+					<% if signed_in? %>
+						<li>
+							
+							<%= link_to("Logout", session_url(current_user), method: :delete, class: "btn") %>
+						</li>
+					<% else %>
+					
+						<li>
+							<button id='register' class="btn" data-toggle='modal' data-target='#auth-modal'>
+								Register
+							</button>
+						</li>
+						<li>
+							<button id='sign-in' class="btn" data-toggle='modal' data-target='#auth-modal'>
+								Sign In
+							</button>
+						</li>
+					<% end %>
+					<li><button class="btn"><span class="glyphicons shopping_bag"></span>Cart</button></li>
+				</ul>
+			</nav>
+		</header>
+
+		<%= yield %>
+	
+		<div class='modal fade' id='auth-modal'>
+			<div class='modal-dialog'>
+				<div class='modal-content'>
+
+					<!-- <div class='modal-header'>
+						<button type='button' class='close' data-dismiss='modal'>
+							<span aria-hidden='true'>&times;</span>
+							<span class='sr-only'>Close</span>
+						</button>
+						<h4 class='modal-title'>Sign Up</h4>
+					</div> -->
+
+					<div class='modal-body'>
+						<!-- <% if flash[:error] %>
+							<div class='alert alert-danger'>
+								<%= JSON.parse(flash[:error]).join(', ') %>
+							</div>
+						<% end %> -->
+							
+						<button type='button' class='close' data-dismiss='modal'>
+							<span aria-hidden='true'>&times;</span>
+							<span class='sr-only'>Close</span>
+						</button>
+						<ul class='nav nav-tabs'>
+							<li class='active'>
+								<a href='#sign-up-tab' data-toggle='tab'>Sign Up</a>
+							</li>
+							<li>
+								<a href='#sign-in-tab' data-toggle='tab'>Sign In</a>
+							</li>
+						</ul>
+						<br>
+						<div class='tab-content'>
+							<div class='tab-pane active' id='sign-up-tab'>
+								<%= render '/users/new' %>
+							</div>
+							
+							<div class='tab-pane' id='sign-in-tab'>
+								<%= render '/sessions/new' %>
+							</div>
 						</div>
-						<button type='submit' class='btn btn-default'>Search</button>
-					</form>
-				</li>
-				<li class='dropdown'>
-					<button href="#" class='dropdown-toggle' id='browse' data-toggle="dropdown" aria-expanded='false' type='button'>
-						Browse
-						<span class='caret'></span>
-					</button>
-					<ul class='dropdown-menu'>
-						<li><a href='#'>Holidays</a></li>
-						<li><a href='#'>Gift Ideas</a></li>
-						<li class="divider"></li>
-						<li><a href='#'>Yachts</a></li>
-						<li><a href='#'>Cars</a></li>
-						<li><a href='#'>Homes</a></li>
-						<li><a href='#'>Really Really Expensive Things</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class='nav navbar-nav navbar-right'>
-				<li><button class="btn">Register</button></li>
-				<li><button id='sign-in' class="btn">Sign In</button></li>
-				<li><button class="btn"><span class="glyphicons shopping_bag"></span>Cart</button></li>
-			</ul>
-		</nav>
-	</header>
+					</div>
 
-	<%= yield %>
-	
-	<footer>
-		<div class='margins'>
-			<div class='row'>
-				
-				<div class='col-md-3'>
-					<h5 class='footer-title'> Turn your passion into a business</h5>
-					<ul>
-						<li><button class='btn'>Open a shop</button></li>
-						<li><a href="#">Seller Handbook</a></li>
-					</ul>
 				</div>
-				
-				<div class='col-md-3'>
-					<h5 class='footer-title'>Join the community</h5>
-					<ul>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Upcoming Events</a></li>
-					</ul>
-				</div>
-				
-				<div class='col-md-3'>
-					<h5 class='footer-title'>Resources</h5>
-					<ul>
-						<li><a href="#">Discover and shop</a></li>
-						<li><a href="#">Blog</a></li>
-					</ul>
-				</div>
-				
-				<div class='col-md-3'>
-					<h5 class='footer-title'>Get to know us</h5>
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Careers</a></li>
-					</ul>
-				</div>
-				
 			</div>
 		</div>
-	</footer>
+				
+	
+			<footer>
+				<div class='margins'>
+					<div class='row'>
+				
+						<div class='col-md-3'>
+							<h5 class='footer-title'> Turn your passion into a business</h5>
+							<ul>
+								<li><button class='btn'>Open a shop</button></li>
+								<li><a href="#">Seller Handbook</a></li>
+							</ul>
+						</div>
+				
+						<div class='col-md-3'>
+							<h5 class='footer-title'>Join the community</h5>
+							<ul>
+								<li><a href="#">Teams</a></li>
+								<li><a href="#">Upcoming Events</a></li>
+							</ul>
+						</div>
+				
+						<div class='col-md-3'>
+							<h5 class='footer-title'>Resources</h5>
+							<ul>
+								<li><a href="#">Discover and shop</a></li>
+								<li><a href="#">Blog</a></li>
+							</ul>
+						</div>
+				
+						<div class='col-md-3'>
+							<h5 class='footer-title'>Get to know us</h5>
+							<ul>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Careers</a></li>
+							</ul>
+						</div>
+				
+					</div>
+				</div>
+			</footer>
 
-</body>
-</html>
+		</body>
+		</html>

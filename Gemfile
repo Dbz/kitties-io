@@ -28,14 +28,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-linkedin'
+# gem 'devise'
+# gem 'omniauth'
+# gem 'omniauth-twitter'
+# gem 'omniauth-facebook'
+# gem 'omniauth-linkedin'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'better_errors'
+gem 'binding_of_caller'
+
+gem 'backbone-on-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -44,5 +49,5 @@ gem 'omniauth-linkedin'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'byebug', group: [:development, :test]
 
