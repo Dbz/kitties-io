@@ -1,0 +1,84 @@
+<div id='shop-header' class='margins'>
+	<div id='shop-details'>
+		<img>
+		<h2>Shop Name</h2>
+	</div>
+	<div id='shop-items'>
+		<img>
+		<img>
+		<img>
+		<img>
+		<img>
+	</div>
+</div>
+
+<div id='shop-content' class='margins'>
+	<div id='left-content'>
+		<div id='image-viewer'>
+			<div class='carousel'>
+				<div class='items'>
+					<% _(listing.get('images')).each(function(image) { %>
+						<%= image %>
+					<% }); %>
+				</div>
+				<a href='javascript:void(0)' class='slide-left'>Prev</a>
+				<a href='javascript:void(0)' class='slide-right'>Next</a>
+			</div>
+		</div>
+		
+		<div id='listing-details'>
+			<h3 class='center'> Details </h3>
+			<p class='center'> <%= listing.get('description') %> </p>
+		</div>
+	</div>
+	
+	<div id='right-content'>
+		<div id='item-panel' class='panel panel-default'>
+			<div class='panel-heading'>
+				<h1 class='panel-title'> Item Name: <%= listing.escape('name') %> </h2>
+				<h5> Item Price: <%= listing.escape('price') %> </h3>
+			</div>
+			
+			<div class='panel-body'>
+				<h4> Num Available: <%= listing.escape('available') %> </h4>
+				<p> Overview </p>
+				<ul id='overview'>
+					<li> Handmade </li>
+					<li> Materials </li>
+					<li> Feedback <%= listing.get('reviews') %> Reviews </li>
+				</ul>
+			</div>
+			
+			<div class='panel-footer'>
+				<button class='btn'>Add to Cart</button>
+			</div>
+		</div>
+		
+		<div id='shop-panel' class='panel panel-default'>
+			<div class='panel-heading'>
+				<img>
+				<h3 class='panel-title'> Shop Name </h3>
+				<h3> Shop Location </h3>
+			</div>
+			
+			<div class='panel-body'>
+				<img>
+				<img>
+				<img>
+				<img>
+				<img>
+			</div>
+		</div>
+	</div>
+	
+	<div id='related-items'>
+		<h2> People who bought this item also liked </h2>
+	</div>
+	
+</div>
+
+<script>
+	$(function() {
+		$('.carousel').carousel();
+	});
+</script>

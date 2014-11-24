@@ -1,13 +1,14 @@
-// window.SpendYourSavings = {
-//   Models: {},
-//   Collections: {},
-//   Views: {},
-//   Routers: {},
-//   initialize: function() {
-//     alert('Hello from Backbone!');
-//   }
-// };
+window.SpendYourSavings = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  initialize: function() {
+		new SpendYourSavings.Routers.Router({ $rootEl: $('#main-content') });
+		Backbone.history.start();
+  }
+};
 
-// $(document).ready(function(){
-//   SpendYourSavings.initialize();
-// });
+$(document).ready(function(){
+  SpendYourSavings.initialize();
+});

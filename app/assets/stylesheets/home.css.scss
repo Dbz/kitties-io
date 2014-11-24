@@ -1,0 +1,60 @@
+/*				Home Page			*/
+#welcoming-display {
+	min-height: 500px;
+	background-image: image-url("island-optimized.jpg");	
+	background-size: 100%;
+	background-width: 100%;
+	margin-top: -9px;
+}
+#right-text {
+	float: right;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	max-width: 400px;
+	padding-top: 50px;
+}
+#recent-favorites {
+	height: 600px;
+	color: #303030;
+}
+#catch-phrase {
+	color: #707070;
+}
+.favorite-item {
+	width: 340px;
+}
+.favorite-item .panel-heading {
+	background-color: white;
+	padding: 5px 0;
+}
+.favorite-item-img {
+	margin-top: 5px;
+	margin-left: 4px;
+	margin-right: 4px;
+	width: 330px;
+	height: 250px;
+	background: black;
+	border-radius: 4px;
+}
+.product-money {
+	float: right;
+	color: green;
+}
+.product-price {
+}
+.product-currency {
+	font-size: 11px;
+}
+.other-seller-product {
+//	width: 90px;
+	height: 85px;
+	padding: 0 10px;
+	background: black;
+	border: 1px solid white;
+}
+.seller-image img{
+	height: 80px;
+	width: 80px;
+	background: black;
+}

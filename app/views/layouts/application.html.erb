@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>SpendYourSavings</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
 
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application' %>
 		<%= csrf_meta_tags %>
 
 	</head>
@@ -13,7 +13,7 @@
 		<header>
 			<nav class="nav margins">
 				<ul class='nav navbar-nav'>
-					<li class='left-nav-list-item navbar-brand'> Logo </li>
+					<li class='left-nav-list-item navbar-brand'> <img id="logo"> Logo </li>
 					<li class='left-nav-list-item'>
 						<form class='navbar-form navbar-left' role='search'>
 							<div class='form-group'>
@@ -62,7 +62,10 @@
 			</nav>
 		</header>
 
-		<%= yield %>
+		<div id="main-content">
+			<%= yield %>
+		</div>
+
 	
 		<div class='modal fade' id='auth-modal'>
 			<div class='modal-dialog'>

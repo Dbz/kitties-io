@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController
   def create
-    @listing = Listing.new(listing_params)
+    @listing = Api::Listing.new(listing_params)
     if @listing.save
       render json: @listing
     else
@@ -10,7 +10,7 @@ class Api::ListingsController < ApplicationController
   
   def show
     #@listing = Listing.includes(:images, :reviews).find(params[:id])
-    @listing = Listing.find(params[:id])
+    @listing = Api::Listing.find(params[:id])
     if @listing
       render json: @listing
     else
