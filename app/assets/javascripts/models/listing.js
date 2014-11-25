@@ -7,6 +7,7 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 	
 	parse: function(data) {
 		if(data.images) {
+			debugger
 			this.images().set(data.images);
 			delete data.images;
 		}
