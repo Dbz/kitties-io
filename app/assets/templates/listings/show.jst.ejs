@@ -60,40 +60,43 @@
 	</div>
 	
 	<div id='right-content'>
-		<div id='item-panel' class='panel panel-default'>
-			<div class='panel-heading'>
-				<h1 class='panel-title'> Item Name: <%= listing.escape('name') %> </h2>
-				<h5> Item Price: <%= listing.escape('price') %> </h3>
-			</div>
+		<div class='panel-wrapper'>
+			<div id='item-panel' class='panel panel-default'>
+				<div class='panel-heading'>
+					<h4 class='bold' id='panel-listing-name'> <%= listing.escape('name') %> </h4>
+					<h4 class='bold'> $<%= listing.escape('price') %> <a class='product-currency no-underline'> USD </a> </h4>
+				</div>
 			
-			<div class='panel-body'>
-				<h4> Num Available: <%= listing.escape('available') %> </h4>
-				<p> Overview </p>
-				<ul id='overview'>
-					<li> Handmade </li>
-					<li> Materials </li>
-					<li> Feedback <%= listing.get('reviews') %> Reviews </li>
-				</ul>
-			</div>
+				<div class='panel-body'>
+					<p> Num Available: <%= listing.escape('available') %> </p>
+					<p class='bold underline'> Overview </p>
+					<ul id='overview'>
+						<li> Handmade </li>
+						<li> Feedback <a><%= listing.get('reviews') %></a> Reviews </li>
+					</ul>
+				</div>
 			
-			<div class='panel-footer'>
-				<button class='btn'>Add to Cart</button>
+				<div class='panel-footer'>
+					<button class='btn' id='cart-button'>Add to Cart</button>
+				</div>
 			</div>
 		</div>
 		
-		<div id='shop-panel' class='panel panel-default'>
-			<div class='panel-heading'>
-				<img>
-				<h3 class='panel-title'> Shop Name </h3>
-				<h3> Shop Location </h3>
-			</div>
+		<div class='panel-wrapper'>
+			<div id='shop-panel' class='panel panel-default'>
+				<div class='panel-heading'>
+					<img>
+					<h3 class='panel-title'> Shop Name </h3>
+					<h3> Shop Location </h3>
+				</div>
 			
-			<div class='panel-body'>
-				<img>
-				<img>
-				<img>
-				<img>
-				<img>
+				<div class='panel-body'>
+					<img>
+					<img>
+					<img>
+					<img>
+					<img>
+				</div>
 			</div>
 		</div>
 	</div>
