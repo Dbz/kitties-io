@@ -2,17 +2,18 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Api::Listing.new(listing_params)
     if @listing.save
-      render json: @listing
+      render json: @listing, include: :images
     else
       render json: @listing.errors.full_messages, status: :unprocessable_entity
     end
   end
   
   def show
-    #@listing = Listing.includes(:images, :reviews).find(params[:id])
     @listing = Api::Listing.find(params[:id])
+    # @listing = Api::Listing.includes(:images, :reviews).find(params[:id])
+    # @listing = Api::Listing.find(params[:id])
     if @listing
-      render json: @listing
+      render json: @listing, include: :images
     else
       render json: ["Listing not found"], status: 404
     end
