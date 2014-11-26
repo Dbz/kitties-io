@@ -1,0 +1,36 @@
+<div class='review-containter'>
+	<div class='reviewer'>
+		<img src="<%= review.userImage() %>">
+		<p> Reviewed By </p>
+		<p><a> <%= review.username %></a></p>
+	</div>
+	<div class='review-data'>
+		<div class='review-header'>
+			<div class='review-stars'>
+				<% for(var x = 0; x < review.get('stars'); x++) { %>
+					<span class='star gold'></span>
+				<% } %>
+				<% for(var x = review.get('stars'); x < 5; x++) { %>
+					<span class='star white'></span>
+				<% } %>
+			</div>
+			<div class='review-date'>
+				<p> <%= review.escape('updated_at') %> </p>
+			</div>
+		</div>
+		
+		<div class='review-body'>
+			<p> <%= review.get('content') %> </p>
+		</div>
+		
+		<div class='review-footer'>
+			<div class='review-image'>
+				<img src="<%= review.listingImage() %>">
+			</div>
+			<div class='review-listing-name'>
+				<p> <%= review.listingName() %> </p>
+			</div>
+		</div>
+	</div>
+</div>
+				
