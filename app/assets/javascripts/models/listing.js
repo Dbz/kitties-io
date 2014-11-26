@@ -8,15 +8,24 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 		this._reviews = this._reviews || new SpendYourSavings.Collections.Reviews([], { listing: this });
 		return this._reviews;
 	},
+	shop: function() {
+		this._shop = this._shop || new SpendYourSavings.Model.Shop([], { listing: this });
+		return this._shop;
+	},
+	
 	
 	parse: function(data) {
 		if(data.images) {
-			this.images().set(data.images);
+			this.images().set(data.images, { parse: true });
 			delete data.images;
 		}
 		if(data.reviews) {
-			this.reviews().set(data.reviews);
+			this.reviews().set(data.reviews, { parse: true });
 			delete data.reviews;
+		}
+		if(data.shop) {
+			this.shop.set(data.shop, { parse: true });
+			delete data.shop;
 		}
 		return data;
 	}

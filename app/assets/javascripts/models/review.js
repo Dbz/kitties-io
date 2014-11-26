@@ -1,5 +1,7 @@
 SpendYourSavings.Models.Review = Backbone.Model.extend({
 	initialize: function(options) {
-		this.listing = options.listing;
+		var listing = new SpendYourSavings.Models.Listing({ id: options.listing_id });
+		listing.fetch();
+		this.listing = listing;
 	}
 });

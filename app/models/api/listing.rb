@@ -1,5 +1,6 @@
 class Api::Listing < ActiveRecord::Base
   has_many :images
-  has_many :reviews
-  validates :name, :price, :available, :shop_id, :description, :policies, presence: true
+  belongs_to :shop
+  has_many :reviews, through: :shop
+  validates :name, :price, :available, :shop_id, :description, presence: true
 end
