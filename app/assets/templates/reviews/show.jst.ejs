@@ -1,22 +1,21 @@
-<div class='review-containter'>
+<div class='review-container'>
 	<div class='reviewer'>
-		<% debugger %>
-		<img src="<%= review.userImage() %>">
-		<p> Reviewed By </p>
-		<p><a> <%= review.username %></a></p>
+		<img src="<%= review.userImage() %>" class='img-circle'>
+		<h6> Reviewed By </h6>
+		<h6 class='reviewer-name'><a> <%= review.escape('user_name') %></a></h6>
 	</div>
 	<div class='review-data'>
 		<div class='review-header'>
 			<div class='review-stars'>
-				<% for(var x = 0; x < review.get('stars'); x++) { %>
-					<span class='star gold'></span>
-				<% } %>
 				<% for(var x = review.get('stars'); x < 5; x++) { %>
-					<span class='star white'></span>
+					<div class='star'>☆</div>
+				<% } %>
+				<% for(var x = 0; x < review.get('stars'); x++) { %>
+					<div class='star gold'>☆</div>
 				<% } %>
 			</div>
 			<div class='review-date'>
-				<p> <%= review.escape('updated_at') %> </p>
+				<p> <%= review.date() %> </p>
 			</div>
 		</div>
 		
@@ -26,10 +25,10 @@
 		
 		<div class='review-footer'>
 			<div class='review-image'>
-				<img src="<%= review.listingImage() %>">
+				<img src="<%= review.listing.images().first.url %>">
 			</div>
 			<div class='review-listing-name'>
-				<p> <%= review.listingName() %> </p>
+				<p> <%= review.listing.get('name') %> </p>
 			</div>
 		</div>
 	</div>

@@ -4,11 +4,40 @@
 	width: 570px;
 	min-height: 390px;
 	max-height: 390px;
-//	border: 1px solid black;
 }
 .slide {
 	background-opacity: 0;
 }
 .carousel .carousel-control.right, .carousel .carousel-control.left {
 	background-image: none;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+          transition: opacity 2s ease-in-out;
+	
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
 }

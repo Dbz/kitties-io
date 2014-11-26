@@ -9,7 +9,7 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 		return this._reviews;
 	},
 	shop: function() {
-		this._shop = this._shop || new SpendYourSavings.Model.Shop([], { listing: this });
+		this._shop = this._shop || new SpendYourSavings.Models.Shop([], { listing: this });
 		return this._shop;
 	},
 	
@@ -24,7 +24,7 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 			delete data.reviews;
 		}
 		if(data.shop) {
-			this.shop.set(data.shop, { parse: true });
+			this.shop().set(data.shop, { parse: true });
 			delete data.shop;
 		}
 		return data;
