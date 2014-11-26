@@ -9,7 +9,12 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	},
 	
 	index: function() {
-		;
+		var shops = new SpendYourSavings.Collections.Shops();
+		// var homeView = new SpendYourSavings.Views.StaticHome({ collection: shops });
+		
+		var homeView = new SpendYourSavings.Views.StaticHome({collection: shops});
+		this._swapView(homeView);
+		shops.fetch({url: "api/shops/featured_shops"});
 	},
 	
 	showListing: function(id) {

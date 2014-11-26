@@ -1,8 +1,6 @@
 SpendYourSavings.Models.Review = Backbone.Model.extend({
 	initialize: function(options) {
-		var listing = new SpendYourSavings.Models.Listing({ id: options.listing_id });
-		listing.fetch();
-		this.listing = listing;
+		this.listing = options.listing
 	},
 	userImage: function() {
 		return "https://www.etsy.com/images/avatars/default_avatar_75px.png";

@@ -1,10 +1,11 @@
 /*					Carousel						*/
 
-.carousel {
-	width: 570px;
-	min-height: 390px;
-	max-height: 390px;
-}
+//.carousel {
+//	width: 570px;
+//	min-height: 390px;
+//	max-height: 390px;
+//}
+
 .slide {
 	background-opacity: 0;
 }
@@ -14,9 +15,9 @@
 
 .carousel-fade .carousel-inner .item {
   opacity: 0;
-  -webkit-transition: opacity 2s ease-in-out;
-          transition: opacity 2s ease-in-out;
-	
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+
 }
 .carousel-fade .carousel-inner .active {
   opacity: 1;
