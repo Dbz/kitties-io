@@ -7,7 +7,7 @@ SpendYourSavings.Collections.Reviews = Backbone.Collection.extend({
 	
 	_prepareModel: function(attrs, options) {
 		var model = Backbone.Collection.prototype._prepareModel.call(this, attrs, options);
-		model.shop = this.listing.shop();
+		// model.shop = this.listing.shop();
 		model.listing = this.listing
 		return model;
 	}
