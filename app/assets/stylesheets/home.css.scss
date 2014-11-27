@@ -53,6 +53,20 @@ img.other-seller-product {
 //	background: black;
 	border: 1px solid white;
 }
+.image-border {
+	border: 1px solid black;
+}
+
+.all-seller-listings {
+	height: 83px;
+	width: 83px;
+	border: 1px solid black;
+	text-align: center;
+	line-height: 83px;
+}
+.all-seller-listings:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
 .seller-image img{
 	height: 80px;
 	width: 80px;

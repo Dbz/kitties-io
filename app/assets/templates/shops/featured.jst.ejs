@@ -17,11 +17,13 @@
 		<div class='row'>
 			<% products.forEach(function(product){ %>
 				<div class='col-md-4'>
+					<div class='image-border'>
 						<a href='/#listings/<%= product.get('id') %>'> <img class='other-seller-product' src='<%= product.images().first().get('url') %>'> </a>
+					</div>
 				</div>
 			<% }) %>
 			<div class='col-md-4'>
-				<div class='other-seller-product'>
+				<div class='all-seller-listings'>
 					<p> <%= shop.listings().length %> Products </p>
 				</div>
 			</div>
@@ -32,18 +34,25 @@
 		<div class='row'>
 			<div class='col-md-4'>
 				<div class='seller-image'>
-					<img class='img-circle'>
+					<img class='img-circle' src="https://www.etsy.com/images/avatars/default_avatar_75px.png">
 				</div>
 			</div>
 			<div class='col-md-8'>
 				<div class='seller-bio'>
 					<div class='seller-location'>
-						<p> San Fransisco, California </p>
+						<span> San Fransisco, California </span>
 					</div>
 					<div class='seller-rating'>
-						<div class='review-stars'>
-						</div>
-						<p>☆☆☆☆☆ 48 reviews</p>
+						<p>
+							<% var x = 0 %>
+							<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
+								<span class='gold'>☆</span>
+							<% } %>
+							<% for(; x < 5; x++) { %>
+								<span>☆</span>
+							<% } %>
+							<span> <%= shop.reviews().length %> Reviews </span>
+						</p>
 					</div>
 				</div>
 			</div>

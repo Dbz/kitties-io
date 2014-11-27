@@ -10,6 +10,15 @@ SpendYourSavings.Collections.Reviews = Backbone.Collection.extend({
 		// model.shop = this.listing.shop();
 		model.listing = this.listing
 		return model;
+	},
+	
+	averageReview: function() {
+		var stars = 0;
+		this.each(function(review) {
+			stars += review.get('stars');
+		});
+		return Math.ceil(stars/this.length);
 	}
+	
 
 });
