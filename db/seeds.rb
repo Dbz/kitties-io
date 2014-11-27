@@ -42,4 +42,5 @@ Review.create(
   user_id: 4
 )
 
-Listing.create(name: "Van Cat", price: 5, available: 27, shop_id: 1, description: "Known for their mismatching eye colors and love of swimming, Van cats are the purrfect pets. This furry companion is a champion snuggler.")
+# Listing.create(name: "Van Cat", price: 5, available: 27, shop_id: 1, description: "Known for their mismatching eye colors and love of swimming, Van cats are the purrfect pets. This furry companion is a champion snuggler.")
+
