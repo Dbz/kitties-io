@@ -1,12 +1,12 @@
 <div class='panel panel-default favorite-item'>
 	<div class='panel-heading'>
-		<a href='<%= featuredProduct.url() %>'>
+		<a href='/#listings/<%= featuredProduct.get('id') %>'>
 			<img class="favorite-item-img" src='<%= featuredProduct.images().first().get('url') %>'>
 		</a>
 	</div>
 				
 	<div class='panel-body product-link'>
-		<a href="<% featuredProduct.url() %>"> <%= featuredProduct.get('name').substring(0, 35) %></a>
+		<a href='/#listings/<%= featuredProduct.get('id') %>'> <%= featuredProduct.get('name').substring(0, 35) %></a>
 		<div class='product-money'>
 			<a href="" class='product-price no-underline'> $<%= featuredProduct.get('price') %>K </a>
 			<a href="" class='product-currency no-underline'> USD </a>
@@ -17,11 +17,12 @@
 		<div class='row'>
 			<% products.forEach(function(product){ %>
 				<div class='col-md-4'>
-						<a href='<%= product.url() %>'> <img class='other-seller-product' src='<%= product.images().first().get('url') %>'> </a>
+						<a href='/#listings/<%= product.get('id') %>'> <img class='other-seller-product' src='<%= product.images().first().get('url') %>'> </a>
 				</div>
 			<% }) %>
 			<div class='col-md-4'>
 				<div class='other-seller-product'>
+					<p> <%= shop.listings().length %> Products </p>
 				</div>
 			</div>
 		</div>
