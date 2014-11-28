@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
+  after_create :create_default_image
   
   def is_password?(password)
     @password = password
@@ -32,4 +33,9 @@ class User < ActiveRecord::Base
     return nil unless user
     return user.is_password?(password) ? user : nil
   end
+  
+  def create_default_image
+    Image.create(user_id: self.id) unless self.image
+  end
+      
 end

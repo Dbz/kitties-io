@@ -13,7 +13,8 @@ class Api::ListingsController < ApplicationController
     # @listing = Api::Listing.includes(:images, :reviews).find(params[:id])
     # @listing = Api::Listing.find(params[:id])
     if @listing
-      render json: @listing, include: [:images, :shop, :reviews]
+      #render json: @listing, include: [:images, :shop, :reviews]
+      render :show_listing
     else
       render json: ["Listing not found"], status: 404
     end

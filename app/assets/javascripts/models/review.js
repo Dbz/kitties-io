@@ -2,7 +2,13 @@ SpendYourSavings.Models.Review = Backbone.Model.extend({
 	initialize: function(options) {
 		this.listing = options.listing
 	},
+	user: function() {
+		this._user = this._user || new SpendYourSavings.Models.User();
+		return this._user;
+	},
 	userImage: function() {
+		if(this.user().get('url'))
+			return this.user().get('url');
 		return "https://www.etsy.com/images/avatars/default_avatar_75px.png";
 	},
 	date: function() {
@@ -14,5 +20,12 @@ SpendYourSavings.Models.Review = Backbone.Model.extend({
 	    var args = [null].concat(argArray);
 	    var factoryFunction = constructor.bind.apply(constructor, args);
 	    return new factoryFunction();
+	},
+	parse: function(data) {
+		if(data.user) {
+			this.user().set(data.user);
+			delete data.user;
+		}
+		return data;
 	}
 });

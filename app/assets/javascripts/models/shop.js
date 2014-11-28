@@ -15,6 +15,11 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 		return this._listings;
 	},
 	
+	user: function() {
+		this._user = this._user || new SpendYourSavings.Models.User()
+		return this._user
+	},
+	
 	parse: function(data) {
 		if(data.listings) {
 			this.listings().set(data.listings, { parse: true });
@@ -23,6 +28,10 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 		if(data.reviews) {
 			this.reviews().set(data.reviews, { parse: true });
 			delete data.reviews;
+		}
+		if(data.user) {
+			this.user().set(data.user, { parse: true });
+			delete data.user;
 		}
 		return data
 	}

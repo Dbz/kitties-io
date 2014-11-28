@@ -1,5 +1,10 @@
 json.array! @shops do |shop|
-  json.extract! shop, :id, :user_id, :description, :policies
+  json.extract! shop, :id, :description, :policies
+  
+  json.user do
+    json.extract! shop.user, :id, :username
+    json.extract! shop.user.image, :url
+  end
 
   json.reviews do
   	json.array! shop.reviews do |review|
