@@ -5,7 +5,7 @@ class Image < ActiveRecord::Base
   belongs_to :shop
   belongs_to :user
   
-  validates :url, :listing_id, presence: true
+  validates :url, presence: true
   validate :only_main_image
   
   def only_main_image
