@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessor :main_img
+  # attr_accessor :main_img
   
   belongs_to :listing
   belongs_to :shop
@@ -11,10 +11,10 @@ class Image < ActiveRecord::Base
   
   
   def only_main_image
-    if self.main_img == 1
-      img = Image.where({ main_img: 1}).where.not({ id: self.id });
+    if self.main_img == true
+      img = Image.where({ main_img: true}).where({ listing_id: self.listing_id }).where.not({ id: self.id });
       unless img.empty?
-        img.first.main_img = 0;
+        img.first.main_img = false;
         img.first.save
       end
     end
