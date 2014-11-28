@@ -5,6 +5,6 @@ class Listing < ActiveRecord::Base
   validates :name, :price, :available, :shop_id, :description, presence: true
   
   def main_image
-    listing.images.where({main_img: 1}).first
+    self.images.where({main_img: true}).first
   end
 end

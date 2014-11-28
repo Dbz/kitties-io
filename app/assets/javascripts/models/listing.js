@@ -28,5 +28,14 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 			delete data.shop;
 		}
 		return data;
+	},
+	
+	mainImage: function() {
+		var main;
+		this.images().each(function(image) {
+			if(image.get('main_img'))
+				main = image;
+		});
+		return main || new SpendYourSavings.Models.Image();
 	}
 });

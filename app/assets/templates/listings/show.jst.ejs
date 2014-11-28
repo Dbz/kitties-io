@@ -30,11 +30,11 @@
 				<div class='carousel-inner'>
 					<% if(len) { %>
 						<div class='item active'>
-							<img src='<%= listing.images().models[0].get('url') %>'>
+							<img src='<%= listing.mainImage().get('url') %>'>
 						</div>
 					<% } %>
-					<% _(listing.images().models).each(function(image, index) { %>
-						<% if(index != 0) { %>
+					<% _(listing.images().models).each(function(image) { %>
+						<% if(!image.get('main_img')) { %>
 							<div class='item'>
 								<img src='<%= image.get('url') %>'>
 							</div>
