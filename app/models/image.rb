@@ -2,6 +2,9 @@ class Image < ActiveRecord::Base
   attr_accessor :main_img
   
   belongs_to :listing
+  belongs_to :shop
+  belongs_to :user
+  
   validates :url, :listing_id, presence: true
   validate :only_main_image
   
