@@ -6,6 +6,7 @@ SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.model.reviews(), "add", this.addReview);
 		this.listenTo(this.model.shop(), "add", this.addShopHeader);
+		this.listenTo(this.model.shop(), "add", this.addShopSidebar);
 	},
 	
 	render: function() {
@@ -29,6 +30,12 @@ SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
 		debugger
 		var headerView = new SpendYourSavings.Views.ListingShopHeader({ model: shop });
 		this.addSubview('#shop-header', headerView);
+	},
+	
+	addShopSidebar: function(shop) {
+		debugger
+		var sidebarView = new SpendYourSavings.Views.ListingShopSidebar({ model: shop });
+		this.addSubview('#listing-shop-sidebar', sidebarView);
 	}
 
 });

@@ -45,8 +45,28 @@
 		<div id='listing-tab-panel'>
 		
 			<ul class='nav nav-tabs'>
-				<li class='active'><a href='#listing-details' aria-controls='listing-details' data-toggle='tab'>Details</a></li>
-				<li><a href='#listing-reviews' aria-controls='listing-reviews' data-toggle='tab'>Reviews</a></li>
+				<li class='active'>
+					<a href='#listing-details' aria-controls='listing-details' data-toggle='tab'>
+						Details
+					</a>
+				</li>
+				<li>
+					<a href='#listing-reviews' aria-controls='listing-reviews' data-toggle='tab'>
+						<% var x = 0 %>
+						<% for(x = 0; x < listing.reviews().averageReview(); x++) { %>
+							<span class='gold'>☆</span>
+						<% } %>
+						<% for(; x < 5; x++) { %>
+							<span>☆</span>
+						<% } %>
+						<span> (<%= listing.reviews().length %>)</span>
+					</a>
+				</li>
+				<li>
+					<a href='#listing-policies' aria-controls='listing-policies' data-toggle='tab'>
+						Policies
+					</a>
+				</li>
 			</ul>
 		
 			<div class='tab-content'>
@@ -56,6 +76,10 @@
 				</div>
 		
 				<div id='listing-reviews' class='tab-pane fade'>
+				</div>
+				
+				<div id='listing-policies' class='tab-pane fade'>
+					<p><%= listing.shop().get('policies') %></p>
 				</div>
 			
 			</div>
@@ -85,23 +109,9 @@
 			</div>
 		</div>
 		
-		<div class='panel-wrapper'>
-			<div id='shop-panel' class='panel panel-default'>
-				<div class='panel-heading'>
-					<img>
-					<h3 class='panel-title'> Shop Name </h3>
-					<h3> Shop Location </h3>
-				</div>
-			
-				<div class='panel-body'>
-					<img>
-					<img>
-					<img>
-					<img>
-					<img>
-				</div>
-			</div>
+		<div class='panel-wrapper' id='listing-shop-sidebar'>
 		</div>
+		
 	</div>
 	
 	<div id='related-items'>

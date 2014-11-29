@@ -3,9 +3,7 @@
 	<p><%= shop.get('name') || "" %></p>
 </div>
 <div id='shop-items'>
-	<img>
-	<img>
-	<img>
-	<img>
-	<img>
+	<% shop.listings().each(function(listing) { %>
+		<img src='<%= listing.get('url') %>'>
+	<% }) %>
 </div>

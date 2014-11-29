@@ -19,10 +19,11 @@
 	float: right;
 }
 .review-container {
-	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
 	margin-bottom: 10px;
 	padding-top: 8px;
 	clear: both;
+	overflow: auto;
 }
 .review-stars {
 	display: inline-block;
