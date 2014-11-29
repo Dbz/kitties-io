@@ -42,13 +42,25 @@
 			</div>
 		</div>
 		
-		<div id='listing-details'>
-			<h3 class='center'> Details </h3>
-			<p class='center'> <%= listing.get('description') %> </p>
+		<div id='listing-tab-panel'>
+		
+			<ul class='nav nav-tabs'>
+				<li class='active'><a href='#listing-details' aria-controls='listing-details' data-toggle='tab'>Details</a></li>
+				<li><a href='#listing-reviews' aria-controls='listing-reviews' data-toggle='tab'>Reviews</a></li>
+			</ul>
+		
+			<div class='tab-content'>
+				<div id='listing-details' class='tab-pane active fade in'>
+					<h3 class='center'> Details </h3>
+					<p class='center'> <%= listing.get('description') %> </p>
+				</div>
+		
+				<div id='listing-reviews' class='tab-pane fade'>
+				</div>
+			
+			</div>
 		</div>
 		
-		<div id='listing-reviews'>
-		</div>
 	</div>
 	
 	<div id='right-content'>
