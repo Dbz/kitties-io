@@ -1,9 +1,5 @@
 SpendYourSavings.Models.Shop = Backbone.Model.extend({
 	urlRoot: "/api/shops",
-	initialize: function(options) {
-		this.randomProductList = []; // Stores each listing from calling randomProduct()
-		// this.listings().fetch();
-	},
 	
 	reviews: function() {
 		this._reviews = this._reviews || new SpendYourSavings.Collections.Reviews([], {});
@@ -16,11 +12,18 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 	},
 	
 	user: function() {
-		this._user = this._user || new SpendYourSavings.Models.User()
-		return this._user
+		this._user = this._user || new SpendYourSavings.Models.User([], {});
+		return this._user;
+	},
+	
+	image: function() {
+		this._image = this._image || new SpendYourSavings.Models.Image([], {});
+		return this._image
 	},
 	
 	parse: function(data) {
+		console.log("shop parse data: " + data);
+		debugger
 		if(data.listings) {
 			this.listings().set(data.listings, { parse: true });
 			delete data.listings;
@@ -33,7 +36,11 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 			this.user().set(data.user, { parse: true });
 			delete data.user;
 		}
-		return data
+		if(data.image) {
+			debugger
+			this.image().set(data.image, { parse: true });
+			delete data.image;
+		}
+		return data;
 	}
-	
 });

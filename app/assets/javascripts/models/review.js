@@ -13,6 +13,7 @@ SpendYourSavings.Models.Review = Backbone.Model.extend({
 	},
 	date: function() {
 		var args = this.get('updated_at').substring(0, this.get('updated_at').indexOf("T")).split('-');
+		args[1] -= 1; // Change month to 0 index
 		var d = this.applyToConstructor(Date, args);
 		return d.toDateString();
 	},

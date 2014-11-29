@@ -54,6 +54,7 @@ body {
 header {
 	min-height: 70px;
 	background: white;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 nav {
 	display: block;
@@ -86,7 +87,7 @@ nav {
 	margin-left: 15px;
 }
 #search {
-	color: #00A1D9;
+//	color: #00A1D9;
 	background: #f9f9f8;
 	width: 250px;
 //	border: none;
