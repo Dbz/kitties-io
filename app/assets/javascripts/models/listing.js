@@ -9,8 +9,9 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 		return this._reviews;
 	},
 	shop: function() {
-		this._shop = this._shop || new SpendYourSavings.Models.Shop([], { listing: this });
+		this._shop = this._shop || new SpendYourSavings.Models.Shop({}, { listing: this });
 		return this._shop;
+		//return this.get('shop') || new SpendYourSavings.Models.Shop([], { listing: this });
 	},
 	
 	
@@ -24,7 +25,8 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 			delete data.reviews;
 		}
 		if(data.shop) {
-			this.shop().set(data.shop, { parse: true });
+			var shopParams = this.shop().parse(data.shop);
+			this.shop().set(shopParams);
 			delete data.shop;
 		}
 		return data;

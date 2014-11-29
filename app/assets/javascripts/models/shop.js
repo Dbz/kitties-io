@@ -12,18 +12,17 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 	},
 	
 	user: function() {
-		this._user = this._user || new SpendYourSavings.Models.User([], {});
+		this._user = this._user || new SpendYourSavings.Models.User({}, {});
 		return this._user;
 	},
 	
 	image: function() {
-		this._image = this._image || new SpendYourSavings.Models.Image([], {});
+		this._image = this._image || new SpendYourSavings.Models.Image({}, {});
 		return this._image
+		// return this.get('image') || new SpendYourSavings.Models.Image({}, {});
 	},
 	
 	parse: function(data) {
-		console.log("shop parse data: " + data);
-		debugger
 		if(data.listings) {
 			this.listings().set(data.listings, { parse: true });
 			delete data.listings;
@@ -33,12 +32,13 @@ SpendYourSavings.Models.Shop = Backbone.Model.extend({
 			delete data.reviews;
 		}
 		if(data.user) {
-			this.user().set(data.user, { parse: true });
+			var userParams = this.user().parse(data.user);
+			this.user().set(userParams);
 			delete data.user;
 		}
 		if(data.image) {
-			debugger
-			this.image().set(data.image, { parse: true });
+			var imageParams = this.image().parse(data.image);
+			this.image().set(imageParams);
 			delete data.image;
 		}
 		return data;

@@ -1,9 +1,13 @@
 <div id='shop-details'>
-	<img src='#' class='user-img img-circle'>
-	<p><%= shop.get('name') || "" %></p>
+	<div class='listing-shop-header-img'>
+		<img src='<%= shop.image().get('url') %>' class='user-img'>
+	</div>
+	<div><%= shop.get('name') || "" %></div>
 </div>
-<div id='shop-items'>
+<div id='listing-shop-items'>
 	<% shop.listings().each(function(listing) { %>
-		<img src='<%= listing.get('url') %>'>
+		<div class='listing-shop-header-img'>
+			<a href='/#listings/<%= listing.get('id') %>'><img src='<%= listing.get('url') %>'></a>
+		</div>
 	<% }) %>
 </div>

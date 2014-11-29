@@ -22,7 +22,7 @@ json.shop do
   json.listings do
     json.array! @listing.shop.listings.sample(4) do |listing|
       json.extract! listing, :id, :name
-      json.extract! listing.main_image, :id, :url
+      json.extract! listing.main_image, :url
     end
   end
 end
