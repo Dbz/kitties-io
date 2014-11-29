@@ -21,12 +21,13 @@
 #catch-phrase {
 	color: #707070;
 }
-.favorite-item {
+div .favorite-item {
 	width: 340px;
-}
-.favorite-item .panel-heading {
-	background-color: white;
-	padding: 5px 0;
+	.panel-heading {
+		background-color: white;
+		border: none;
+		padding: 5px 0;
+	}
 }
 .favorite-item-img {
 	margin-top: 5px;

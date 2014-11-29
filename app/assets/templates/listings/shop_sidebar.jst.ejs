@@ -6,10 +6,10 @@
 	</div>
 
 	<div class='panel-body'>
-		<img>
-		<img>
-		<img>
-		<img>
-		<img>
+		<% shop.listings().each(function(listing) {  %>
+			<div class='listing-item-img-wrapper'>
+				<img src='<%= listing.get('url') %>'>
+			</div>
+		<% }) %>
 	</div>
 </div>

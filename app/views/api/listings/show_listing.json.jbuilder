@@ -8,7 +8,7 @@ end
 
 json.reviews do
   json.array! @listing.reviews do |review|
-    json.extract! review, :id, :content, :stars, :shop_id, :user_name, :user_id, :updated_at
+    json.extract! review, :id, :content, :stars, :listing_id, :user_name, :user_id, :updated_at
     json.user do
       json.extract! review.user, :id, :username
       json.extract! review.user.image, :url

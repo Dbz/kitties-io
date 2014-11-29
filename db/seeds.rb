@@ -24,28 +24,28 @@ Image.create(listing_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursa
 Review.create(
   content: "This is an amazing seller. I bought my Van Cat from her and she came exactly as promised. One eye blue, one eye green, and she loves to swim with me! I'm definitely buying another once this one dies!",
   stars: 5,
-  shop_id: 1,
+  listing_id: 1,
   user_name: "Danny",
   user_id: 1
 )
 Review.create(
   content: "I tried to take my Chimpanzee with me through the airport dressed up as a child in a stroller. I GOT ARRESTED!! I wasn't warned that this would happen and it was an awful experience.",
   stars: 1,
-  shop_id: 1,
+  listing_id: 1,
   user_name: "John",
   user_id: 2
 )
 Review.create(
   content: "My ferrit siphoned gas out of my neighbors car. Who knew they could do that?!",
   stars: 4,
-  shop_id: 1,
+  listing_id: 1,
   user_name: "Matt",
   user_id: 3
 )
 Review.create(
   content: "BEST SELLER ON HERE",
   stars: 5,
-  shop_id: 1,
+  listing_id: 1,
   user_name: "Some Dude",
   user_id: 4
 )
