@@ -8,8 +8,8 @@
 	<div class='panel-body product-link'>
 		<a href='/#listings/<%= featuredProduct.get('id') %>'> <%= featuredProduct.get('name').substring(0, 35) %></a>
 		<div class='product-money'>
-			<a href="" class='product-price no-underline'> $<%= featuredProduct.get('price') %>K </a>
-			<a href="" class='product-currency no-underline'> USD </a>
+			<a class='product-price no-underline'> $<%= featuredProduct.get('price') %>K </a>
+			<a class='product-currency no-underline'> USD </a>
 		</div>
 	</div>
 				
@@ -17,9 +17,9 @@
 		<div class='row'>
 			<% products.forEach(function(product){ %>
 				<div class='col-md-4'>
-					<div class='image-border'>
-						<a href='/#listings/<%= product.get('id') %>'> <img class='other-seller-product' src='<%= product.images().first().get('url') %>'> </a>
-					</div>
+					<a href='/#listings/<%= product.get('id') %>'>
+						<img class='other-seller-product img-border' src='<%= product.images().first().get('url') %>'>
+					</a>
 				</div>
 			<% }) %>
 			<div class='col-md-4'>
@@ -34,16 +34,14 @@
 		<div class='row'>
 			<div class='col-md-4'>
 				<div class='seller-image'>
-					<img class='img-circle user-img' src="<%= shop.user().get('url') %>">
+					<img class='img-circle user-img' src="<%= shop.image().get('url') %>">
 				</div>
 			</div>
 			<div class='col-md-8'>
 				<div class='seller-bio'>
-					<div class='seller-location'>
 						<span> San Fransisco, California </span>
-					</div>
-					<div class='seller-rating'>
-						<p>
+						<br>
+						<span>
 							<% var x = 0 %>
 							<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
 								<span class='gold'>☆</span>
@@ -52,9 +50,7 @@
 								<span>☆</span>
 							<% } %>
 							<span> <%= shop.reviews().length %> Reviews </span>
-						</p>
-					</div>
-				</div>
+						</span>
 			</div>
 		</div>
 	</div>
