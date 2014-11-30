@@ -1,0 +1,22 @@
+#listing-shop-header {
+	padding: 15px 0px;
+}
+#shop-details {
+	float: left;
+}
+#listing-shop-items {
+	float: right;
+}
+.listing-shop-header-img {
+	background: white;
+	border: 1px solid #ececec;
+	border-radius: 3px;
+	float: right;
+	margin-left: 20px;
+	img {
+		width: 85px;
+		height: 85px;
+		padding: 3px;
+		border-radius: 3px;
+	}
+}

@@ -11,7 +11,9 @@ Image.create(user_id: 1, url: "http://www.hollywoodreporter.com/sites/default/fi
 User.create(username: "john", password: "johnjohn")
 User.create(username: "matt", password: "mattmatt")
 User.create(username: "Some Dude", password: "somedude")
-User.create(username: "Crazy Cat Lady", password: "crazycatlady");
+
+User.create(username: "Crazy Cat Lady", password: "crazycatlady")
+Image.create(user_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatlady.jpg")
 
 Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all of your exotic animals here!", policies: "We will ship anywhere and make sure whatever you buy gets to you in the condition you bought it")
 Image.create(shop_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/slowloris.jpg")

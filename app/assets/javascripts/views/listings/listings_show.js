@@ -6,7 +6,7 @@ SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.model.reviews(), "add", this.addReview);
 		this.listenTo(this.model.shop(), "change reset", this.addShopHeader);
-		// this.listenTo(this.model.shop(), "change reset", this.addShopSidebar);
+		this.listenTo(this.model.shop(), "change reset", this.addShopSidebar);
 	},
 	
 	render: function() {
