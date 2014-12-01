@@ -1,8 +1,12 @@
-.search-item-img-wrapper {
+#items-found {
+	margin-top: 20px;
+}
+
+.search-item-wrapper {
 	display: inline-block;
 	border: 1px solid gray;
 	border-radius: 5px;
-	margin: 10px 10px 0 0;
+	margin: 20px 20px 10px 10px;
 	width: 262px;
 	img {
 		width: 260px;

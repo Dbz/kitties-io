@@ -33,7 +33,7 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	searchResults: function(queryData) {
 		queryData = queryData.substring(2);
 		var listings = new SpendYourSavings.Collections.SearchListings();
-		listings.fetch({ data: encodeURIComponent(queryData) });
+		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
 			
 		var searchView = new SpendYourSavings.Views.ListingsSearchShow({ 
 			collection: listings 

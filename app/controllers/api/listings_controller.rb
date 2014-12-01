@@ -18,7 +18,7 @@ class Api::ListingsController < ApplicationController
   end
   
   def search
-    @listings = Listing.search(params[:search][:text])
+    @listings = Listing.search(URI.unescape(params[:text]))
     render :search_listing
   end
   

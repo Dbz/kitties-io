@@ -23,6 +23,6 @@ SpendYourSavings.Collections.Listings = Backbone.Collection.extend({
 SpendYourSavings.Collections.SearchListings = Backbone.Collection.extend({
 
   model: SpendYourSavings.Models.Listing,
-	url: "api/listings/search?search%5Btext%5D="
+	url: "api/listings/search" // ?search%5Btext%5D=
 	
 });

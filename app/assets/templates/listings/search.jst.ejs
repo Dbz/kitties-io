@@ -1,16 +1,17 @@
-<div class='margins center'>
-	<p> We found <%= listings.length %> items! </p>
+<div class='margins center' id='items-found'>
+	<h3> We found <%= listings.length %> items! </h3>
 </div>
 
 <div id='search-items' class='margins'>
 	<% listings.each(function(listing) {  %>
-		<div class='search-item-img-wrapper'>
+		<div class='search-item-wrapper'>
 			<a href='/#listings/<%= listing.get('id') %>'>
 				<img src='<%= listing.mainImage().escape('url') %>'>
 			</a>
 			<div class='search-item-text'>
 				<p><a href='/#listings/<%= listing.get('id') %>'><%= truncate(listing.escape('name'), 10) %></a></p>
 				<p>
+					<a class='search-item-shop-name'><%= listing.shop().escape('name') %></a>
 					<a class='product-price no-underline'>$<%= listing.escape('price') %></a>
 					<a class='product-currency no-underline'>USD</a>
 				</p>
