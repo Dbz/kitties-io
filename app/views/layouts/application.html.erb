@@ -51,17 +51,17 @@
 					<% else %>
 					
 						<li>
-							<button id='register' class="btn" data-toggle='modal' data-target='#auth-modal'>
+							<button id='sign-up' class="btn login" data-toggle='modal' data-target='#auth-modal'>
 								Register
 							</button>
 						</li>
 						<li>
-							<button id='sign-in' class="btn" data-toggle='modal' data-target='#auth-modal'>
+							<button id='sign-in' class="btn login" data-toggle='modal' data-target='#auth-modal'>
 								Sign In
 							</button>
 						</li>
 					<% end %>
-					<li><button class="btn"><span class="glyphicons shopping_bag"></span>Cart</button></li>
+					<li><button class="btn" id='cart'><span class="glyphicons shopping_bag"></span>Cart</button></li>
 				</ul>
 			</nav>
 		</header>
@@ -74,14 +74,6 @@
 		<div class='modal fade' id='auth-modal'>
 			<div class='modal-dialog'>
 				<div class='modal-content'>
-
-					<!-- <div class='modal-header'>
-						<button type='button' class='close' data-dismiss='modal'>
-							<span aria-hidden='true'>&times;</span>
-							<span class='sr-only'>Close</span>
-						</button>
-						<h4 class='modal-title'>Sign Up</h4>
-					</div> -->
 
 					<div class='modal-body'>
 						<!-- <% if flash[:error] %>

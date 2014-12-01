@@ -162,6 +162,12 @@ nav {
 	border-radius: 3px;
 	border: 1px solid #F2D03B;
 }
+nav {
+	#sign-up:focus, #sign-in:focus, #cart:focus {
+		outline: none;
+	}
+	
+}
 
 /*				Auth Modal				*/
 
