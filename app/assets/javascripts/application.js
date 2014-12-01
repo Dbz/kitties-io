@@ -25,3 +25,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+	
+truncate = function(text, chars) {
+	return text.length > 34 ? text.substring(0, chars) + "..." : text;
+}

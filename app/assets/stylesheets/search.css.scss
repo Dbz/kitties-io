@@ -1,0 +1,24 @@
+.search-item-img-wrapper {
+	display: inline-block;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 10px 10px 0 0;
+	width: 262px;
+	img {
+		width: 260px;
+		height: 200px;
+		padding: 6px;
+		border-radius: 6px;
+	}
+	p {
+		margin: 0px;
+		padding: 0px;
+	}
+}
+.search-item-text {
+	padding: 5px;
+	text-align: left;
+}
+#search-items {
+	text-align: center;
+}

@@ -1,20 +1,25 @@
 SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "index",
-		"listings/:id": "showListing"
+		"listings/:id": "showListing",
+		"search?q=*": "searchResults"
 	},
 	
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
+		$('#search-wrapper').on('submit', function (event) {
+			event.preventDefault();
+			var queryString = $(event.currentTarget).find('#search').val();
+			this.searchResults("q=" + queryString)
+		}.bind(this));
 	},
 	
 	index: function() {
-		var shops = new SpendYourSavings.Collections.Shops();
-		// var homeView = new SpendYourSavings.Views.StaticHome({ collection: shops });
+		var shops = new SpendYourSavings.Collections.FeaturedShops();
+		shops.fetch();
 		
 		var homeView = new SpendYourSavings.Views.StaticHome({collection: shops});
 		this._swapView(homeView);
-		shops.fetch({url: "api/shops/featured_shops/3"});
 	},
 	
 	showListing: function(id) {
@@ -23,6 +28,17 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 		var listingView = new SpendYourSavings.Views.ListingsShow({ model: listing });
 		
 		this._swapView(listingView);
+	},
+	
+	searchResults: function(queryData) {
+		queryData = queryData.substring(2);
+		var listings = new SpendYourSavings.Collections.SearchListings();
+		listings.fetch({ data: encodeURIComponent(queryData) });
+			
+		var searchView = new SpendYourSavings.Views.ListingsSearchShow({ 
+			collection: listings 
+		});
+		this._swapView(searchView);
 	},
 	
 	_swapView: function(view) {
