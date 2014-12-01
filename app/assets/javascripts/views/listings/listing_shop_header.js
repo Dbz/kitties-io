@@ -10,6 +10,10 @@ SpendYourSavings.Views.ListingShopHeader = Backbone.View.extend({
 	render: function() {
 		var templateCode = this.template({ shop: this.model });
 		this.$el.html(templateCode);
+		setTimeout( function() {
+			this.$el.tooltip();
+		}.bind(this), 1 );
+		
 		return this;
 	}
 	

@@ -7,7 +7,9 @@
 <div id='listing-shop-items'>
 	<% shop.listings().each(function(listing) { %>
 		<div class='listing-shop-header-img'>
-			<a href='/#listings/<%= listing.get('id') %>'><img src='<%= listing.get('url') %>'></a>
+			<a href='/#listings/<%= listing.get('id') %>'>
+				<img src='<%= listing.get('url') %>' title='<%= listing.escape('name') %>'>
+			</a>
 		</div>
 	<% }) %>
 </div>

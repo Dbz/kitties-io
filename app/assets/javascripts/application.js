@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require marked
 //= require bootstrap
 //= require underscore
 //= require backbone

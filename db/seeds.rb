@@ -93,18 +93,16 @@ Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursav
 Shop.create(name: "Cat mugs", user_id: 3, description: "Cute Cat Mugs!", policies: "I ship anywhere");
 Image.create(shop_id: 3, url: "https://img0.etsystatic.com/051/0/30272423/iusa_75x75.28233324_nkpx.jpg")
 Listing.create(shop_id: 3, name: "Crazy Cat Lady Mugs", price: "20", available: 20, description: "
-<pre>
+### Crazy Cat Lady Coffee Mug ###
+
 Our designer mugs make the perfect gift for friends and family or just an extra special treat for your someone special ;) 
 
-Crazy Cat Lady Coffee Mug
-
-11 oz. Coffee Mug
-– Design/Image is on both sides of mug.
-– Professional Quality
-– Dishwasher safe (Top Rack)
-– All of the designs are transferred to the mugs using a professional heat press.
-– All items are hand crafted so they may vary slightly from the sample image. 
-</pre>
+#### 11 oz. Coffee Mug ####
++ Design/Image is on both sides of mug.
++ Professional Quality
++ Dishwasher safe (Top Rack)
++ All of the designs are transferred to the mugs using a professional heat press.
++ All items are hand crafted so they may vary slightly from the sample image. 
 ")
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug1optimized.png", main_img: true)
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug2optimized.png")

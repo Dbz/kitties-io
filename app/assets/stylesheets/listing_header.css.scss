@@ -14,9 +14,15 @@
 	float: right;
 	margin-left: 20px;
 	img {
+		-webkit-transition: opacity .1s;
+		opacity: 1.0;
 		width: 85px;
 		height: 85px;
 		padding: 3px;
 		border-radius: 3px;
+	}
+	img:hover {
+		opacity: .8;
+		-webkit-transition: opacity .1s;
 	}
 }
