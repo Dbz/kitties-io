@@ -15,7 +15,10 @@ User.create(username: "Some Dude", password: "somedude")
 User.create(username: "Crazy Cat Lady", password: "crazycatlady")
 Image.create(user_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatlady.jpg")
 
-Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all of your exotic animals here!", policies: "We will ship anywhere and make sure whatever you buy gets to you in the condition you bought it")
+Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all of your exotic cats here!",
+policies: "
+We will ship anywhere and make sure your feline gets to you in purrfect condition!
+")
 Image.create(shop_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/slowloris.jpg")
 
 Listing.create(name: "Ocelot", price: 2000, available: 1, shop_id: 1, description: "Buy this furry friend while he's still around! Ocelot pelts are in high demand due to what wonderful pillows they make")
@@ -90,9 +93,17 @@ Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursav
 Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/forestcat3optimized.png")
 
 
-Shop.create(name: "Cat mugs", user_id: 3, description: "Cute Cat Mugs!", policies: "I ship anywhere");
+Shop.create(name: "Cat mugs", user_id: 3, description: "Cute Cat Mugs!",
+policies: "
+
+#### **IMPORTANT**
+Please double check your shipping address before submitting your order, we cannot replace orders sent to an incorrect address.
+
+Orders will be posted to the buyers Kitties.io address within 3 business days and within 5 business days for custom. If you'd like your order posted to a different address, please include at checkout.
+")
+
 Image.create(shop_id: 3, url: "https://img0.etsystatic.com/051/0/30272423/iusa_75x75.28233324_nkpx.jpg")
-Listing.create(shop_id: 3, name: "Crazy Cat Lady Mugs", price: "20", available: 20, description: "
+Listing.create(shop_id: 3, name: "Cute Cat Mugs", price: "20", available: 20, description: "
 ### Crazy Cat Lady Coffee Mug ###
 
 Our designer mugs make the perfect gift for friends and family or just an extra special treat for your someone special ;) 
@@ -108,4 +119,19 @@ Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursa
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug2optimized.png")
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug3optimized.png")
 
-Review.create(listing_id: 5, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "Wonderful Mugs!!!");
+Review.create(listing_id: 5, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "Wonderful Mugs!!!")
+
+Listing.create(shop_id: 3, name: "Crazy Cat Lady Mug", price: "20", available: 20, description: "
+### Crazy Cat Lady Coffee Mug ###
+
+Our designer mugs make the perfect gift for friends and family or just an extra special treat for your someone special ;) 
+
+#### 11 oz. Coffee Mug ####
++ Design/Image is on both sides of mug.
++ Professional Quality
++ Dishwasher safe (Top Rack)
++ All of the designs are transferred to the mugs using a professional heat press.
++ All items are hand crafted so they may vary slightly from the sample image. 
+")
+Image.create(listing_id: 6, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatladymugoptimized.png", main_img: true)
+Review.create(listing_id: 6, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "I just had to buy this! It fits my personality :)")
