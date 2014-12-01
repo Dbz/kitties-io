@@ -8,4 +8,7 @@ class Listing < ActiveRecord::Base
     self.images.where({main_img: true}).first
   end
   
+  def self.search(params)
+      where("name ILIKE '%#{params}%' OR description ILIKE '%#{params}%'")
+  end
 end
