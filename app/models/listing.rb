@@ -7,4 +7,5 @@ class Listing < ActiveRecord::Base
   def main_image
     self.images.where({main_img: true}).first
   end
+  
 end

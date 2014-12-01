@@ -20,8 +20,7 @@
 }
 .review-container {
 	border-bottom: 1px solid gray;
-	margin-bottom: 10px;
-	padding-top: 8px;
+	padding-top: 25px;
 }
 .review-stars {
 	display: inline-block;
@@ -37,4 +36,8 @@
 }
 #related-items {
 	clear: both;
+}
+
+.review-footer {
+	clear:left;
 }

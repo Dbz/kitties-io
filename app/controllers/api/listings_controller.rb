@@ -20,6 +20,11 @@ class Api::ListingsController < ApplicationController
     end
   end
   
+  def index
+    @listings = Listing.search(params[:search])
+    render json: @listings
+  end
+  
   private
   def listing_params
     params.require(:listing).permit(:name, :price, :available, :description, :shop_id, :policies)

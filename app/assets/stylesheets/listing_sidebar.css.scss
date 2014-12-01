@@ -1,7 +1,8 @@
 .listing-item-img-wrapper {
+	display: inline-block;
 	border: 1px solid gray;
 	border-radius: 5px;
-	margin: 10px 0;
+	margin: 10px 10px 0 0;
 	width: 131px;
 	img {
 		width: 130px;
@@ -15,6 +16,9 @@
 	}
 }
 .sidebar-item-text {
-	position: relative;
-	left: 6px;
+	padding: 5px;
+	text-align: left;
+}
+#shop-panel .panel-body {
+	text-align: center;
 }

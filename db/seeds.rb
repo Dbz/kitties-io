@@ -241,3 +241,4 @@ Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyours
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie2optimized.png")
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie3optimzed.png")
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie4optimized.png")
+
