@@ -27,5 +27,5 @@
 //= require_tree .
 	
 truncate = function(text, chars) {
-	return text.length > 34 ? text.substring(0, chars) + "..." : text;
+	return text.length > chars ? text.substring(0, chars) + "..." : text;
 }

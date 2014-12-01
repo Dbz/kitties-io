@@ -2,7 +2,7 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "index",
 		"listings/:id": "showListing",
-		"search?q=*": "searchResults"
+		"search?q=:term": "searchResults"
 	},
 	
 	initialize: function(options) {
@@ -10,7 +10,8 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 		$('#search-wrapper').on('submit', function (event) {
 			event.preventDefault();
 			var queryString = $(event.currentTarget).find('#search').val();
-			this.searchResults("q=" + queryString)
+			// this.searchResults("q=" + queryString)
+			Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
 		}.bind(this));
 	},
 	
@@ -31,7 +32,7 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	},
 	
 	searchResults: function(queryData) {
-		queryData = queryData.substring(2);
+		queryData = decodeURIComponent(queryData);
 		var listings = new SpendYourSavings.Collections.SearchListings();
 		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
 			
