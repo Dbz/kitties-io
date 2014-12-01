@@ -135,3 +135,109 @@ Our designer mugs make the perfect gift for friends and family or just an extra 
 ")
 Image.create(listing_id: 6, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatladymugoptimized.png", main_img: true)
 Review.create(listing_id: 6, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "I just had to buy this! It fits my personality :)")
+
+
+Shop.create(name: "Kitty Cat Clothing", user_id: 2, description: "Buy all your cat sweaters here!", 
+policies: "
+
+Shipping
+---
+Orders will ship within 1-3 business days after receipt of payment.
+
+Refunds and Exchanges
+---
+At TeesAndTankYou our goal is your satisfaction. If you are unsatisfied with your purchase, it may be returned for within 14 days of receiving your package.
+
+We cannot accept returns of items that are customer specific designs, worn, altered, laundered or damaged by the purchaser. Items should be in original condition and packaging with all tags and labels as shipped.
+
+Shipping and handling costs are not refundable.
+
+To assure proper credit, all returns are subject to inspection upon receipt.
+
+Mail your garment with a printed email receipt. Ship via insured mail or carrier. Return shipping cost and original shipping and handling are not refundable unless item is manufacturer defective when shipped.
+
+")
+Image.create(shop_id: 4, url: "https://img0.etsystatic.com/022/0/35228203/iusa_75x75.25928794_7wa2.jpg")
+Listing.create(shop_id: 4, name: "Dashing through the NO", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 7, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/dashingthroughthesnowoptimized.png", main_img: true)
+
+Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 8, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+
+Listing.create(shop_id: 4, name: "Check Meowt", price: 17, available: 100, description:
+"
+
+Made from our exquisite poly viscose, this simple tee's rich and luxuriously soft fabric is designed to drape perfectly and accentuate your figure. 
+
+65% poly-cotton 35% viscose, 30 single 3.7 oz/yd2. (Red Marble and White Marble are made from 91% polyester, 9% combed and ring-spun cotton, 40 single 3.5 oz/yd2.)
+
+Features: Longer body length. Scoop neck. Side-seamed. Easy, drapey fit.
+
+Style: 8816 Bella Women's Flowy Simple Tee")
+Image.create(listing_id: 9, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/checkmeowtoptimized.png", main_img: true)
+
+Shop.create(name: "Professional Cats", user_id: 3, description: "Ties, and whatnot",
+policies: "
+Shipping
+----
+
+Please contact me directly if you need a rush on the production of your order. Your order will ship USPS First Class/First Class international within the quoted time in the item listing. Priority 2-3 Day shipping upgrades are available for US orders only. These upgrades rush the ship time only, not the listed processing time. Tracking information provided in most cases. You may request insurance before purchase for a small fee. You will be notified upon shipment of your purchase. 
+
+International orders usually take from 1-4 weeks to arrive from what I've heard from my customers. The range is due to distance, customs, and who-knows-what that goes on behind the scenes. I have never had an undelivered package in my 5 years shipping through USPS, but some have arrived delayed. 
+
+Buyer is responsible for any taxes, customs charges or other fees resulting from shipping and delivery to their location. Thankfully we have not experienced any problems with this in the past. 
+
+Buying multiple items from the shop at once helps cut shipping costs, so keep that in mind if you're buying gifts or stocking up.
+
+Refunds and Exchanges
+---
+
+As a general rule, refunds and exchanges are not accepted. Please contact me if there are any problems or delays in purchase or delivery.
+")
+
+Image.create(shop_id: 5, url: "https://img0.etsystatic.com/000/0/6054069/iusa_75x75.6643874.jpg")
+
+Listing.create(shop_id: 5, name: "Cat Ties", price: 15, available: 250,
+description: "
+
+\"Class up your cat\" 
+There's nothing like a new suit and tie to make a man feel sharp. \"But what about my cat?\", many loving cat-owners ask themselves. \"Doesn't he deserve to feel sharp?\" Of course he does. 
+These collars feature a white shirt collar with a classic tie and a black elastic band. (See below for links to other prints) They are comfortable, washable, and stylish. What more could your handsome friend ever ask for? 
+
+My Charlie has worn them exclusively as his collar for over 2 years now. I created the original bow tie for a black and white party I hosted, my cat hates all collars so I figured it would be on for an hour tops. To my surprise he wore it happily after about 30 minutes of adjustment from no collar at all. They must be more comfortable for cats than regular collars, as they are elastic, snug enough to not fall off, but not too tight and very light weight. I've found from Charlie and customers' feedback that it can take up to a day of adjustment, where the cat may fiddle with it a bit, but they seem to adjust, so far in every case. It is smaller than other cat ties and bow ties out there (in my opinion more proportionate to the cat) which helps with the comfort as well.
+I love these collars and I'm happy to answer any questions :)
+See customer photos here: http://www.chariots-afire-cats.tumblr.com
+
+The first picture features the light blue stripe tie.
+
+Care Instructions
+---
+
+Machine Wash
+Tumble Dry
+
+Handmade in the USA
+===
+")
+Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie1optimized.png", main_img: true)
+Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie2optimized.png")
+Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie3optimzed.png")
+Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie4optimized.png")
