@@ -1,0 +1,40 @@
+<% debugger %>
+<div class='margins'>
+	<div id='shop-sidebar'>
+		<div class='shop-owner'>
+		</div>
+		<div class='shop-info'>
+		</div>
+	</div>
+	<div id='shop-header'>
+		<img>
+		<div id='shop-description'>
+		</div>
+	</div>
+	<div id='shop-body'>
+		<div id='shop-search'>
+		</div>
+		<div id='shop-listings'>
+			<% shop.listings().each(function(listing) { %>
+				<div class='shop-item-wrapper'>
+					<a href='/#listings/<%= listing.get('id') %>'>
+						<img src='<%= listing.mainImage().escape('url') %>'>
+					</a>
+					<div class='shop-item-text'>
+						<div>
+							<a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
+								<%= truncate(listing.escape('name'), 21) %>
+							</a>
+						</div>
+						<div>
+							<div class='product-money'>
+								<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
+								<span class='product-currency no-underline'>USD</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</div>

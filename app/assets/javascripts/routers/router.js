@@ -2,6 +2,7 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "index",
 		"listings/:id": "showListing",
+		"shops/:id": "showShop",
 		"search?q=:term": "searchResults"
 	},
 	
@@ -29,6 +30,13 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 		var listingView = new SpendYourSavings.Views.ListingsShow({ model: listing });
 		
 		this._swapView(listingView);
+	},
+	
+	showShop: function(id) {
+		var shop = new SpendYourSavings.Models.Shop({ id: id });
+		shop.fetch();
+		var shopView = new SpendYourSavings.Views.ShopShow({ model: shop });
+		this._swapView(shopView);
 	},
 	
 	searchResults: function(queryData) {
