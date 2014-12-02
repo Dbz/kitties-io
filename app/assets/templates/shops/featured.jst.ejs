@@ -36,23 +36,26 @@
 		<div class='row'>
 			<div class='col-md-4'>
 				<div class='seller-image'>
-					<img class='img-circle user-img' src="<%= shop.image().get('url') %>">
+					<a href='/#shops/<%= shop.get('id') %>'>
+						<img class='img-circle user-img' src="<%= shop.image().get('url') %>">
+					</a>
 				</div>
 			</div>
 			<div class='col-md-8'>
 				<div class='seller-bio'>
-						<span> San Fransisco, California </span>
-						<br>
-						<span>
-							<% var x = 0 %>
-							<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
-								<span class='gold'>☆</span>
-							<% } %>
-							<% for(; x < 5; x++) { %>
-								<span>☆</span>
-							<% } %>
-							<span> <%= shop.reviews().length %> Reviews </span>
-						</span>
+					<span> San Fransisco, California </span>
+					<br>
+					<span>
+						<% var x = 0 %>
+						<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
+							<span class='gold'>☆</span>
+						<% } %>
+						<% for(; x < 5; x++) { %>
+							<span>☆</span>
+						<% } %>
+						<span> <%= shop.reviews().length %> Reviews </span>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>

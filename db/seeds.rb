@@ -243,3 +243,55 @@ Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyours
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie3optimzed.png")
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie4optimized.png")
 
+
+Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 11, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+
+
+Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 12, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+
+Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+
+Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+"
+
+***Tends to run one size bigger***
+
+50% Cotton/50% Polyester Pre-shrunk Fleece
+
+Seamed 1x1 ribbed collar with spandex
+
+Concealed seam on cuffs")
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+
+
+

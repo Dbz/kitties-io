@@ -1,40 +1,60 @@
-<div class='margins shop-wrapper clearfix'>
-	<div id='shop-sidebar' class='clearfix'>
-		<div class='shop-owner'>
-		</div>
-		<div class='shop-info'>
+<div class='margins row'>
+	<div class='row' id='shop-header'>
+		<div id='shop-banner' class='row'>
+			<img src='<%= shop.banner().escape('url') %>'>
 		</div>
 	</div>
-	<div id='shop-content' class='clearfix'>
-		<div id='shop-banner'>
-			<img src='<%= shop.banner().escape('url') %>'>
-			<div id='shop-description'>
-				<p> <%= marked(shop.escape('description')) %> </p>
-			</div>
+	
+	<div id='shop-search' class='row'>
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="input-group">
+	      <input type="text" class="form-control">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button">Go!</button>
+	      </span>
+	    </div>
+	  </div>	
+	</div>
+	
+	<div class='row'>
+		<div class='shop-sidebar col-md-3'>
+			<p> Here there will be a sidebar </p>
 		</div>
-		<div id='shop-search'>
-		</div>
-		<div id='shop-listings'>
+		
+		<div class='shop-items col-md-9'>
 			<% shop.listings().each(function(listing) { %>
-				<div class='shop-item-wrapper'>
-					<a href='/#listings/<%= listing.get('id') %>'>
-						<img src='<%= listing.mainImage().escape('url') %>'>
-					</a>
-					<div class='shop-item-text'>
-						<div>
-							<a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
-								<%= truncate(listing.escape('name'), 21) %>
-							</a>
-						</div>
-						<div>
-							<div class='product-money'>
+				<div class='shop-item col-md-4'>
+					<div class='shop-item-wrapper'>
+						<a href='/#listings/<%= listing.get('id') %>'>
+							<img src='<%= listing.mainImage().escape('url') %>'>
+						</a>
+						<div class='shop-item-text'>
+							<div>
+								<a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
+									<%= truncate(listing.escape('name'), 17) %>
+								</a>
 								<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
 								<span class='product-currency no-underline'>USD</span>
 							</div>
 						</div>
 					</div>
 				</div>
-			<% }) %>
+			<% }); %>
 		</div>
+		
+		<div class='row'>
+			<nav class='col-md-6 col-md-offset-3'>
+			  <ul class="pagination pagination-lg">
+			    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+			    <li class='active'><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+			  </ul>
+			</nav>
+		</div>
+		
 	</div>
 </div>

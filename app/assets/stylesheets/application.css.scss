@@ -23,6 +23,22 @@ html[xmlns] .clearfix { display: block;}
 * html .clearfix{ height: 1%;}
 .clearfix {display: block}
 
+html, body {
+  height: 100%;
+}
+
+#main-content {
+  min-height: 100%;
+   /* equal to footer height */
+  margin-bottom: -200px; 
+}
+
+#main-content:after {
+  content: "";
+  display: block;
+  height: 200px; 	
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -188,9 +204,9 @@ footer {
 	height: 200px;
 	background: #003056;
 	color: white;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+//	position: absolute;
+//	bottom: 0;
+//	width: 100%;
 }
 .footer-title {
 	text-decoration: underline;
