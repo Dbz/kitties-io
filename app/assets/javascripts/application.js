@@ -18,7 +18,7 @@
 //= require underscore
 //= require backbone
 //= require composite_view
-//= require spend_your_savings
+//= require kitties
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
