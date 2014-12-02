@@ -1,16 +1,25 @@
 <div class='margins'>
-	<table>
+	<table class='table table-hover'>
 		<tr>
 			<th>Product</th>
 			<th>Amount</th>
 			<th>Total</th>
 		</tr>
+		<%
+			var total = 0; amount = 0
+		%>
 		<% orders.each(function(order) { %>
 			<tr>
-				<th><%= order.listing().escape('name') %></th>
-				<th><%= order.escape('amount') %></th>
-				<th><%= order.listing().escape('price') * order.escape('amount') %></th>
+				<td><%= order.listing().escape('name') %></td>
+				<td><%= order.escape('amount') %></td>
+				<td><%= order.listing().escape('price') * order.escape('amount') %></td>
 			</tr>
+			<% total += order.listing().escape('price') * order.escape('amount') %>
+			<% amount += Number(order.escape('amount')) %>
 		<% }) %>
+		<tr class= 'info'>
+			<td> Final Total </td>
+			<td><%= amount %></td>
+			<td><%= total %></td>
 	</table>
 </div>
