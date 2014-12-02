@@ -1,6 +1,29 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-table {
-	margin-top: 50px;
+.cart-listing-wrapper {
+	display: inline-block;
+}
+.cart-img {
+    display: block;
+    max-width:130px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+}
+.cart-img-box {
+	width: 135px;
+	border-right: 1px solid #999999;
+}
+
+.panel .panel-title a {
+	color: #F2D03B;
+}
+
+.order-info {
+
+}
+
+.panel .close {
+	margin-top: -20px;
 }

@@ -1,25 +1,52 @@
 <div class='margins'>
-	<table class='table table-hover'>
-		<tr>
-			<th>Product</th>
-			<th>Amount</th>
-			<th>Total</th>
-		</tr>
-		<%
-			var total = 0; amount = 0
-		%>
-		<% orders.each(function(order) { %>
-			<tr>
-				<td><%= order.listing().escape('name') %></td>
-				<td><%= order.escape('amount') %></td>
-				<td><%= order.listing().escape('price') * order.escape('amount') %></td>
-			</tr>
-			<% total += order.listing().escape('price') * order.escape('amount') %>
-			<% amount += Number(order.escape('amount')) %>
-		<% }) %>
-		<tr class= 'info'>
-			<td> Final Total </td>
-			<td><%= amount %></td>
-			<td><%= total %></td>
-	</table>
+	<div class='row'>
+		<div class='col-md-8 col-md-offset-2'>
+			<% shops.each(function(shop) { %>
+				<div class='panel panel-default'>
+					<div class='panel-heading'>
+						<h3 class='panel-title'>
+							Order from <a href='/#shops/<%= shop.get('id') %>'> <%= shop.escape('name') %> </a>
+						</h3>
+						<button type='button' class='close'>X</button>
+					</div>
+					
+					<% var total = 0; amount = 0 %>
+					<% shop.orders().each(function(order) {  %>
+						<div class='panel-body'>
+							<div class='cart-listing-wrapper'>
+								<div class='cart-img-box'>
+									<img src='<%= order.listing().mainImage().get('url') %>' class='cart-img'>
+								</div>
+								<div class='order-info'>
+									<h4>
+										<a href='/#listings/<%= order.listing().get('id') %>'><%= order.listing().get('name') %></a>
+									</h4>
+									<span> Quantity: <%= order.escape('amount') %> </span>
+									<% amount += Number(order.escape('amount')) %>
+									<br>
+									<span class='product-price'>
+										$<%= order.listing().escape('price') %>
+										<span class='product-currency'>USD</span>
+									</span>
+									<% total += Number(order.listing().escape('price')) * Number(order.escape('amount')) %>
+								</div>
+							</div>
+						</div>
+					<% }); %>
+					
+					<div class='panel-footer'>
+						<span> Final Quatity: <%= amount %> </span>
+						<br>
+						<span> Final Total: <%= total %> </span>
+					</div>
+					
+				</div>
+			<% }); %>
+		</div>
+	</div>
+			
+		
+	
+	
+	
 </div>

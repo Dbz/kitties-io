@@ -8,7 +8,7 @@ Kitties.Views.CartShow = Backbone.View.extend({
 	},
 	
 	render: function() {
-		var templateCode = this.template({ orders: this.collection });
+		var templateCode = this.template({ shops: this.collection });
 		this.$el.html(templateCode);
 		
 		return this;

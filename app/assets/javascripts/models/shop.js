@@ -26,6 +26,11 @@ Kitties.Models.Shop = Backbone.Model.extend({
 		return this._banner;
 	},
 	
+	orders: function() {
+		this._orders = this._orders || new Kitties.Collections.Orders([], {});
+		return this._orders;
+	},
+	
 	parse: function(data) {
 		if(data.listings) {
 			this.listings().set(data.listings, { parse: true });
@@ -49,6 +54,10 @@ Kitties.Models.Shop = Backbone.Model.extend({
 			var bannerParams = this.banner().parse(data.banner);
 			this.banner().set(bannerParams);
 			delete data.banner;
+		}
+		if(data.orders) {
+			var orderParams = this.orders().set(data.orders, { parse: true });
+			delete data.orders;
 		}
 		return data;
 	}

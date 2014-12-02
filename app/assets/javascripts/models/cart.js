@@ -4,15 +4,15 @@ Kitties.Models.Cart = Backbone.Model.extend({
 		this.user_id = options.user_id;
 	},
 	
-	orders: function() {
-		this._orders = this._orders || new Kitties.Collections.Orders([], {});
-		return this._orders;
+	shops: function() {
+		this._shops = this._shops || new Kitties.Collections.Shops([], {});
+		return this._shops;
 	},
 	
 	parse: function(data) {
-		if(data.orders) {
-			this.orders().set(data.orders, { parse: true });
-			delete data.orders;
+		if(data.shops) {
+			this.shops().set(data.shops, { parse: true });
+			delete data.shops;
 		}
 		return data;
 	}

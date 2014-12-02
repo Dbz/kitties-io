@@ -29,13 +29,15 @@
 							<img src='<%= listing.mainImage().escape('url') %>'>
 						</a>
 						<div class='shop-item-text'>
-							<div>
+							<span>
 								<a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
 									<%= truncate(listing.escape('name'), 17) %>
 								</a>
-								<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
+							</span>
+							<span class="product-price pull-right">
+								<span class='no-underline'>$<%= listing.escape('price') %></span>
 								<span class='product-currency no-underline'>USD</span>
-							</div>
+							</span>
 						</div>
 					</div>
 				</div>
