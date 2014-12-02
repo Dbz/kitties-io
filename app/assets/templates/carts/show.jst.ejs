@@ -3,13 +3,13 @@
 		<tr>
 			<th>Product</th>
 			<th>Amount</th>
-			<th>Price</th>
+			<th>Total</th>
 		</tr>
 		<% orders.each(function(order) { %>
 			<tr>
-				<th><%= order.escape('name') %></th>
-				<th><%= order.escape('price') %></th>
+				<th><%= order.listing().escape('name') %></th>
 				<th><%= order.escape('amount') %></th>
+				<th><%= order.listing().escape('price') * order.escape('amount') %></th>
 			</tr>
 		<% }) %>
 	</table>

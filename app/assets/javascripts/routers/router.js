@@ -9,11 +9,16 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
+		
 		$('#search-wrapper').on('submit', function (event) {
 			event.preventDefault();
 			var queryString = $(event.currentTarget).find('#search').val();
 			Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
 		}.bind(this));
+		
+		$("#cart").on('click', function(event) {
+			Backbone.history.navigate('#/cart', { trigger: true });
+		});
 	},
 	
 	index: function() {
@@ -43,6 +48,7 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		queryData = decodeURIComponent(queryData);
 		var listings = new Kitties.Collections.SearchListings();
 		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
+		$("#search").val(queryData);
 			
 		var searchView = new Kitties.Views.ListingsSearchShow({ 
 			collection: listings 

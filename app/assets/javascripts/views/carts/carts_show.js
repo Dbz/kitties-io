@@ -4,6 +4,7 @@ Kitties.Views.CartShow = Backbone.View.extend({
 	
 	initialize: function(optioins) {
 		this.listenTo(this.collection, "sync", this.render);
+		this.listenTo(this.model, "sync", this.render);
 	},
 	
 	render: function() {

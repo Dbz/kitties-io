@@ -9,6 +9,20 @@ Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 		this.listenTo(this.model.shop(), "change reset", this.addShopSidebar);
 	},
 	
+	events: {
+		"submit #add-to-cart": "addToCart"
+	},
+	
+	addToCart: function(event) {
+		console.log("hello")
+		event.preventDefault();
+		$.ajax({
+			url: 'api/cart/' + this.model.get('id'),
+			type: "POST",
+			dataType: "json"
+		});
+	},
+	
 	render: function() {
 		if(this.model.images().length == 0)
 			this.model.images().set(new Kitties.Collections.Images());

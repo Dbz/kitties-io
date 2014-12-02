@@ -62,7 +62,7 @@ Review.create(
   user_id: 1
 )
 
-Listing.create(name: "Tiger", price: 200000, available: 2, shop_id: 1, description: "Very child friendly tigers. There have been no accidents with either of our current tigers. Unfortunately the white ones are out of stock.")
+Listing.create(name: "Tiger", price: 2000000, available: 2, shop_id: 1, description: "Very child friendly tigers. There have been no accidents with either of our current tigers. Unfortunately the white ones are out of stock.")
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger1optimized.png", main_img: true)
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger3optimzed.png")
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger2optimized.png")
