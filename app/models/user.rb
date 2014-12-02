@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
-  after_create :create_default_image
+  after_create :create_default_image, :create_empty_cart
   
   def is_password?(password)
     @password = password
@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
   
   def create_default_image
     Image.create(user_id: self.id) unless self.image
+  end
+  
+  def create_empty_cart
+    Cart.create(user_id: self.id)
   end
       
 end

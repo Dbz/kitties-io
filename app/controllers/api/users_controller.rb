@@ -10,7 +10,11 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    render json: @user, include: [:image] if @user
+    if @user
+      render json: @user, include: [:image]
+    elsif current_user
+      render json: current_user
+    end
   end
   
   private

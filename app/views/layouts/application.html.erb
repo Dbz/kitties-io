@@ -49,9 +49,12 @@
 				</ul>
 				<ul class='nav navbar-nav navbar-right'>
 					<% if signed_in? %>
-						<li>
+						<script>
+							window.Kitties.user_id = "<%= current_user.id %>";
+						</script>
 							
-							<%= link_to("Logout", session_url(current_user), method: :delete, class: "btn") %>
+						<li>
+							<%= link_to("Logout", sessions_url(current_user), method: :delete, class: "btn") %>
 						</li>
 					<% else %>
 					

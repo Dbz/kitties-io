@@ -3,7 +3,8 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		"": "index",
 		"listings/:id": "showListing",
 		"shops/:id": "showShop",
-		"search?q=:term": "searchResults"
+		"search?q=:term": "searchResults",
+		"cart": "showCart"
 	},
 	
 	initialize: function(options) {
@@ -47,6 +48,14 @@ Kitties.Routers.Router = Backbone.Router.extend({
 			collection: listings 
 		});
 		this._swapView(searchView);
+	},
+	
+	showCart: function() {
+		var cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
+		cart.fetch();
+		
+		var cartView = new Kitties.Views.CartShow({ model: cart });
+		this._swapView(cartView);
 	},
 	
 	_swapView: function(view) {

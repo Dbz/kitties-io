@@ -22,7 +22,7 @@ Kitties.Models.Shop = Backbone.Model.extend({
 	},
 	
 	banner: function() {
-		this._banner = this._image || new Kitties.Models.Image({}, {});
+		this._banner = this._banner || new Kitties.Models.Image({}, {});
 		return this._banner;
 	},
 	

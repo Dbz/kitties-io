@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
     if signed_in?
       current_user.reset_session_token!
       session[:session_token] = nil
+      session[:cart_id] = nil
       redirect_to root_url
     end
   end
