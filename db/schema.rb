@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129050247) do
+ActiveRecord::Schema.define(version: 20141202014627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: true do |t|
     t.integer  "listing_id"
-    t.text     "url",                        null: false
+    t.text     "url",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "shop_id"
-    t.boolean  "main_img",   default: false
+    t.boolean  "main_img",    default: false
+    t.boolean  "shop_banner", default: false
   end
 
   add_index "images", ["listing_id"], name: "index_images_on_listing_id", using: :btree
@@ -51,12 +52,13 @@ ActiveRecord::Schema.define(version: 20141129050247) do
   end
 
   create_table "shops", force: true do |t|
-    t.integer  "user_id",     null: false
-    t.string   "name",        null: false
-    t.text     "description", null: false
-    t.text     "policies",    null: false
+    t.integer  "user_id",                                                             null: false
+    t.string   "name",                                                                null: false
+    t.text     "description",                                                         null: false
+    t.text     "policies",                                                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location",    default: "This shop has chosen to hide their location"
   end
 
   create_table "users", force: true do |t|

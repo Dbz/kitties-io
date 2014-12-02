@@ -18,8 +18,12 @@ Kitties.Models.Shop = Backbone.Model.extend({
 	
 	image: function() {
 		this._image = this._image || new Kitties.Models.Image({}, {});
-		return this._image
-		// return this.get('image') || new Kitties.Models.Image({}, {});
+		return this._image;
+	},
+	
+	banner: function() {
+		this._banner = this._image || new Kitties.Models.Image({}, {});
+		return this._banner;
 	},
 	
 	parse: function(data) {
@@ -40,6 +44,11 @@ Kitties.Models.Shop = Backbone.Model.extend({
 			var imageParams = this.image().parse(data.image);
 			this.image().set(imageParams);
 			delete data.image;
+		}
+		if(data.banner) {
+			var bannerParams = this.banner().parse(data.banner);
+			this.banner().set(bannerParams);
+			delete data.banner;
 		}
 		return data;
 	}

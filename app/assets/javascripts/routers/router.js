@@ -11,7 +11,6 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		$('#search-wrapper').on('submit', function (event) {
 			event.preventDefault();
 			var queryString = $(event.currentTarget).find('#search').val();
-			// this.searchResults("q=" + queryString)
 			Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
 		}.bind(this));
 	},

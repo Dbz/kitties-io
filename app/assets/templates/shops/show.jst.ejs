@@ -1,17 +1,17 @@
-<% debugger %>
-<div class='margins'>
-	<div id='shop-sidebar'>
+<div class='margins shop-wrapper clearfix'>
+	<div id='shop-sidebar' class='clearfix'>
 		<div class='shop-owner'>
 		</div>
 		<div class='shop-info'>
 		</div>
 	</div>
-	<div id='shop-header'>
-		<img>
-		<div id='shop-description'>
+	<div id='shop-content' class='clearfix'>
+		<div id='shop-banner'>
+			<img src='<%= shop.banner().escape('url') %>'>
+			<div id='shop-description'>
+				<p> <%= marked(shop.escape('description')) %> </p>
+			</div>
 		</div>
-	</div>
-	<div id='shop-body'>
 		<div id='shop-search'>
 		</div>
 		<div id='shop-listings'>

@@ -137,7 +137,7 @@ Image.create(listing_id: 6, url: "https://s3-us-west-1.amazonaws.com/spendyoursa
 Review.create(listing_id: 6, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "I just had to buy this! It fits my personality :)")
 
 
-Shop.create(name: "Kitty Cat Clothing", user_id: 2, description: "Buy all your cat sweaters here!", 
+Shop.create(name: "TeesAndTankYou", user_id: 2, description: "Buy all your cat sweaters here!", 
 policies: "
 
 Shipping
@@ -157,6 +157,7 @@ To assure proper credit, all returns are subject to inspection upon receipt.
 Mail your garment with a printed email receipt. Ship via insured mail or carrier. Return shipping cost and original shipping and handling are not refundable unless item is manufacturer defective when shipped.
 
 ")
+Image.create(shop_id: 4, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/teesandtankyoubanner.jpg", shop_banner: true)
 Image.create(shop_id: 4, url: "https://img0.etsystatic.com/022/0/35228203/iusa_75x75.25928794_7wa2.jpg")
 Listing.create(shop_id: 4, name: "Dashing through the NO", price: 17, available: 100, description:
 "

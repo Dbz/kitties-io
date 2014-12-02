@@ -6,6 +6,8 @@ class Api::ShopsController < ApplicationController
   end
   
   def show
-    render :json => Shop.find(params[:id]), include: [:reviews, :listings]
+    # render :json => Shop.find(params[:id]), include: [:reviews, :listings]
+    @shop = Shop.find(params[:id])
+    render :show_shop
   end
 end

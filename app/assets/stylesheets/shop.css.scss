@@ -1,12 +1,22 @@
+.shop-wrapper {
+	margin-top: 1px;
+}
+.shop-content {
+	float: right;
+}
+.shop-banner {
+	text-align: center;
+}
 .shop-item-wrapper {
 	display: inline-block;
+	background: white;
 	border: 1px solid gray;
 	border-radius: 5px;
 	margin: 20px 20px 10px 10px;
-	width: 262px;
+	width: 197px;
 	img {
-		width: 260px;
-		height: 200px;
+		width: 195px;
+		height: 150px;
 		padding: 6px;
 		border-radius: 6px;
 	}
@@ -17,4 +27,11 @@
 .shop-item-text {
 	padding: 5px;
 	text-align: left;
+}
+
+#shop-sidebar {
+	border: 1px solid black;
+	width: 200px;
+	height: 500px;
+	float: left;
 }
