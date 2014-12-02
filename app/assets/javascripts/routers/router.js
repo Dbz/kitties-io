@@ -54,7 +54,7 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		var cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
 		cart.fetch();
 		
-		var cartView = new Kitties.Views.CartShow({ model: cart });
+		var cartView = new Kitties.Views.CartShow({ collection: cart.orders(), model: cart });
 		this._swapView(cartView);
 	},
 	

@@ -1,0 +1,16 @@
+<div class='margins'>
+	<table>
+		<tr>
+			<th>Product</th>
+			<th>Amount</th>
+			<th>Price</th>
+		</tr>
+		<% orders.each(function(order) { %>
+			<tr>
+				<th><%= order.escape('name') %></th>
+				<th><%= order.escape('price') %></th>
+				<th><%= order.escape('amount') %></th>
+			</tr>
+		<% }) %>
+	</table>
+</div>
