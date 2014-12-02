@@ -1,3 +1,3 @@
-SpendYourSavings.Routers.Reviews = Backbone.Router.extend({
+Kitties.Routers.Reviews = Backbone.Router.extend({
 
 });

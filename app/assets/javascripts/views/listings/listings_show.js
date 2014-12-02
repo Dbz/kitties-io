@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
+Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 
   template: JST['listings/show'],
 	
@@ -11,7 +11,7 @@ SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
 	
 	render: function() {
 		if(this.model.images().length == 0)
-			this.model.images().set(new SpendYourSavings.Collections.Images());
+			this.model.images().set(new Kitties.Collections.Images());
 		
 		var templateCode = this.template({ listing: this.model });
 		this.$el.html(templateCode);
@@ -22,17 +22,17 @@ SpendYourSavings.Views.ListingsShow = Backbone.CompositeView.extend({
 	},
 	
 	addReview: function(review) {
-		var reviewView = new SpendYourSavings.Views.ReviewShow({ model: review });
+		var reviewView = new Kitties.Views.ReviewShow({ model: review });
 		this.addSubview('#listing-reviews', reviewView);
 	},
 	
 	addShopHeader: function(shop) {
-		var headerView = new SpendYourSavings.Views.ListingShopHeader({ model: shop });
+		var headerView = new Kitties.Views.ListingShopHeader({ model: shop });
 		this.addSubview('#listing-shop-header', headerView);
 	},
 	
 	addShopSidebar: function(shop) {
-		var sidebarView = new SpendYourSavings.Views.ListingShopSidebar({ model: shop });
+		var sidebarView = new Kitties.Views.ListingShopSidebar({ model: shop });
 		this.addSubview('#listing-shop-sidebar', sidebarView);
 	}
 

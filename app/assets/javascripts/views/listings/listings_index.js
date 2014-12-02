@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ListingsIndex = Backbone.View.extend({
+Kitties.Views.ListingsIndex = Backbone.View.extend({
 
   template: JST['listings/index'],
 	

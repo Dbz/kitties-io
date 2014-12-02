@@ -1,17 +1,17 @@
-SpendYourSavings.Models.Listing = Backbone.Model.extend({
+Kitties.Models.Listing = Backbone.Model.extend({
 	urlRoot: "api/listings/",
 	images: function() {
-		this._images = this._images || new SpendYourSavings.Collections.Images([], { listing: this });
+		this._images = this._images || new Kitties.Collections.Images([], { listing: this });
 		return this._images;
 	},
 	reviews: function() {
-		this._reviews = this._reviews || new SpendYourSavings.Collections.Reviews([], { listing: this });
+		this._reviews = this._reviews || new Kitties.Collections.Reviews([], { listing: this });
 		return this._reviews;
 	},
 	shop: function() {
-		this._shop = this._shop || new SpendYourSavings.Models.Shop({}, { listing: this });
+		this._shop = this._shop || new Kitties.Models.Shop({}, { listing: this });
 		return this._shop;
-		//return this.get('shop') || new SpendYourSavings.Models.Shop([], { listing: this });
+		//return this.get('shop') || new Kitties.Models.Shop([], { listing: this });
 	},
 	
 	
@@ -38,6 +38,6 @@ SpendYourSavings.Models.Listing = Backbone.Model.extend({
 			if(image.get('main_img'))
 				main = image;
 		});
-		return main || new SpendYourSavings.Models.Image();
+		return main || new Kitties.Models.Image();
 	}
 });

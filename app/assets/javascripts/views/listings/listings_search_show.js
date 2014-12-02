@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ListingsSearchShow = Backbone.CompositeView.extend({
+Kitties.Views.ListingsSearchShow = Backbone.CompositeView.extend({
 
   template: JST['listings/search'],
 	

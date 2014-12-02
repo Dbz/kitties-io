@@ -1,14 +1,14 @@
-SpendYourSavings.Collections.Shops = Backbone.Collection.extend({
+Kitties.Collections.Shops = Backbone.Collection.extend({
 
-  model: SpendYourSavings.Models.Shop,
+  model: Kitties.Models.Shop,
 	// initialize: function(options) {
 	// 	this.num = options.num;
 	// }
 
 });
 
-SpendYourSavings.Collections.FeaturedShops = Backbone.Collection.extend({
+Kitties.Collections.FeaturedShops = Backbone.Collection.extend({
 	url: 'api/shops/featured_shops/3',
-  model: SpendYourSavings.Models.Shop
+  model: Kitties.Models.Shop
 
 });

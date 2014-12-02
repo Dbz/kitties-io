@@ -1,5 +1,5 @@
-SpendYourSavings.Collections.Images = Backbone.Collection.extend({
-  model: SpendYourSavings.Models.Image
+Kitties.Collections.Images = Backbone.Collection.extend({
+  model: Kitties.Models.Image
 	// initialize: function(models, options) {
 	// 	this.listing = options.listing;
 	// },

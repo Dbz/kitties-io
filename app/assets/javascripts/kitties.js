@@ -1,16 +1,16 @@
-window.SpendYourSavings = {
+window.Kitties = {
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
   initialize: function() {
-		new SpendYourSavings.Routers.Router({ $rootEl: $('#main-content') });
+		new Kitties.Routers.Router({ $rootEl: $('#main-content') });
 		Backbone.history.start();
   }
 };
 
 $(document).ready(function(){
-  SpendYourSavings.initialize();
+  Kitties.initialize();
 	
 	// For modal buttons to open appropriate tab
 	$('.login').click(function (e) {

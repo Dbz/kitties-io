@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ShopFeatured = Backbone.View.extend({
+Kitties.Views.ShopFeatured = Backbone.View.extend({
 
   template: JST['shops/featured'],
 	className: 'col-md-4',

@@ -1,4 +1,4 @@
-SpendYourSavings.Views.StaticHome = Backbone.CompositeView.extend({
+Kitties.Views.StaticHome = Backbone.CompositeView.extend({
 
   template: JST['static_pages/home'],
 	initialize: function(options) {
@@ -16,7 +16,7 @@ SpendYourSavings.Views.StaticHome = Backbone.CompositeView.extend({
 	},
 	
 	addShop: function(shop) {
-		var shopView = new SpendYourSavings.Views.ShopFeatured({ model: shop });
+		var shopView = new Kitties.Views.ShopFeatured({ model: shop });
 		this.addSubview('#featured-shops', shopView);
 	}
 

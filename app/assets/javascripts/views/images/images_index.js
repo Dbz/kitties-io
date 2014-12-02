@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ImagesIndex = Backbone.View.extend({
+Kitties.Views.ImagesIndex = Backbone.View.extend({
 
   template: JST['images/index']
 

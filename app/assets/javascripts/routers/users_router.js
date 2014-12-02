@@ -1,3 +1,3 @@
-SpendYourSavings.Routers.Users = Backbone.Router.extend({
+Kitties.Routers.Users = Backbone.Router.extend({
 
 });

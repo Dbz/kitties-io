@@ -1,3 +1,3 @@
-SpendYourSavings.Routers.Images = Backbone.Router.extend({
+Kitties.Routers.Images = Backbone.Router.extend({
 
 });

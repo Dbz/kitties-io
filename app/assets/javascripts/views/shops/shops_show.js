@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ShopShow = Backbone.View.extend({
+Kitties.Views.ShopShow = Backbone.View.extend({
 
   template: JST['shops/show'],
 	

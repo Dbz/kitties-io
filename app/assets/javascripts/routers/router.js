@@ -1,4 +1,4 @@
-SpendYourSavings.Routers.Router = Backbone.Router.extend({
+Kitties.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "index",
 		"listings/:id": "showListing",
@@ -17,34 +17,34 @@ SpendYourSavings.Routers.Router = Backbone.Router.extend({
 	},
 	
 	index: function() {
-		var shops = new SpendYourSavings.Collections.FeaturedShops();
+		var shops = new Kitties.Collections.FeaturedShops();
 		shops.fetch();
 		
-		var homeView = new SpendYourSavings.Views.StaticHome({collection: shops});
+		var homeView = new Kitties.Views.StaticHome({collection: shops});
 		this._swapView(homeView);
 	},
 	
 	showListing: function(id) {
-		var listing = new SpendYourSavings.Models.Listing({ id: id });
+		var listing = new Kitties.Models.Listing({ id: id });
 		listing.fetch();
-		var listingView = new SpendYourSavings.Views.ListingsShow({ model: listing });
+		var listingView = new Kitties.Views.ListingsShow({ model: listing });
 		
 		this._swapView(listingView);
 	},
 	
 	showShop: function(id) {
-		var shop = new SpendYourSavings.Models.Shop({ id: id });
+		var shop = new Kitties.Models.Shop({ id: id });
 		shop.fetch();
-		var shopView = new SpendYourSavings.Views.ShopShow({ model: shop });
+		var shopView = new Kitties.Views.ShopShow({ model: shop });
 		this._swapView(shopView);
 	},
 	
 	searchResults: function(queryData) {
 		queryData = decodeURIComponent(queryData);
-		var listings = new SpendYourSavings.Collections.SearchListings();
+		var listings = new Kitties.Collections.SearchListings();
 		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
 			
-		var searchView = new SpendYourSavings.Views.ListingsSearchShow({ 
+		var searchView = new Kitties.Views.ListingsSearchShow({ 
 			collection: listings 
 		});
 		this._swapView(searchView);

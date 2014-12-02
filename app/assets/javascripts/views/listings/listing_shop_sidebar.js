@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ListingShopSidebar = Backbone.View.extend({
+Kitties.Views.ListingShopSidebar = Backbone.View.extend({
 
   template: JST['listings/shop_sidebar'],
 	

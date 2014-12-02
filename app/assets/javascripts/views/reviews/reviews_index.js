@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ReviewsIndex = Backbone.View.extend({
+Kitties.Views.ReviewsIndex = Backbone.View.extend({
 
   template: JST['reviews/index']
 

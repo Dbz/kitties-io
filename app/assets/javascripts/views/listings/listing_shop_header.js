@@ -1,4 +1,4 @@
-SpendYourSavings.Views.ListingShopHeader = Backbone.View.extend({
+Kitties.Views.ListingShopHeader = Backbone.View.extend({
 
   template: JST['listings/shop_header'],
 	className: 'clearfix',

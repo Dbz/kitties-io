@@ -1,3 +1,3 @@
-SpendYourSavings.Routers.Shops = Backbone.Router.extend({
+Kitties.Routers.Shops = Backbone.Router.extend({
 
 });

@@ -1,2 +1,2 @@
-SpendYourSavings.Models.Image = Backbone.Model.extend({
+Kitties.Models.Image = Backbone.Model.extend({
 });

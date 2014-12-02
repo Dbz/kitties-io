@@ -1,5 +1,5 @@
-SpendYourSavings.Collections.Reviews = Backbone.Collection.extend({
-  model: SpendYourSavings.Models.Review,
+Kitties.Collections.Reviews = Backbone.Collection.extend({
+  model: Kitties.Models.Review,
 	
 	initialize: function(models, options) {
 		this.listing = options.listing;

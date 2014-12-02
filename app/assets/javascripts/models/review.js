@@ -1,9 +1,9 @@
-SpendYourSavings.Models.Review = Backbone.Model.extend({
+Kitties.Models.Review = Backbone.Model.extend({
 	initialize: function(options) {
 		this.listing = options.listing
 	},
 	user: function() {
-		this._user = this._user || new SpendYourSavings.Models.User();
+		this._user = this._user || new Kitties.Models.User();
 		return this._user;
 	},
 	userImage: function() {

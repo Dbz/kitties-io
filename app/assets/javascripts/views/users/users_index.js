@@ -1,4 +1,4 @@
-SpendYourSavings.Views.UsersIndex = Backbone.View.extend({
+Kitties.Views.UsersIndex = Backbone.View.extend({
 
   template: JST['users/index']
 

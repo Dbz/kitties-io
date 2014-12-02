@@ -1,25 +1,25 @@
-SpendYourSavings.Models.Shop = Backbone.Model.extend({
+Kitties.Models.Shop = Backbone.Model.extend({
 	urlRoot: "/api/shops",
 	
 	reviews: function() {
-		this._reviews = this._reviews || new SpendYourSavings.Collections.Reviews([], {});
+		this._reviews = this._reviews || new Kitties.Collections.Reviews([], {});
 		return this._reviews;
 	},
 	
 	listings: function() {
-		this._listings = this._listings || new SpendYourSavings.Collections.Listings([], {});
+		this._listings = this._listings || new Kitties.Collections.Listings([], {});
 		return this._listings;
 	},
 	
 	user: function() {
-		this._user = this._user || new SpendYourSavings.Models.User({}, {});
+		this._user = this._user || new Kitties.Models.User({}, {});
 		return this._user;
 	},
 	
 	image: function() {
-		this._image = this._image || new SpendYourSavings.Models.Image({}, {});
+		this._image = this._image || new Kitties.Models.Image({}, {});
 		return this._image
-		// return this.get('image') || new SpendYourSavings.Models.Image({}, {});
+		// return this.get('image') || new Kitties.Models.Image({}, {});
 	},
 	
 	parse: function(data) {
