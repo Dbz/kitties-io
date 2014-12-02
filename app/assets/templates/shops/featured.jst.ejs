@@ -6,10 +6,12 @@
 	</div>
 				
 	<div class='panel-body product-link'>
-		<a href='/#listings/<%= featuredProduct.get('id') %>'> <%= featuredProduct.get('name').substring(0, 35) %></a>
+		<a href='/#listings/<%= featuredProduct.get('id') %>' class='featured-product-name'>
+			<%= truncate(featuredProduct.get('name'), 35) %>
+		</a>
 		<div class='product-money'>
-			<a class='product-price no-underline'> $<%= featuredProduct.get('price') %> </a>
-			<a class='product-currency no-underline'> USD </a>
+			<span class='product-price no-underline'> $<%= featuredProduct.get('price') %> </span>
+			<span class='product-currency no-underline'> USD </span>
 		</div>
 	</div>
 				

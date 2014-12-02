@@ -12,10 +12,10 @@
 					<img src='<%= listing.get('url') %>'>
 				</a>
 				<div class='sidebar-item-text'>
-					<p><a href='/#listings/<%= listing.get('id') %>'><%= listing.get('name') %></a></p>
+					<p><a href='/#listings/<%= listing.get('id') %>' class='sidebar-item-name'><%= truncate(listing.escape('name'), 14) %></a></p>
 					<p>
-						<a class='product-price no-underline'>$<%= listing.get('price') %></a>
-						<a class='product-currency no-underline'>USD</a>
+						<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
+						<span class='product-currency no-underline'>USD</span>
 					</p>
 				</div>
 			</div>

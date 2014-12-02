@@ -60,6 +60,9 @@ body {
 	font-size: 11px;
 	color: green;
 }
+.product-price {
+	color: green;
+}
 
 /*				Header / Nav				*/
 
@@ -192,5 +195,12 @@ footer li {
 }
 footer li a {
 	color: #47D9BF;
+}
+#logo {
+	position: relative;
+	right: -10px;
+	top: -5px;
+	width: 66px;
+	height: 50px;
 }
 

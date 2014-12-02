@@ -9,12 +9,12 @@
 				<img src='<%= listing.mainImage().escape('url') %>'>
 			</a>
 			<div class='search-item-text'>
-				<div><a href='/#listings/<%= listing.get('id') %>'><%= truncate(listing.escape('name'), 10) %></a></div>
+				<div><a class='search-item-name' href='/#listings/<%= listing.get('id') %>'><%= truncate(listing.escape('name'), 21) %></a></div>
 				<div>
-					<a class='search-item-shop-name'><%= listing.shop().escape('name') %></a>
+					<a class='search-item-shop-name'><%= truncate(listing.shop().escape('name'), 21) %></a>
 					<div class='product-money'>
-						<a class='product-price no-underline'>$<%= listing.escape('price') %></a>
-						<a class='product-currency no-underline'>USD</a>
+						<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
+						<span class='product-currency no-underline'>USD</span>
 					</div>
 				</div>
 			</div>
