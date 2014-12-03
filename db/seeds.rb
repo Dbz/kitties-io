@@ -1,10 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+tags = [
+  Tag.create(name: "Cat"),
+  Tag.create(name: "Apparel"),
+  Tag.create(name: "Toys"),
+  Tag.create(name: "Gift Ideas"),
+  Tag.create(name: "Fan Favorites")
+]
+
 User.create(username: "danny", password: "dannydanny")
 Image.create(user_id: 1, url: "http://www.hollywoodreporter.com/sites/default/files/imagecache/modal_800/2014/09/too_good_for_grumpy_cat.jpg")
 
@@ -19,9 +20,14 @@ Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all 
 policies: "
 We will ship anywhere and make sure your feline gets to you in purrfect condition!
 ")
+
+Shop.find(1).tags = [tags[0], tags[4]]
+
 Image.create(shop_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/slowloris.jpg")
 
 Listing.create(name: "Ocelot", price: 2000, available: 1, shop_id: 1, description: "Buy this furry friend while he's still around! Ocelot pelts are in high demand due to what wonderful pillows they make")
+
+Listing.find(1).tags = [tags[0], tags[4]]
 
 Image.create(listing_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/sleepyocelot2.png", main_img: true)
 Image.create(listing_id: 1, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/philosophyocelot2.png")
@@ -50,6 +56,7 @@ Review.create(
 )
 
 Listing.create(name: "Van Cat", price: 500, available: 27, shop_id: 1, description: "Known for their mismatching eye colors and love of swimming, Van cats are the purrfect pets. This furry companion is a champion snuggler.")
+
 Image.create(listing_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/vancat1optimized.png", main_img: true)
 Image.create(listing_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/vancat3optimized.png")
 Image.create(listing_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/vancat2optimized.png")
@@ -63,6 +70,9 @@ Review.create(
 )
 
 Listing.create(name: "Tiger", price: 2000000, available: 2, shop_id: 1, description: "Very child friendly tigers. There have been no accidents with either of our current tigers. Unfortunately the white ones are out of stock.")
+
+Listing.find(3).tags = [tags[0], tags[4]]
+
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger1optimized.png", main_img: true)
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger3optimzed.png")
 Image.create(listing_id: 3, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tiger2optimized.png")
@@ -102,6 +112,8 @@ Please double check your shipping address before submitting your order, we canno
 Orders will be posted to the buyers Kitties.io address within 3 business days and within 5 business days for custom. If you'd like your order posted to a different address, please include at checkout.
 ")
 
+Shop.find(3).tags = [tags[3]]
+
 Image.create(shop_id: 3, url: "https://img0.etsystatic.com/051/0/30272423/iusa_75x75.28233324_nkpx.jpg")
 Listing.create(shop_id: 3, name: "Cute Cat Mugs", price: "20", available: 20, description: "
 ### Crazy Cat Lady Coffee Mug ###
@@ -115,6 +127,9 @@ Our designer mugs make the perfect gift for friends and family or just an extra 
 + All of the designs are transferred to the mugs using a professional heat press.
 + All items are hand crafted so they may vary slightly from the sample image. 
 ")
+
+Listing.find(5).tags = [tags[3]]
+
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug1optimized.png", main_img: true)
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug2optimized.png")
 Image.create(listing_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/catmug3optimized.png")
@@ -133,6 +148,9 @@ Our designer mugs make the perfect gift for friends and family or just an extra 
 + All of the designs are transferred to the mugs using a professional heat press.
 + All items are hand crafted so they may vary slightly from the sample image. 
 ")
+
+Listing.find(6).tags = [tags[3]]
+
 Image.create(listing_id: 6, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatladymugoptimized.png", main_img: true)
 Review.create(listing_id: 6, stars: 5, user_id: 5, user_name: "Crazy Cat Lady", content: "I just had to buy this! It fits my personality :)")
 
@@ -169,6 +187,9 @@ Listing.create(shop_id: 4, name: "Dashing through the NO", price: 17, available:
 Seamed 1x1 ribbed collar with spandex
 
 Concealed seam on cuffs")
+
+Listing.find(7).tags = [tags[1], tags[3], tags[4]]
+
 Image.create(listing_id: 7, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/dashingthroughthesnowoptimized.png", main_img: true)
 
 Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
@@ -181,6 +202,9 @@ Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, d
 Seamed 1x1 ribbed collar with spandex
 
 Concealed seam on cuffs")
+
+Listing.find(8).tags = [tags[1]]
+
 Image.create(listing_id: 8, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
 
 Listing.create(shop_id: 4, name: "Check Meowt", price: 17, available: 100, description:
@@ -193,6 +217,9 @@ Made from our exquisite poly viscose, this simple tee's rich and luxuriously sof
 Features: Longer body length. Scoop neck. Side-seamed. Easy, drapey fit.
 
 Style: 8816 Bella Women's Flowy Simple Tee")
+
+Listing.find(9).tags = [tags[1]]
+
 Image.create(listing_id: 9, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/checkmeowtoptimized.png", main_img: true)
 
 Shop.create(name: "Professional Cats", user_id: 3, description: "Ties, and whatnot",
@@ -213,6 +240,8 @@ Refunds and Exchanges
 
 As a general rule, refunds and exchanges are not accepted. Please contact me if there are any problems or delays in purchase or delivery.
 ")
+
+Shop.find(5).tags = [tags[1]]
 
 Image.create(shop_id: 5, url: "https://img0.etsystatic.com/000/0/6054069/iusa_75x75.6643874.jpg")
 
@@ -238,6 +267,9 @@ Tumble Dry
 Handmade in the USA
 ===
 ")
+
+Listing.find(10).tags = [tags[1], tags[2], tags[3]]
+
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie1optimized.png", main_img: true)
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie2optimized.png")
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie3optimzed.png")

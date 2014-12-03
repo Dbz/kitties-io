@@ -1,5 +1,7 @@
 class Tag < ActiveRecord::Base
-  has_many :shops, through: :taggings
-  has_many :listings, through: :taggings
+  has_many :taggings, dependent: :destroy
+  has_many :shops, through: :taggings, source: :taggable, source_type: "Shop"
+  has_many :listings, through: :taggings, source: :taggable, source_type: "Listing"
+  
   validates :name, presence: true
 end

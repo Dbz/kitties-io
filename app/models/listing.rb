@@ -2,7 +2,7 @@ class Listing < ActiveRecord::Base
   has_many :images
   belongs_to :shop
   has_many :reviews
-  has_many :taggings, dependent: :destroy
+  has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
   validates :name, :price, :available, :shop_id, :description, presence: true
   
