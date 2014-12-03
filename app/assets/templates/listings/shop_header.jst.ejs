@@ -2,7 +2,7 @@
 	<div class='listing-shop-header-img'>
 		<img src='<%= shop.image().get('url') %>' class='user-img'>
 	</div>
-	<div><%= shop.get('name') || "" %></div>
+	<div id='listing-shop-header-name'><%= shop.get('name') || "" %></div>
 </div>
 <div id='listing-shop-items'>
 	<% shop.listings().each(function(listing) { %>

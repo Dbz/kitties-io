@@ -1,6 +1,9 @@
 #listing-shop-header {
 	padding: 15px 0px;
 }
+#listing-shop-header-name {
+	float: left;
+}
 #shop-details {
 	float: left;
 }
@@ -11,7 +14,7 @@
 	background: white;
 	border: 1px solid #ececec;
 	border-radius: 3px;
-	float: right;
+	float: left;
 	margin-left: 20px;
 	img {
 		-webkit-transition: opacity .1s;

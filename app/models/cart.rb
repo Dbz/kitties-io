@@ -12,6 +12,14 @@ class Cart < ActiveRecord::Base
     end
   end
   
+  def remove(id)
+    order = self.orders.find_by({ listing_id: id }).destroy()
+  end
+  
+  def remove_by_shop(shop_id)
+    self.orders_by_shop(shop_id).map { |order| order.destroy() }
+  end
+  
   def orders_by_shop(shop_id)
     self.orders.select { |order| order.listing.shop_id == shop_id }
   end

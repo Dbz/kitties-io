@@ -62,3 +62,12 @@ Kitties.Models.Shop = Backbone.Model.extend({
 		return data;
 	}
 });
+
+// var ShopListings = Backbone.PageableCollection.extend({});
+// var listings = new ShopListings([], {
+// 	state: {
+// 		firstPage: 1,
+// 		currentPage: 1,
+// 		pageSize: 15
+// 	}
+// })

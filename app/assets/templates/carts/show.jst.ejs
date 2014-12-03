@@ -7,7 +7,7 @@
 						<h3 class='panel-title'>
 							Order from <a href='/#shops/<%= shop.get('id') %>'> <%= shop.escape('name') %> </a>
 						</h3>
-						<button type='button' class='close'>X</button>
+						<button type='button' class='close close-button' data-shop-id='<%= shop.get('id') %>'>X</button>
 					</div>
 					
 					<% var total = 0; amount = 0 %>

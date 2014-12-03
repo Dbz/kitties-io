@@ -5,14 +5,18 @@
 	display: inline-block;
 }
 .cart-img {
-    display: block;
-    max-width:130px;
-    max-height:95px;
-    width: auto;
-    height: auto;
+	border-radius: 4px;
+  display: block;
+  max-width:130px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+	margin: 0 auto;
 }
 .cart-img-box {
-	width: 135px;
+	width: 150px;
+	float: left;
+//	padding-right: 20px;
 	border-right: 1px solid #999999;
 }
 
@@ -21,7 +25,8 @@
 }
 
 .order-info {
-
+	float: left;
+	padding-left: 30px;
 }
 
 .panel .close {

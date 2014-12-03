@@ -19,6 +19,7 @@ Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 		$.ajax({
 			url: 'api/cart/' + this.model.get('id'),
 			type: "POST",
+			data: { add: true },
 			dataType: "json"
 		});
 	},

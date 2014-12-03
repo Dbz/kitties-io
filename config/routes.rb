@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     
     resources :users, only: [:show]
     
-    post 'cart/:id', to: 'carts#add'
+    post 'cart/:id', to: 'carts#change'
     resource :cart, only: [:show]
   end
 end
