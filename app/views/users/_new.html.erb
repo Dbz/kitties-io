@@ -1,4 +1,7 @@
-<form action='/users' method='post'>
+<div>
+	<p class='red' id='signup-errors'><br></p>
+</div>
+<form id="signup-form" method='post'>
 	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 	<div class='form-group'>
 		<label for='username'>Username</label>
@@ -12,3 +15,22 @@
 	</div>
 	<button type='submit' class='btn btn-primary'>Sign Up!</button>
 </form>
+
+<script type="text/javascript">
+	$(function () {
+		$('#signup-form').on('submit', function (event) {
+			event.preventDefault();
+      $.ajax({
+      	url: '/api/users',
+				data: $(event.currentTarget).serialize(),
+				type: "POST",
+				success: function (data) {
+					window.Kitties.user_id = data.id;
+				},
+				error: function (resp) {
+					$('#signup-errors').text(resp.responseJSON.join(', '))
+				},
+      })
+		})
+	})
+</script>

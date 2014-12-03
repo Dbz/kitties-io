@@ -26,7 +26,7 @@ Kitties.Views.CartShow = Backbone.View.extend({
 			dataType: "json",
 			success: function(data) {
 				debugger
-				this.model.parse(data);
+				this.parse(data);
 			}.bind(this)
 		});
 	},
@@ -44,7 +44,8 @@ Kitties.Views.CartShow = Backbone.View.extend({
 			dataType: "json",
 			success: function(data) {
 				debugger
-				this.model.parse(data);
+				var attrs = this.model.parse(data);
+				this.model.set(attrs);
 			}.bind(this)
 		});
 	},
