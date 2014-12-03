@@ -10,4 +10,24 @@ class Api::ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     render :show_shop
   end
+  
+  def search
+    @listings = Listing.search(URI.unescape(params[:text])).where({ shop_id: params[:id] })
+    puts
+    puts
+    puts
+    puts
+    puts
+    puts
+    puts "hello"
+    puts
+    puts @listings.count
+    puts
+    puts
+    puts
+    puts
+    puts "goodbye"
+    puts
+    render :search_listing
+  end
 end

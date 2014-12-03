@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'listings/search', to: 'listings#search'
     resources :listings, only: [:create, :show]
     
+    get 'shops/:id/search', to: 'shops#search'
     get 'shops/featured_shops/:num', to: 'shops#featured_shops'
     resources :shops, only: [:create, :show]
     

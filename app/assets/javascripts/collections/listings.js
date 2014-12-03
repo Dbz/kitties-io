@@ -26,3 +26,16 @@ Kitties.Collections.SearchListings = Backbone.Collection.extend({
 	url: "api/listings/search" // ?search%5Btext%5D=
 	
 });
+
+Kitties.Collections.SearchShopListings = Backbone.Collection.extend({
+	
+	initialize: function(options) {
+		this.shop_id = options.shop_id
+	},
+
+  model: Kitties.Models.Listing,
+	url: function() {
+		return "api/shops/" + this.shop_id + "/search"
+	}
+
+});

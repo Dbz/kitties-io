@@ -5,10 +5,6 @@ Kitties.Views.CartShow = Backbone.View.extend({
 	initialize: function(optioins) {
 		this.listenTo(this.collection, "sync", this.render);
 		this.listenTo(this.model, "sync", this.render);
-		// $('.panel-heading #close').on('click', function(event) {
-// 			event.preventDefault();
-// 			// TODO: remove items from cart
-// 		})
 	},
 	
 	events: {
@@ -26,8 +22,11 @@ Kitties.Views.CartShow = Backbone.View.extend({
 				remove: "shop",
 				shop_id: $(event.currentTarget).data('shop-id')
 			},
-			dataType: "json"
-			// success: Bacj
+			dataType: "json",
+			success: function(data) {
+				debugger
+				this.model.parse(data);
+			}.bind(this)
 		});
 	},
 	

@@ -3,6 +3,7 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		"": "index",
 		"listings/:id": "showListing",
 		"shops/:id": "showShop",
+		"shops/:id/search?q=:term": "shopSearch",
 		"search?q=:term": "searchResults",
 		"cart": "showCart"
 	},
@@ -37,11 +38,19 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		this._swapView(listingView);
 	},
 	
-	showShop: function(id) {
+	showShop: function(id, listings) {
 		var shop = new Kitties.Models.Shop({ id: id });
 		shop.fetch();
-		var shopView = new Kitties.Views.ShopShow({ model: shop });
+		var shopView = new Kitties.Views.ShopShow({ model: shop, collection: listings });
 		this._swapView(shopView);
+	},
+	
+	shopSearch: function(id, queryData) {
+		queryData = decodeURIComponent(queryData);
+		var listings = new Kitties.Collections.SearchShopListings({ shop_id: id });
+		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
+		
+		this.showShop(id, listings);
 	},
 	
 	searchResults: function(queryData) {
