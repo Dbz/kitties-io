@@ -1,9 +1,7 @@
 /*				Home Page			*/
 #welcoming-display {
 	min-height: 500px;
-//	background-image: image-url("island-optimized.jpg");
-//	background-image: url("http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg");
-	background-image: url("http://www.hdwallpaperscool.com/wp-content/uploads/2013/11/Cute-cat-top-pictures-desktop-wallpapers-full.jpg");
+	background-image: url("https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/welcome-img.jpg");
 	background-size: 100%;
 	background-width: 100%;
 	margin-top: -9px;
@@ -19,7 +17,43 @@
 #recent-favorites {
 	height: 600px;
 	color: #303030;
+	margin-bottom: 50px;
 }
 #catch-phrase {
 	color: #707070;
+}
+
+#second-cat-img {
+	margin-top: -10px;
+	max-height: 500px;
+	width: 100%;
+}
+
+#secure-happy {
+	margin-top: 30px;
+	height: 400px;
+	background: white;
+}
+.home-img {
+	img {
+		border-radius: 4px;
+	  display: block;
+	  max-width:130px;
+	  max-height:95px;
+	  width: auto;
+	  height: auto;
+		margin: 0 auto;
+	}
+}
+#second-cat-img {
+	border-top: 2px solid #555;
+	border-bottom: 2px solid #555;
+}
+#personal-statement {
+	img {
+		margin-top: -35px;
+		border: 2px solid #555;
+	}
+	text-align: center;
+	height: 200px;
 }
