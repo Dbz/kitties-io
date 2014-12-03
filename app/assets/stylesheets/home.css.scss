@@ -47,12 +47,13 @@
 }
 #second-cat-img {
 	border-top: 2px solid #555;
-	border-bottom: 2px solid #555;
+	border-bottom: 2px solid #EEE;
 }
 #personal-statement {
 	img {
 		margin-top: -35px;
-		border: 2px solid #555;
+		border: 2px solid #EEE;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 	}
 	text-align: center;
 	height: 200px;
