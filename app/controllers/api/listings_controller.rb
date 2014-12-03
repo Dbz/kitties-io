@@ -17,8 +17,9 @@ class Api::ListingsController < ApplicationController
     end
   end
   
-  def search
+  def index
     @listings = Listing.search(URI.unescape(params[:text]))
+    @listings = @listings.where({ shop_id: params[:shop_id] }) if params[:shop_id]
     render :search_listing
   end
   

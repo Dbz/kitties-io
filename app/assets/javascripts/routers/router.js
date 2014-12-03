@@ -38,24 +38,27 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		this._swapView(listingView);
 	},
 	
-	showShop: function(id, listings) {
+	showShop: function(id) {
 		var shop = new Kitties.Models.Shop({ id: id });
 		shop.fetch();
-		var shopView = new Kitties.Views.ShopShow({ model: shop, collection: listings });
+		var shopView = new Kitties.Views.ShopShow({ model: shop });
 		this._swapView(shopView);
 	},
 	
 	shopSearch: function(id, queryData) {
-		queryData = decodeURIComponent(queryData);
-		var listings = new Kitties.Collections.SearchShopListings({ shop_id: id });
-		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
+		var shop = new Kitties.Models.Shop({ id: id });
+		shop.fetch();
+		var shopView = new Kitties.Views.ShopShow({ model: shop });
 		
-		this.showShop(id, listings);
+		queryData = decodeURIComponent(queryData);
+		shop.listings().fetch({ data: { text: encodeURIComponent(queryData), shop_id: id } });
+		this._swapView(shopView);
+		
 	},
 	
 	searchResults: function(queryData) {
 		queryData = decodeURIComponent(queryData);
-		var listings = new Kitties.Collections.SearchListings();
+		var listings = new Kitties.Collections.Listings();
 		listings.fetch({ data: {text: encodeURIComponent(queryData)} });
 		$("#search").val(queryData);
 			

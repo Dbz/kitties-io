@@ -5,9 +5,7 @@ Kitties.Views.ShopShow = Backbone.CompositeView.extend({
 	
 	initialize: function(options) {
 		this.listenTo(this.model, "sync", this.render);
-		console.log(this.collection)
-		// if(this.collection)
-		// 	this.model._listings = this.collection;
+		this.listenTo(this.model.listings(), "sync", this.render)
 	},
 	
 	events: {
