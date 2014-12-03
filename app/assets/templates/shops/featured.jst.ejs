@@ -26,7 +26,9 @@
 			<% }) %>
 			<div class='col-md-4'>
 				<div class='all-seller-listings'>
-					<p> <%= shop.listings().length %> Products </p>
+					<a href='/#shops/<%= shop.get('id') %>'>
+						<p> <%= shop.listings().length %> Products </p>
+					</a>
 				</div>
 			</div>
 		</div>

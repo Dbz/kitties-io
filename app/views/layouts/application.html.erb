@@ -51,7 +51,7 @@
 						</script>
 							
 						<li>
-							<%= link_to("Logout", sessions_url(current_user), method: :delete, class: "btn") %>
+							<%= link_to("Logout", sessions_url(current_user), method: :delete, class: "btn", id: "logout") %>
 						</li>
 					<% else %>
 					

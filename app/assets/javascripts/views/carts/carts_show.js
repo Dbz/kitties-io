@@ -8,11 +8,11 @@ Kitties.Views.CartShow = Backbone.View.extend({
 	},
 	
 	events: {
-		"click .close-button": "removeFromCart"
+		"click .close-button": "removeShopFromCart",
+		"click .remove-listing-button": "removeListingFromCart"
 	},
 	
-	removeFromCart: function(event) {
-		console.log("hello")
+	removeShopFromCart: function(event) {
 		event.preventDefault();
 		$.ajax({
 			url: 'api/cart/' + this.model.get('id'),
@@ -21,6 +21,24 @@ Kitties.Views.CartShow = Backbone.View.extend({
 				add: false,
 				remove: "shop",
 				shop_id: $(event.currentTarget).data('shop-id')
+			},
+			dataType: "json",
+			success: function(data) {
+				debugger
+				this.model.parse(data);
+			}.bind(this)
+		});
+	},
+	
+	removeListingFromCart: function(event) {
+		event.preventDefault();
+		$.ajax({
+			url: 'api/cart/' + this.model.get('id'),
+			type: "POST",
+			data: {
+				add: false,
+				remove: "listing",
+				listing_id: $(event.currentTarget).data('listing-id')
 			},
 			dataType: "json",
 			success: function(data) {

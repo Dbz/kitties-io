@@ -17,7 +17,7 @@ json.reviews do
 end
 
 json.shop do
-  json.extract! @listing.shop, :name, :policies
+  json.extract! @listing.shop, :id, :name, :policies
   json.image @listing.shop.image, :id, :url
   json.listings do
     json.array! @listing.shop.listings.sample(4) do |listing|

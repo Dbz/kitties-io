@@ -5,7 +5,6 @@
 	border-radius: 10px;
 	padding: 20px 10px;
 	margin-bottom: 20px;
-//	display: inline-block;
 }
 
 #left-content {
@@ -51,6 +50,12 @@
 	width: 100%;
 	border: none;
 	background: rgba(242, 208, 59, 1.0);
+}
+#cart-button:active {
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#cart-button:focus {
+	outline: none;
 }
 #listing-tab-panel {
 	padding-top: 20px;

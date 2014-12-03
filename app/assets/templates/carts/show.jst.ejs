@@ -15,7 +15,9 @@
 						<div class='panel-body'>
 							<div class='cart-listing-wrapper'>
 								<div class='cart-img-box'>
-									<img src='<%= order.listing().mainImage().get('url') %>' class='cart-img'>
+									<a href='/#listings/<%= order.listing().get('id') %>'>
+										<img src='<%= order.listing().mainImage().get('url') %>' class='cart-img'>
+									</a>
 								</div>
 								<div class='order-info'>
 									<h4>
@@ -29,6 +31,11 @@
 										<span class='product-currency'>USD</span>
 									</span>
 									<% total += Number(order.listing().escape('price')) * Number(order.escape('amount')) %>
+								</div>
+								<div class='remove-listing'>
+									<button type='button' class='close remove-listing-button' data-listing-id='<%= order.listing().get('id') %>'>
+										X
+									</button>
 								</div>
 							</div>
 						</div>

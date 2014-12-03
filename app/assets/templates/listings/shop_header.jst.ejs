@@ -1,8 +1,14 @@
 <div id='shop-details'>
 	<div class='listing-shop-header-img'>
-		<img src='<%= shop.image().get('url') %>' class='user-img'>
+		<a href='/#shops/<%= shop.get('id') %>'>
+			<img src='<%= shop.image().get('url') %>' class='user-img'>
+		</a>
 	</div>
-	<div id='listing-shop-header-name'><%= shop.get('name') || "" %></div>
+	<div id='listing-shop-header-name'>
+		<a href='/#shops/<%= shop.get('id') %>'>
+			<%= shop.get('name') || "" %>
+		</a>
+	</div>
 </div>
 <div id='listing-shop-items'>
 	<% shop.listings().each(function(listing) { %>

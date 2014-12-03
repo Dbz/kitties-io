@@ -5,7 +5,7 @@ class Api::CartsController < ApplicationController
     if params[:add] == "true"
       @cart.add(params[:id].to_i)
     elsif params[:remove] == "listing"
-      @cart.remove(params[:id].to_i)
+      @cart.remove(params[:listing_id].to_i)
     elsif params[:remove] == "shop"
       @cart.remove_by_shop(params[:shop_id].to_i)
     end
