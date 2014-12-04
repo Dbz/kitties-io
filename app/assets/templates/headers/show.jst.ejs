@@ -49,11 +49,29 @@
 				</button>
 			</li>
 		<% } %>
-		<li>
-			<button class="btn" id='cart'>
-				<span class="glyphicons shopping_bag"></span>
+		<li class='dropdown'>
+			<button href="#" class='dropdown-toggle' id='cart' data-toggle="dropdown" aria-expanded='false' type='button'>
 				Cart <%= Kitties.cart.get('amount') %>
 			</button>
+			<ul class='dropdown-menu' id='cart-menu'>
+				<% Kitties.cart.shops().each(function(shop) { %>
+					<li>
+						<a href='#/cart'>
+							<%= shop.get('name') %>
+						</a>
+						<ul id='cart-orders-list'>
+							<% shop.orders().each(function(order) { %>
+								<li>
+									<a>
+										<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
+										<%= order.listing().escape('name') %> : <%= order.escape('amount') %>
+									</a>
+								</li>
+							<% }) %>
+						</ul>
+					</li>
+				<% }) %>
+			</ul>
 		</li>
 	</ul>
 <!-- </nav> -->
