@@ -27,25 +27,6 @@
 	margin-top: -10px;
 	max-height: 500px;
 	width: 100%;
-}
-
-#secure-happy {
-	margin-top: 30px;
-	height: 400px;
-	background: white;
-}
-.home-img {
-	img {
-		border-radius: 4px;
-	  display: block;
-	  max-width:130px;
-	  max-height:95px;
-	  width: auto;
-	  height: auto;
-		margin: 0 auto;
-	}
-}
-#second-cat-img {
 	border-top: 2px solid #555;
 	border-bottom: 2px solid #EEE;
 }
@@ -57,4 +38,26 @@
 	}
 	text-align: center;
 	height: 200px;
+}
+
+#secure-happy {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	height: 300px;
+	p {
+		font-size: 20px;
+		color: #888;
+		line-height: 1.4em;
+	}
+}
+.home-img {
+	img {
+		border-radius: 4px;
+	  display: block;
+	  max-width:130px;
+	  max-height:95px;
+	  width: auto;
+	  height: auto;
+		margin: 0 auto;
+	}
 }
