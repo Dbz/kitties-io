@@ -1,5 +1,5 @@
 tags = [
-  Tag.create(name: "Cat"),
+  Tag.create(name: "Cats"),
   Tag.create(name: "Apparel"),
   Tag.create(name: "Toys"),
   Tag.create(name: "Gift Ideas"),
@@ -9,8 +9,8 @@ tags = [
 User.create(username: "danny", password: "dannydanny")
 Image.create(user_id: 1, url: "http://www.hollywoodreporter.com/sites/default/files/imagecache/modal_800/2014/09/too_good_for_grumpy_cat.jpg")
 
-User.create(username: "john", password: "johnjohn")
-User.create(username: "matt", password: "mattmatt")
+User.create(username: "John", password: "johnjohn")
+User.create(username: "Matt", password: "mattmatt")
 User.create(username: "Some Dude", password: "somedude")
 
 User.create(username: "Crazy Cat Lady", password: "crazycatlady")

@@ -26,8 +26,8 @@
 				type: "POST",
 				success: function (data) {
 					$('#auth-modal').modal('hide')
-					window.Kitties.user_id = data.id;
-					Backbone.history.navigate('#', { trigger: true });
+					window.Kitties.user = new Kitties.Models.User({ id: data.id });
+					window.Kitties.cart.fetch();
 				},
 				error: function (resp) {
 					$('#signin-errors').text(resp.responseJSON)

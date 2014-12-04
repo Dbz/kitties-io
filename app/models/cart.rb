@@ -23,4 +23,10 @@ class Cart < ActiveRecord::Base
   def orders_by_shop(shop_id)
     self.orders.select { |order| order.listing.shop_id == shop_id }
   end
+  
+  def amount
+    num = 0
+    self.orders.map { |order| num += order.amount }
+    num
+  end
 end

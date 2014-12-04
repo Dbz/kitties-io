@@ -106,35 +106,19 @@ nav {
 	height: 60px;
 	width: 47px;
 	margin-top: -15px;
-}
-#logout {
-	margin-top: -2px;
-}
-//.navbar-header {
-//    float: left;
-//    padding: 15px;
-//    text-align: center;
-//    width: 100%;
-//}
-//.navbar-brand {float:none;}
-.navbar-form {
-	/*border: 1px solid #003056;*/
-}
-#search::-webkit-input-placeholder {
-/*   color: #47D9BF;*/
+	position: relative;
+	right: -10px;
+	top: -5px;
 }
 #search-wrapper {
-//	border: 1px solid black;
 	border-radius: 5px;
 	padding: 0px;
 	margin-right: 15px;
 	margin-left: 15px;
 }
 #search {
-//	color: #00A1D9;
 	background: #f9f9f8;
 	width: 250px;
-//	border: none;
 	border: 1px solid #CFCBC8;
 	border-radius: 5px 0 0 5px;
 	border-right: 0px;
@@ -195,8 +179,12 @@ nav {
 	border-radius: 3px;
 	border: 1px solid #F2D03B;
 }
+
+#logout {
+	border: 1px solid #F2D03B;
+}
 nav {
-	#sign-up:focus, #sign-in:focus, #cart:focus {
+	#sign-up:focus, #sign-in:focus, #cart:focus #logout:focus {
 		outline: none;
 	}
 	
@@ -226,12 +214,5 @@ footer li {
 }
 footer li a {
 	color: #47D9BF;
-}
-#logo {
-	position: relative;
-	right: -10px;
-	top: -5px;
-	width: 66px;
-	height: 50px;
 }
 

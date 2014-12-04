@@ -16,8 +16,9 @@ class Api::SessionsController < ApplicationController
       current_user.reset_session_token!
       session[:session_token] = nil
       session[:cart_id] = nil
-      redirect_to root_url
+      render json: ["success"]
+    else
+      render json: ["failure"], status: 422
     end
-    return
   end
 end

@@ -10,18 +10,6 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
-		
-		this.addHeader();
-		
-		$('#search-wrapper').on('submit', function (event) {
-			event.preventDefault();
-			var queryString = $(event.currentTarget).find('#search').val();
-			Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
-		}.bind(this));
-		
-		$("#cart").on('click', function(event) {
-			Backbone.history.navigate('#/cart', { trigger: true });
-		});
 	},
 	
 	index: function() {
@@ -75,11 +63,6 @@ Kitties.Routers.Router = Backbone.Router.extend({
 		var cartView = new Kitties.Views.CartShow({ collection: Kitties.cart.shops(), model: Kitties.cart });
 		this._swapView(cartView);
 	},
-	
-	addHeader: function() {
-		var headerView = new Kitties.Views.Header({ cart: Kitties.cart });
-		$('header').html(headerView.render().$el);
-	}
 	
 	_swapView: function(view) {
 		if(this._currentView)

@@ -14,27 +14,12 @@ Kitties.Views.CartShow = Backbone.View.extend({
 	},
 	
 	removeShopFromCart: function(event) {
-		// event.preventDefault();
-		// $.ajax({
-		// 	url: 'api/cart/' + this.model.get('id'),
-		// 	type: "POST",
-		// 	data: {
-		// 		add: false,
-		// 		remove: "shop",
-		// 		shop_id: $(event.currentTarget).data('shop-id')
-		// 	},
-		// 	dataType: "json",
-		// 	success: function(data) {
-		// 		debugger
-		// 		this.parse(data);
-		// 	}.bind(this)
-		// });
+		event.preventDefault();
 		Kitties.cart.removeShop($(event.currentTarget).data('shop-id'));
 	},
 	
 	removeListingFromCart: function(event) {
 		event.preventDefault();
-		
 		Kitties.cart.removeOrder($(event.currentTarget).data('order-id'));
 	},
 	

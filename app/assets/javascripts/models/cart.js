@@ -1,7 +1,12 @@
 Kitties.Models.Cart = Backbone.Model.extend({
-	urlRoot: "api/cart",
+	// urlRoot: "api/cart",
+	
+	url: function () {
+		return "api/cart";
+	},
+	
 	initialize: function(options) {
-		this.user_id = options.user_id;
+		this.user = options.user;
 	},
 	
 	shops: function() {
@@ -16,7 +21,8 @@ Kitties.Models.Cart = Backbone.Model.extend({
 				order.destroy({ data: { order_id: id }, processData: true });
 				shop.orders().remove(order);
 				if(shop.orders().length == 0)
-					this.removeShop(shop.get('id'));
+					this.shops().remove(shop)
+				Kitties.cart.set('amount', Kitties.cart.get('amount') - order.get('amount'));
 				this.trigger("removeOrder");
 			}
 		}.bind(this));
@@ -24,8 +30,13 @@ Kitties.Models.Cart = Backbone.Model.extend({
 	
 	removeShop: function(id) {
 		var shop = this.shops().get(id);
-		shop.destroy({ data: { shop_id: id }, processData: true });
+		var numOrders = 0;
+		shop.orders().each(function(order) {
+			numOrders += order.get('amount');
+		});
+		shop.orders().pop().destroy({ data: { shop_id: id }, processData: true });
 		this.shops().remove(shop);
+		this.set('amount', this.get('amount') - numOrders);
 		this.trigger("removeShop");
 	},
 	
@@ -40,4 +51,5 @@ Kitties.Models.Cart = Backbone.Model.extend({
 });
 
 
-Kitties.cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
+Kitties.cart = new Kitties.Models.Cart({ user: Kitties.user });
+Kitties.cart.fetch();

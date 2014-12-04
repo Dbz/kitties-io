@@ -1,5 +1,4 @@
-json.extract! @cart, :id, :user_id
-json.amount @cart.orders.length
+json.extract! @cart, :id, :user_id, :amount
 json.shops do
   json.array! @cart.shops.uniq do |shop|
     json.extract! shop, :id, :name

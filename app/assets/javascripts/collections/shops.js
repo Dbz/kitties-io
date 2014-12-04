@@ -3,17 +3,23 @@ Kitties.Collections.Shops = Backbone.Collection.extend({
   model: Kitties.Models.Shop,
 	
 	getOrFetch: function(id) {
-		var shop = this.get(id);
+		// var shop = this.get(id);
+		// if(!shop) {
+		// 	shop = new Kitties.Models.Shop({id: id});
+		// 	shop.save({}, function() {
+		// 		success: (function() {
+		// 			this.add(shop);
+		// 		}).bind(this)
+		// 	});
+		// } else {
+		// 	shop.fetch();
+		// }
+		// return shop;
+		var shop = this.get(id)
 		if(!shop) {
-			shop = new Kitties.Models.Shop({id: id});
-			shop.save({}, function() {
-				success: (function() {
-					this.add(shop);
-				}).bind(this)
-			});
-		} else {
-			shop.fetch();
+			shop = new Kitties.Models.Shop({ id: id });
 		}
+		shop.fetch();
 		return shop;
 	}
 

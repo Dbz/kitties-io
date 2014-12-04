@@ -18,6 +18,8 @@ Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 		var order = new Kitties.Models.Order({ listing_id: this.model.get('id') });
 		order.save();
 		Kitties.cart.shops().getOrFetch(this.model.shop().get('id')).orders().add(order);
+		Kitties.cart.set('amount', Kitties.cart.get('amount') + 1);
+		Kitties.cart.trigger("sync");
 	},
 	
 	render: function() {

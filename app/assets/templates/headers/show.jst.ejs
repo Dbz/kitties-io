@@ -2,7 +2,7 @@
 	<ul class='nav navbar-nav'>
 		<li class='left-nav-list-itme'>
 			<div class='navbar-header'>
-				<a href="", class='navbar-brand'>
+				<a href="#", class='navbar-brand'>
 					<img id='logo' src='https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/lovetailslogo4.png'>
 				</a>
 			</div>
@@ -21,26 +21,23 @@
 				<span class='caret'></span>
 			</button>
 			<ul class='dropdown-menu'>
-				<li><a href='#'>Fan Favorites</a></li>
-				<li><a href='#'>Gift Ideas</a></li>
+				<li><a href='#/search?q=Fan%20Favorites'>Fan Favorites</a></li>
+				<li><a href='#/search?q=Gift%20Ideas'>Gift Ideas</a></li>
 				<li class="divider"></li>
-				<li><a href='#'>Cats</a></li>
-				<li><a href='#'>Toys</a></li>
-				<li><a href='#'>Apparel</a></li>
+				<li><a href='#/search?q=Cats'>Cats</a></li>
+				<li><a href='#/search?q=Toys'>Toys</a></li>
+				<li><a href='#/search?q=Apparel'>Apparel</a></li>
 			</ul>
 		</li>
 	</ul>
 	<ul class='nav navbar-nav navbar-right'>
-		<% if signed_in? %>
-			<script>
-				window.Kitties.user_id = "<%= current_user.id %>";
-			</script>
-				
+		<% if(Kitties.user.get('id')) { %>
 			<li>
-				<%= link_to("Logout", api_sessions_url(current_user), method: :delete, class: "btn", id: "logout") %>
+				<button id='logout' class='btn'>
+					Logout
+				</button>
 			</li>
-		<% else %>
-		
+		<% } else { %>
 			<li>
 				<button id='sign-up' class="btn login" data-toggle='modal' data-target='#auth-modal'>
 					Register
@@ -51,7 +48,12 @@
 					Sign In
 				</button>
 			</li>
-		<% end %>
-		<li><button class="btn" id='cart'><span class="glyphicons shopping_bag"></span>Cart</button></li>
+		<% } %>
+		<li>
+			<button class="btn" id='cart'>
+				<span class="glyphicons shopping_bag"></span>
+				Cart <%= Kitties.cart.get('amount') %>
+			</button>
+		</li>
 	</ul>
 <!-- </nav> -->

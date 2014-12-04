@@ -8,6 +8,14 @@ class Api::UsersController < ApplicationController
     end
   end
   
+  def index
+    if current_user
+      render json: current_user, include: [:image]
+    else
+      render json: User.new
+    end
+  end
+  
   # def show
   #   @user = User.find(params[:id])
   #   if @user

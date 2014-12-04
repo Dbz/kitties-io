@@ -12,9 +12,10 @@ window.Kitties = {
 $(document).ready(function(){
   Kitties.initialize();
 	
-	// For modal buttons to open appropriate tab
-	$('.login').click(function (e) {
-		$("a[href='#" + e.currentTarget.id + "-tab']").tab('show');
-	});
+	Kitties.user = Kitties.user || new Kitties.Models.User();
+	Kitties.user.fetch();
+	
+	var headerView = new Kitties.Views.Header({});
+	$('header').html(headerView.render().$el);
 	
 });

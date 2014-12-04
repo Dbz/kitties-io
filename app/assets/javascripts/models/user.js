@@ -6,9 +6,10 @@ Kitties.Models.User = Backbone.Model.extend({
 	},
 	parse: function(data) {
 		if(data.image) {
-			this.image().set(data.image, { parse: true });
+			var imageParams = this.image().parse(data.image);
+			this.image().set(imageParams);
 			delete data.image;
 		}
-		return data
+		return data;
 	}
 });
