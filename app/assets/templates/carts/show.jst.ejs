@@ -33,7 +33,7 @@
 									<% total += Number(order.listing().escape('price')) * Number(order.escape('amount')) %>
 								</div>
 								<div class='remove-listing'>
-									<button type='button' class='close remove-listing-button' data-listing-id='<%= order.listing().get('id') %>'>
+									<button type='button' class='close remove-listing-button' data-order-id='<%= order.get('id') %>'>
 										X
 									</button>
 								</div>

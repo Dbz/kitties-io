@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     resource :sessions, only: [:create, :destroy]
     resources :users, only: [:create]
     
-    post 'cart/:id', to: 'carts#change'
     resource :cart, only: [:show]
+    
+    resources :orders, only: [:create, :destroy]
   end
 end

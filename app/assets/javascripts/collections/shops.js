@@ -1,9 +1,21 @@
 Kitties.Collections.Shops = Backbone.Collection.extend({
 
   model: Kitties.Models.Shop,
-	// initialize: function(options) {
-	// 	this.num = options.num;
-	// }
+	
+	getOrFetch: function(id) {
+		var shop = this.get(id);
+		if(!shop) {
+			shop = new Kitties.Models.Shop({id: id});
+			shop.save({}, function() {
+				success: (function() {
+					this.add(shop);
+				}).bind(this)
+			});
+		} else {
+			shop.fetch();
+		}
+		return shop;
+	}
 
 });
 

@@ -1,4 +1,6 @@
 Kitties.Models.Order = Backbone.Model.extend({
+	urlRoot: "api/orders",
+	
 	listing: function() {
 		this._listing = this._listing || new Kitties.Models.Listing({}, {});
 		return this._listing

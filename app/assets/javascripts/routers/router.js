@@ -69,10 +69,13 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	},
 	
 	showCart: function() {
-		var cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
-		cart.fetch();
+		// var cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
+		// cart.fetch();
 		
-		var cartView = new Kitties.Views.CartShow({ collection: cart.shops(), model: cart });
+		// Kitties.cart({ user_id: Kitties.user_id });
+		Kitties.cart.fetch();
+		
+		var cartView = new Kitties.Views.CartShow({ collection: Kitties.cart.shops(), model: Kitties.cart });
 		this._swapView(cartView);
 	},
 	

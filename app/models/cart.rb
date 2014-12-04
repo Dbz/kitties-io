@@ -13,7 +13,7 @@ class Cart < ActiveRecord::Base
   end
   
   def remove(id)
-    order = self.orders.find_by({ listing_id: id }).destroy()
+    order = self.orders.find_by({ id: id }).destroy()
   end
   
   def remove_by_shop(shop_id)

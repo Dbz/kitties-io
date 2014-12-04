@@ -25,7 +25,9 @@
 				data: $(event.currentTarget).serialize(),
 				type: "POST",
 				success: function (data) {
+					$('#auth-modal').modal('hide')
 					window.Kitties.user_id = data.id;
+					Backbone.history.navigate('#', { trigger: true });
 				},
 				error: function (resp) {
 					$('#signin-errors').text(resp.responseJSON)

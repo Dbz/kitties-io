@@ -14,14 +14,10 @@ Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 	},
 	
 	addToCart: function(event) {
-		console.log("hello")
 		event.preventDefault();
-		$.ajax({
-			url: 'api/cart/' + this.model.get('id'),
-			type: "POST",
-			data: { add: true },
-			dataType: "json"
-		});
+		var order = new Kitties.Models.Order({ listing_id: this.model.get('id') });
+		order.save();
+		Kitties.cart.shops().getOrFetch(this.model.shop().get('id')).orders().add(order);
 	},
 	
 	render: function() {
