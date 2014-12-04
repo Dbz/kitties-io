@@ -54,7 +54,13 @@
 				Cart <%= Kitties.cart.get('amount') %>
 			</button>
 			<ul class='dropdown-menu' id='cart-menu'>
-				<% Kitties.cart.shops().each(function(shop) { %>
+				<% if(Kitties.cart.shops().length == 0) { %>
+					<li>
+						<a href='#' id='empty-cart-link'>
+							<img src="https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cart_empty.jpg" id='cart-dropdown-empty-img'>
+						</a>
+					</li>
+				<% } else { Kitties.cart.shops().each(function(shop) { %>
 					<li>
 						<a href='#/cart'>
 							<%= shop.get('name') %>
@@ -70,7 +76,7 @@
 							<% }) %>
 						</ul>
 					</li>
-				<% }) %>
+				<% }) } %>
 			</ul>
 		</li>
 	</ul>

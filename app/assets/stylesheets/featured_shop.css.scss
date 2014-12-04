@@ -64,7 +64,17 @@ img.other-seller-product:hover {
 		margin: 0;
 		line-height: 0;
 	}
+	a {
+		color: #303030;
+	}
+	a:hover {
+		color: #303030;
+		text-decoration: none;
+	}
 }
 .featured-product-name, .featured-product-name:hover {
 	color: #666666;
+}
+.favorite-item .panel-footer:hover {
+	background: #DFEFF5;
 }

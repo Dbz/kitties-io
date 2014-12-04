@@ -40,6 +40,17 @@ Kitties.Models.Cart = Backbone.Model.extend({
 		this.trigger("removeShop");
 	},
 	
+	findOrder: function(listingId) {
+		var order;
+		this.shops().each(function(shop) {
+			shop.orders().each(function(currentOrder) {
+				if(currentOrder.listing().get('id') == listingId)
+					order = currentOrder;
+			});	
+		});
+		return order;
+	},
+	
 	parse: function(data) {
 		if(data.shops) {
 			this.shops().set(data.shops, { parse: true });

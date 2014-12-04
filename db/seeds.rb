@@ -16,7 +16,7 @@ User.create(username: "Some Dude", password: "somedude")
 User.create(username: "Crazy Cat Lady", password: "crazycatlady")
 Image.create(user_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatlady2.jpg")
 
-Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all of your exotic cats here!",
+Shop.create(name: "The Animal Auction House", user_id: 1, description: "Buy all of your exotic cats here!", location: "San Fransisco, California",
 policies: "
 We will ship anywhere and make sure your feline gets to you in purrfect condition!
 ")
@@ -94,7 +94,8 @@ Review.create(
   user_id: 5
 )
 
-Shop.create(name: "Cats Cats Cats", user_id: 5, description: "I raise cats and then sell them for profit!", policies: "You must pick up your cat. I will NOT ship it!!")
+Shop.create(name: "Cats Cats Cats", user_id: 5, description: "I raise cats and then sell them for profit!", location: "San Fransisco, California",
+policies: "You must pick up your cat. I will NOT ship it!!")
 Image.create(shop_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatlady2.jpg")
 Listing.create(shop_id: 2, name: "Norwegian Forest Cat", price: 200, available: 1, description: "Its body shape and double coat are what makes this cat so unique. This dense and long-flowing hair provides excellent protection in the winter (and makes it a soft cuddling partner). The Norwegian Forest Cat's well-balanced body structure, equilateral triangle-shaped head and bright emerald green eyes (with a band of gold) also gives it an aura of mystery, while its broad chest and well-developed muscles display the cat's power and strength.
 In addition, the Forest Cat can adapt to the weather and change its coat! During spring, it molts its heavy winter coat and dons a lighter one. In the fall, the cat will again molt and shed its summer coat.")
@@ -106,7 +107,7 @@ Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursav
 Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/forestcat3optimized.png")
 
 
-Shop.create(name: "Cat mugs", user_id: 3, description: "Cute Cat Mugs!",
+Shop.create(name: "Cat mugs", user_id: 3, description: "Cute Cat Mugs!", location: "Palo Alto, California",
 policies: "
 
 #### **IMPORTANT**

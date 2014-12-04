@@ -126,3 +126,12 @@ nav {
 	float: left;
 	margin-left: 10px;
 }
+#cart-dropdown-empty-img {
+	display: block;
+	text-align: center;
+	height: 155px;
+	width: 225px;
+}
+#empty-cart-link:hover {
+	background: white;
+}

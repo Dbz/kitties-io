@@ -45,18 +45,20 @@
 			</div>
 			<div class='col-md-8'>
 				<div class='seller-bio'>
-					<span> San Fransisco, California </span>
-					<br>
-					<span>
-						<% var x = 0 %>
-						<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
-							<span class='gold'>☆</span>
-						<% } %>
-						<% for(; x < 5; x++) { %>
-							<span>☆</span>
-						<% } %>
-						<span> <%= shop.reviews().length %> Reviews </span>
-					</span>
+					<a href='/#shops/<%= shop.get('id') %>'>
+						<span> <%= shop.get('location') %> </span>
+						<br>
+						<span>
+							<% var x = 0 %>
+							<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
+								<span class='gold'>☆</span>
+							<% } %>
+							<% for(; x < 5; x++) { %>
+								<span>☆</span>
+							<% } %>
+							<span> <%= shop.reviews().length %> Reviews </span>
+						</span>
+					</a>
 				</div>
 			</div>
 		</div>
