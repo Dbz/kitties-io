@@ -34,7 +34,10 @@ Kitties.Views.Header = Backbone.View.extend({
 	search: function(event) {
 		event.preventDefault();
 		var queryString = $(event.currentTarget).find('#search').val();
-		Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
+		if(queryString === "")
+			Backbone.history.navigate("#", { trigger: true });
+		else
+			Backbone.history.navigate("#/search?q=" + encodeURIComponent(queryString), { trigger: true });
 	},
 	
 	cart: function() {
