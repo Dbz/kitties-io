@@ -147,6 +147,9 @@ nav {
 #search-button:hover {
 //	background: #04518C;
 }
+#cart:focus {
+	outline: 3px auto #F2D03B;
+}
 
 #browse { /*Browse Drop Down*/
 	height: 34px;

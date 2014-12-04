@@ -26,3 +26,9 @@ json.shop do
     end
   end
 end
+
+json.tags do
+  json.array! @listing.tags do |tag|
+    json.extract! tag, :name
+  end
+end

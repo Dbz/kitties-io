@@ -13,6 +13,10 @@ Kitties.Models.Listing = Backbone.Model.extend({
 		return this._shop;
 		//return this.get('shop') || new Kitties.Models.Shop([], { listing: this });
 	},
+	tags: function() {
+		this._tags = this._tags || new Kitties.Collections.Tags([], {});
+		return this._tags;
+	},
 	
 	
 	parse: function(data) {
@@ -28,6 +32,10 @@ Kitties.Models.Listing = Backbone.Model.extend({
 			var shopParams = this.shop().parse(data.shop);
 			this.shop().set(shopParams);
 			delete data.shop;
+		}
+		if(data.tags) {
+			this.tags().set(data.tags, { parse: true });
+			delete data.tags;
 		}
 		return data;
 	},

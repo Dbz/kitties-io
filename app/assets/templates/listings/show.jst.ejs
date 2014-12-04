@@ -1,7 +1,7 @@
 <div id='listing-shop-header' class='margins'>
 </div>
 
-<div id='shop-content' class='margins'>
+<div id='shop-content' class='margins clearfix'>
 	<div id='left-content'>
 		<div id='image-viewer'>
 			<div class='carousel slide carousel-fade' data-ride='carousel' data-interval='false' id='listing-carousel'>
@@ -115,8 +115,15 @@
 		
 	</div>
 	
-	<div id='related-items'>
-		<!-- <h2> People who bought this item also liked </h2> -->
-	</div>
+</div>
+
+<div class='margins' id='tags'>
+	<h3> Related Tags </h3>
+	
+	<% listing.tags().each(function(tag) { %>
+		<a href='#/search?q=<%= encodeURIComponent(tag.escape('name')) %>'>
+			<span class='listing-tag'> <%= tag.escape('name') %> </span>
+		</a>
+	<% }) %>
 	
 </div>
