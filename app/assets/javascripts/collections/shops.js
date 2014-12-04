@@ -2,7 +2,7 @@ Kitties.Collections.Shops = Backbone.Collection.extend({
 
   model: Kitties.Models.Shop,
 	
-	getOrFetch: function(id) {
+	getOrAdd: function(id) {
 		// var shop = this.get(id);
 		// if(!shop) {
 		// 	shop = new Kitties.Models.Shop({id: id});

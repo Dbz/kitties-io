@@ -1,7 +1,7 @@
 json.extract! @cart, :id, :user_id, :amount
 json.shops do
   json.array! @cart.shops.uniq do |shop|
-    json.extract! shop, :id, :name
+    json.extract! shop, :id, :name, :expected_ship_date
     json.orders do
       json.array! @cart.orders_by_shop(shop.id) do |order|
         json.extract! order, :id, :amount

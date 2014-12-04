@@ -1,12 +1,12 @@
 <div class='panel panel-default favorite-item'>
 	<div class='panel-heading'>
-		<a href='/#listings/<%= featuredProduct.get('id') %>'>
+		<a href='#listings/<%= featuredProduct.get('id') %>'>
 			<img class="favorite-item-img" src='<%= featuredProduct.images().first().get('url') %>'>
 		</a>
 	</div>
 				
 	<div class='panel-body product-link'>
-		<a href='/#listings/<%= featuredProduct.get('id') %>' class='featured-product-name'>
+		<a href='#listings/<%= featuredProduct.get('id') %>' class='featured-product-name'>
 			<%= truncate(featuredProduct.get('name'), 35) %>
 		</a>
 		<div class='product-money'>
@@ -19,48 +19,44 @@
 		<div class='row'>
 			<% products.forEach(function(product){ %>
 				<div class='col-md-4'>
-					<a href='/#listings/<%= product.get('id') %>'>
+					<a href='#listings/<%= product.get('id') %>'>
 						<img class='other-seller-product img-border' src='<%= product.images().first().get('url') %>'>
 					</a>
 				</div>
 			<% }) %>
 			<div class='col-md-4'>
 				<div class='all-seller-listings'>
-					<a href='/#shops/<%= shop.get('id') %>'>
+					<a href='#shops/<%= shop.get('id') %>'>
 						<p> <%= shop.listings().length %> Products </p>
 					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-							
-	<div class='panel-footer'>
-		<div class='row'>
-			<div class='col-md-4'>
-				<div class='seller-image'>
-					<a href='/#shops/<%= shop.get('id') %>'>
+	
+	<a href='#shops/<%= shop.get('id') %>'>
+		<div class='panel-footer'>
+			<div style='display:table;'>
+				<div style='display:table-cell;vertical-align:middle'>
+					<div class='seller-image'>
 						<img class='img-circle user-img' src="<%= shop.image().get('url') %>">
-					</a>
+					</div>
 				</div>
-			</div>
-			<div class='col-md-8'>
-				<div class='seller-bio'>
-					<a href='/#shops/<%= shop.get('id') %>'>
-						<span> <%= shop.get('location') %> </span>
-						<br>
-						<span>
-							<% var x = 0 %>
-							<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
-								<span class='gold'>☆</span>
-							<% } %>
-							<% for(; x < 5; x++) { %>
-								<span>☆</span>
-							<% } %>
-							<span> <%= shop.reviews().length %> Reviews </span>
-						</span>
-					</a>
+				<div style='display:table-cell;vertical-align:middle' class='seller-bio'>
+					<span id='seller-location'> <%= shop.get('location') %> </span>
+					<br>
+					<span>
+						<% var x = 0 %>
+						<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
+							<span class='gold'>☆</span>
+						<% } %>
+						<% for(; x < 5; x++) { %>
+							<span>☆</span>
+						<% } %>
+						<span> <%= shop.reviews().length %> Reviews </span>
+					</span>
 				</div>
 			</div>
 		</div>
-	</div>
+	</a>
 </div>

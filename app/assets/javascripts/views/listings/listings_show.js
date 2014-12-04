@@ -15,13 +15,18 @@ Kitties.Views.ListingsShow = Backbone.CompositeView.extend({
 	
 	addToCart: function(event) {
 		event.preventDefault();
-		var order = Kitties.cart.findOrder(this.model.get('id')) || new Kitties.Models.Order({ listing_id: this.model.get('id'), listing: this.model, amount: 0 });
+		
+		var order = Kitties.cart.findOrder(this.model.get('id')) ||
+			new Kitties.Models.Order({ listing_id: this.model.get('id'), listing: this.model, amount: 0 });
+		
 		order.set('amount', order.get('amount') + 1);
+		
 		debugger
 		order.save();
-		Kitties.cart.shops().getOrFetch(this.model.shop().get('id')).orders().add(order);
+		
+		Kitties.cart.shops().getOrAdd(this.model.shop().get('id')).orders().add(order);
 		Kitties.cart.set('amount', Kitties.cart.get('amount') + 1);
-		Kitties.cart.trigger("sync");
+		Kitties.cart.trigger("addOrder", order);
 	},
 	
 	render: function() {

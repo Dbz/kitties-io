@@ -67,7 +67,7 @@
 						</a>
 						<ul id='cart-orders-list'>
 							<% shop.orders().each(function(order) { %>
-								<li>
+								<li class='clearfix'>
 									<a>
 										<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
 										<%= order.listing().escape('name') %> : <%= order.escape('amount') %>

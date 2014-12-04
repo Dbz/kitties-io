@@ -59,19 +59,17 @@ img.other-seller-product:hover {
 	width: 80px;
 	background: black;
 }
-.seller-bio {
+.seller-bio, .seller-bio:hover {
 	span {
-		margin: 0;
-		line-height: 0;
+		padding-left: 5px;
 	}
-	a {
-		color: #303030;
-	}
-	a:hover {
-		color: #303030;
-		text-decoration: none;
+	color: #303030;
+	.seller-location {
+		margin-left: 10px;
+		text-align: center;
 	}
 }
+
 .featured-product-name, .featured-product-name:hover {
 	color: #666666;
 }

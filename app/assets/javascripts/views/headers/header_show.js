@@ -5,8 +5,10 @@ Kitties.Views.Header = Backbone.View.extend({
 	className: "nav margins",
 	
 	initialize: function(options) {
-		this.listenTo(Kitties.cart, "all", this.render);		
-		this.listenTo(Kitties.user, "all", this.render);
+		this.listenTo(Kitties.cart, "sync", this.render);		
+		this.listenTo(Kitties.user, "sync", this.render);
+		this.listenTo(Kitties.cart, 'addOrder', this.addOrder);
+		header = this;
 	},
 	
 	events: {
@@ -14,6 +16,11 @@ Kitties.Views.Header = Backbone.View.extend({
 		"click #cart": "cart",
 		"click .login": "openModal",
 		"click #logout": "logout"
+	},
+	
+	addOrder: function (order) {
+		debugger
+		
 	},
 	
 	logout: function(event) {
