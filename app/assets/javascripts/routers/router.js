@@ -11,6 +11,8 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
 		
+		this.addHeader();
+		
 		$('#search-wrapper').on('submit', function (event) {
 			event.preventDefault();
 			var queryString = $(event.currentTarget).find('#search').val();
@@ -69,15 +71,15 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	},
 	
 	showCart: function() {
-		// var cart = new Kitties.Models.Cart({ user_id: Kitties.user_id });
-		// cart.fetch();
-		
-		// Kitties.cart({ user_id: Kitties.user_id });
 		Kitties.cart.fetch();
-		
 		var cartView = new Kitties.Views.CartShow({ collection: Kitties.cart.shops(), model: Kitties.cart });
 		this._swapView(cartView);
 	},
+	
+	addHeader: function() {
+		var headerView = new Kitties.Views.Header({ cart: Kitties.cart });
+		$('header').html(headerView.render().$el);
+	}
 	
 	_swapView: function(view) {
 		if(this._currentView)
