@@ -1,5 +1,4 @@
 Kitties.Models.Cart = Backbone.Model.extend({
-	// urlRoot: "api/cart",
 	
 	url: function () {
 		return "api/cart";
@@ -18,14 +17,32 @@ Kitties.Models.Cart = Backbone.Model.extend({
 		this.shops().each(function(shop) {
 			var order = shop.orders().get(id);
 			if(order) {
+				Kitties.cart.set('amount', Kitties.cart.get('amount') - order.get('amount'));
 				order.destroy({ data: { order_id: id }, processData: true });
 				shop.orders().remove(order);
 				if(shop.orders().length == 0)
 					this.shops().remove(shop)
-				Kitties.cart.set('amount', Kitties.cart.get('amount') - order.get('amount'));
-				this.trigger("removeOrder");
+				this.trigger("sync");
 			}
 		}.bind(this));
+	},
+	
+	addOrder: function(listing) {
+		var order = this.findOrder(listing.get('id'));
+		if(order) {
+			order.set('amount', order.get('amount') + 1);	
+			order.save({ data: { listing_id: listing.get('id') } });
+		} else {
+			order = new Kitties.Models.Order({ amount: 1, listing: listing });
+			order.save({ data: { listing_id: listing.get('id') } });
+			var shopId = listing.shop().get('id');
+			var shop = this.shops().getOrAdd(shopId);
+			shop.orders().add(order);
+		}
+		
+		this.set('amount', this.get('amount') + 1);
+		this.trigger('sync');
+		
 	},
 	
 	removeShop: function(id) {
@@ -37,7 +54,7 @@ Kitties.Models.Cart = Backbone.Model.extend({
 		shop.orders().pop().destroy({ data: { shop_id: id }, processData: true });
 		this.shops().remove(shop);
 		this.set('amount', this.get('amount') - numOrders);
-		this.trigger("removeShop");
+		this.trigger("sync");
 	},
 	
 	findOrder: function(listingId) {
@@ -60,7 +77,3 @@ Kitties.Models.Cart = Backbone.Model.extend({
 	}
 
 });
-
-
-Kitties.cart = new Kitties.Models.Cart({ user: Kitties.user });
-Kitties.cart.fetch();

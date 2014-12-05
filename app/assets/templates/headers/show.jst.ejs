@@ -62,9 +62,6 @@
 					</li>
 				<% } else { Kitties.cart.shops().each(function(shop) { %>
 					<li>
-						<!-- <a href='#/cart'>
-							<%= truncate(shop.get('name'), 24) %>
-						</a> -->
 						<ul id='cart-orders-list'>
 							<% shop.orders().each(function(order) { %>
 								<li class='cart-shop-order'>
@@ -72,7 +69,7 @@
 										<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
 									</div>
 									<span class='cart-listing-name'>
-										<%= truncate(order.listing().escape('name'), 15) %>
+										<%= order.listing().escape('name') %>
 									</span>
 									<span class='cart-order-amount'>
 										<%= order.escape('amount') %>

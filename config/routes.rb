@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     
     resource :cart, only: [:show]
     
-    resources :orders, only: [:create, :destroy]
+    resources :orders, only: [:create, :destroy, :update]
   end
 end

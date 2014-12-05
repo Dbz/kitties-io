@@ -10,12 +10,12 @@ window.Kitties = {
 };
 
 $(document).ready(function(){
-  Kitties.initialize();
 	
 	Kitties.user = Kitties.user || new Kitties.Models.User();
 	Kitties.user.fetch();
 	
-	var headerView = new Kitties.Views.Header({});
-	$('header').html(headerView.render().$el);
+	Kitties.cart = new Kitties.Models.Cart({ user: Kitties.user });
+	Kitties.cart.fetch();
 	
+  Kitties.initialize();
 });

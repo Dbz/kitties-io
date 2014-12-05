@@ -1,6 +1,11 @@
 class Api::OrdersController < ApplicationController
   def create
-    current_cart.add(params[:listing_id].to_i)
+    current_cart.add(params[:data][:listing_id].to_i)
+    render json: ['success']
+  end
+  
+  def update
+    current_cart.add(params[:data][:listing_id].to_i)
     render json: ['success']
   end
   

@@ -52,7 +52,7 @@ Kitties.Views.Header = Backbone.View.extend({
 	},
 	
 	render: function() {
-		console.log("render")
+		console.log("rendering Header")
 		var templateCode = this.template({});
 		this.$el.html(templateCode);
 		return this;

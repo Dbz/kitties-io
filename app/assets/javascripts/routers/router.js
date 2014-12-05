@@ -10,6 +10,9 @@ Kitties.Routers.Router = Backbone.Router.extend({
 	
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
+		
+		headerView = new Kitties.Views.Header({});
+		$('header').html(headerView.render().$el);
 	},
 	
 	index: function() {

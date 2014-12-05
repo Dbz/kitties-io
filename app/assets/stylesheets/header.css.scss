@@ -141,13 +141,10 @@ nav {
 .cart-dropdown-img {
 	border-radius: 4px;
   display: block;
-  max-width: 65px;
-  max-height: 48px;
-  width: auto;
-//  height: auto;
-//	margin: 0 auto;
-	float: left;
+	width: 68px;
+	height: 48px;
 	margin-left: 10px;
+	object-fit: cover;
 }
 .cart-img-wrapper {
 	width: 80px;

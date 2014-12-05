@@ -1,9 +1,14 @@
 Kitties.Models.Order = Backbone.Model.extend({
-	urlRoot: "api/orders",
+	// url: function() {
+	// 	return "api/orders";
+	// },
+	urlRoot: 'api/orders',
 	
-	initiazlie: function(options) {
-		this.amount = options.amount;
-		this.listing = options.listing;
+	initialize: function(options) {
+		if(options.listing) {
+			this._listing = options.listing;
+			this.amount = options.amount;
+		}
 	},
 	
 	listing: function() {
