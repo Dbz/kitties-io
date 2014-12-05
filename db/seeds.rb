@@ -119,7 +119,8 @@ Orders will be posted to the buyers Kitties.io address within 3 business days an
 Shop.find(3).tags = [tags[3]]
 
 Image.create(shop_id: 3, url: "https://img0.etsystatic.com/051/0/30272423/iusa_75x75.28233324_nkpx.jpg")
-Listing.create(shop_id: 3, name: "Cute Cat Mugs", price: "20", available: 20, description: "
+Image.create(shop_id: 3, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/tickledteal.jpg", shop_banner: true)
+Listing.create(shop_id: 3, name: "Tickled Teal Boutique", price: "20", available: 20, description: "
 ### Crazy Cat Lady Coffee Mug ###
 
 Our designer mugs make the perfect gift for friends and family or just an extra special treat for your someone special ;) 
@@ -226,7 +227,7 @@ Listing.find(9).tags = [tags[1]]
 
 Image.create(listing_id: 9, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/checkmeowtoptimized.png", main_img: true)
 
-Shop.create(name: "Professional Cats", user_id: 3, description: "Ties, and whatnot",
+Shop.create(name: "Chariots Afire", user_id: 3, description: "Ties, and whatnot",
 policies: "
 Shipping
 ----
@@ -248,6 +249,7 @@ As a general rule, refunds and exchanges are not accepted. Please contact me if 
 Shop.find(5).tags = [tags[1]]
 
 Image.create(shop_id: 5, url: "https://img0.etsystatic.com/000/0/6054069/iusa_75x75.6643874.jpg")
+Image.create(shop_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/chariotsafire.jpg", shop_banner: true)
 
 Listing.create(shop_id: 5, name: "Cat Ties", price: 15, available: 250,
 description: "

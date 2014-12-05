@@ -30,6 +30,8 @@ Kitties.Models.Cart = Backbone.Model.extend({
 	addOrder: function(listing) {
 		var order = this.findOrder(listing.get('id'));
 		if(order) {
+			if(order.get('amount') + 1 > listing.get('available'))
+				return;
 			order.set('amount', order.get('amount') + 1);	
 			order.save({ data: { listing_id: listing.get('id') } });
 		} else {

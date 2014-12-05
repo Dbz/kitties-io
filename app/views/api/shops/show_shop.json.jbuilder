@@ -1,4 +1,4 @@
-json.extract! @shop, :id, :description, :policies, :name
+json.extract! @shop, :id, :description, :policies, :name, :location
   
 json.image do
   json.extract! @shop.image, :id, :url

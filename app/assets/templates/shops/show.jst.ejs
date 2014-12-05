@@ -32,7 +32,7 @@
 					<img src='<%= shop.user().image().get('url') %>' class='user-img' id='shop-owner-img'>
 					<br>
 					<span id='shop-owner-name'> <a><%= shop.user().get('username') %></a> </span>
-					<p> User Location </p>
+					<p> <%= shop.escape('location') %> </p>
 					<br>
 					<span><b>Have a question?</b></span>
 					<button class='btn btn-primary'>Contact Shop Owner</button>
