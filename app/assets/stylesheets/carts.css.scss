@@ -52,12 +52,15 @@
 }
 
 .cart-items {
-	border-right: 2px solid #444;
+	border-right: 2px solid #CCC;
 }
 
 .seller-notes {
 	height: 100px;
 	width: 500px;
+	resize: none;
+	border-radius: 3px;
+	border: 1px solid #CCC;
 }
 
 .shop-ship-date {

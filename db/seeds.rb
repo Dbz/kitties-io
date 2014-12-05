@@ -100,7 +100,7 @@ Image.create(shop_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavin
 Listing.create(shop_id: 2, name: "Norwegian Forest Cat", price: 200, available: 1, description: "Its body shape and double coat are what makes this cat so unique. This dense and long-flowing hair provides excellent protection in the winter (and makes it a soft cuddling partner). The Norwegian Forest Cat's well-balanced body structure, equilateral triangle-shaped head and bright emerald green eyes (with a band of gold) also gives it an aura of mystery, while its broad chest and well-developed muscles display the cat's power and strength.
 In addition, the Forest Cat can adapt to the weather and change its coat! During spring, it molts its heavy winter coat and dons a lighter one. In the fall, the cat will again molt and shed its summer coat.")
 
-Listing.find(4).tags = [tags[4]]
+Listing.find(4).tags = [tags[0], tags[4]]
 
 Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/forestcat2optimized.png" , main_img: true)
 Image.create(listing_id: 4, url:"https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/forestcat1optimized.png")

@@ -49,7 +49,7 @@
 				</button>
 			</li>
 		<% } %>
-		<li class='dropdown'>
+		<li class='dropdown' id='cart-dropdown'>
 			<button href="#" class='dropdown-toggle' id='cart' data-toggle="dropdown" aria-expanded='false' type='button'>
 				Cart <%= Kitties.cart.get('amount') %>
 			</button>
@@ -62,16 +62,21 @@
 					</li>
 				<% } else { Kitties.cart.shops().each(function(shop) { %>
 					<li>
-						<a href='#/cart'>
-							<%= shop.get('name') %>
-						</a>
+						<!-- <a href='#/cart'>
+							<%= truncate(shop.get('name'), 24) %>
+						</a> -->
 						<ul id='cart-orders-list'>
 							<% shop.orders().each(function(order) { %>
-								<li class='clearfix'>
-									<a>
+								<li class='cart-shop-order'>
+									<div class='cart-img-wrapper'>
 										<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
-										<%= order.listing().escape('name') %> : <%= order.escape('amount') %>
-									</a>
+									</div>
+									<span class='cart-listing-name'>
+										<%= truncate(order.listing().escape('name'), 15) %>
+									</span>
+									<span class='cart-order-amount'>
+										<%= order.escape('amount') %>
+									</span>
 								</li>
 							<% }) %>
 						</ul>
