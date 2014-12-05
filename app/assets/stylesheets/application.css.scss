@@ -101,6 +101,23 @@ body {
     filter: blur(15px);
 }
 
+
+.auth-error {
+	color: #a94442;
+	font-size: 12px;
+	width: 100%;
+	text-align: center;
+	margin-top: -10px;
+	span {
+		display: none;
+		padding-right: 10px;
+	}
+}
+
+.modal-body ul {
+	padding-left: 15px;
+}
+
 /*				Footer				*/
 footer {
 	height: 200px;
