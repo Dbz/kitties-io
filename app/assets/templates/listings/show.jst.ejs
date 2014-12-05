@@ -105,6 +105,7 @@
 				<div class='panel-footer'>
 					<form id='add-to-cart'>
 						<button type='submit' class='btn' id='cart-button' >Add to Cart</button>
+						<!-- <button class="btn btn-7 btn-7a icon-cart">Add To Cart</button> -->
 					</form>
 				</div>
 			</div>
@@ -127,3 +128,20 @@
 	<% }) %>
 	
 </div>
+<script>
+	var buttons7Click = Array.prototype.slice.call( document.querySelectorAll( '#btn-click button' ) ),
+		buttons9Click = Array.prototype.slice.call( document.querySelectorAll( 'button.btn-8g' ) ),
+		totalButtons7Click = buttons7Click.length,
+		totalButtons9Click = buttons9Click.length;
+
+	buttons7Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+
+	function activate() {
+		var self = this, activatedClass = 'btn-activated';
+		if( !classie.has( this, activatedClass ) ) {
+			classie.add( this, activatedClass );
+			setTimeout( function() { classie.remove( self, activatedClass ) }, 1000 );
+		}
+	}
+
+</script>

@@ -26,7 +26,9 @@
 										</div>
 										<div class='order-info'>
 											<h4>
-												<a href='/#listings/<%= order.listing().get('id') %>'><%= order.listing().get('name') %></a>
+												<a href='/#listings/<%= order.listing().get('id') %>'>
+													<%= truncate(order.listing().escape('name'), 22) %>
+												</a>
 											</h4>
 											<span> Quantity: <%= order.escape('amount') %> </span>
 											<% amount += Number(order.escape('amount')) %>
@@ -49,8 +51,8 @@
 							</div>
 							<div class='col-md-4'>
 								<div class='cart-payment-wrapper'>
-									<p class='shop-ship-date'> Ready to ship in <%= shop.get('expected_ship_date') %> </p>
-									<span> Final Quatity: <%= amount %> </span>
+									<p class='shop-ship-date'> Ready to ship in <%= shop.escape('expected_ship_date') %> </p>
+									<span> Final Quantity: <%= amount %> </span>
 									<br>
 									<span>
 										Final Total: <span class='product-price'>$<%= total %></span><span class='product-currency'> USD</span>
@@ -63,7 +65,7 @@
 					</div>
 					
 					<div class='panel-footer'>
-						<p> Note to seller </p>
+						<p class='note-to-seller'> Note to seller </p>
 						<textarea class='seller-notes' placeholder=" You can enter any info needed to complete your order or write a note to the shop"></textarea>
 					</div>
 					

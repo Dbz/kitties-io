@@ -65,15 +65,17 @@
 						<ul id='cart-orders-list'>
 							<% shop.orders().each(function(order) { %>
 								<li class='cart-shop-order'>
-									<div class='cart-img-wrapper'>
-										<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
-									</div>
-									<span class='cart-listing-name'>
-										<%= order.listing().escape('name') %>
-									</span>
-									<span class='cart-order-amount'>
-										<%= order.escape('amount') %>
-									</span>
+									<a href='#/cart'>
+										<div class='cart-img-wrapper'>
+											<img src='<%= order.listing().mainImage().escape('url') %>' class='cart-dropdown-img'>
+										</div>
+										<span class='cart-listing-name'>
+											<%= truncate(order.listing().escape('name'), 14) %>
+										</span>
+										<span class='cart-order-amount'>
+											<%= order.escape('amount') %>
+										</span>
+									</a>
 								</li>
 							<% }) %>
 						</ul>

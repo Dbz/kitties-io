@@ -9,17 +9,20 @@ div .favorite-item {
 .favorite-item-img {
 	margin-left: 4px;
 	margin-right: 4px;
+	display: block;
 	width: 330px;
 	height: 250px;
-	background: black;
+	object-fit: cover;
 	border-radius: 4px;
 }
 .product-money {
 	float: right;
 }
 img.other-seller-product {
-	height: 83px;
+	display: block;
 	width: 100px;
+	height: 83px;
+	object-fit: cover;
 	opacity: 1.0;
 	-webkit-transition: opacity .1s ease-in-out;
 }
@@ -57,7 +60,6 @@ img.other-seller-product:hover {
 .seller-image img{
 	height: 80px;
 	width: 80px;
-	background: black;
 }
 .seller-bio, .seller-bio:hover {
 	display: table-cell;

@@ -11,7 +11,9 @@ Image.create(user_id: 1, url: "http://www.hollywoodreporter.com/sites/default/fi
 
 User.create(username: "John", password: "johnjohn")
 User.create(username: "Matt", password: "mattmatt")
-User.create(username: "Some Dude", password: "somedude")
+User.create(username: "Charlie", password: "somedude")
+
+Image.create(user_id: 4, url: "https://img1.etsystatic.com/004/0/13115649/iusa_75x75.20782193_ftm2.jpg")
 
 User.create(username: "Crazy Cat Lady", password: "crazycatlady")
 Image.create(user_id: 5, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/crazycatlady2.jpg")
@@ -51,11 +53,13 @@ Review.create(
   content: "BEST SELLER ON HERE",
   stars: 5,
   listing_id: 1,
-  user_name: "Some Dude",
+  user_name: "Charlie",
   user_id: 4
 )
 
 Listing.create(name: "Van Cat", price: 500, available: 27, shop_id: 1, description: "Known for their mismatching eye colors and love of swimming, Van cats are the purrfect pets. This furry companion is a champion snuggler.")
+
+Listing.find(2).tags = [tags[0]]
 
 Image.create(listing_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/vancat1optimized.png", main_img: true)
 Image.create(listing_id: 2, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/vancat3optimized.png")
@@ -197,6 +201,15 @@ Listing.find(7).tags = [tags[1], tags[3], tags[4]]
 
 Image.create(listing_id: 7, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/dashingthroughthesnowoptimized.png", main_img: true)
 
+Review.create(
+  content: "The wrong size came in the mail. Nice fit.",
+  stars: 3,
+  listing_id: 7,
+  user_id: 4,
+  user_name: "Charlie"
+)
+
+
 Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
 "
 
@@ -282,53 +295,288 @@ Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyours
 Image.create(listing_id: 10, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/cattie4optimized.png")
 
 
-Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
+Listing.create(shop_id: 5, name: "Cat Bow Ties", price: 15, available: 250,
+description: "
+
+## \"Class up your cat\" 
+
+There's nothing like a new suit and tie to make a man feel sharp. \"But what about my cat?\", many loving cat-owners ask themselves. \"Doesn't he deserve to feel sharp?\" Of course he does. 
+These collars feature a white shirt collar with a polka dot bow tie and a black elastic band. (See below for links to other prints) They are comfortable, washable, and stylish. Add a bell to the bow tie style for $1 by purchasing this listing with your order:
+What more could your handsome friend ever ask for? 
+
+My Charlie has worn them exclusively as his collar for over 2 years now. I created the original bow tie for a black and white party I hosted, my cat hates all collars so I figured it would be on for an hour tops. To my surprise he wore it happily after about 30 minutes of adjustment from no collar at all. They must be more comfortable for cats than regular collars, as they are elastic, snug enough to not fall off, but not too tight and very light weight. I've found from Charlie and customers' feedback that it can take up to a day of adjustment, where the cat may fiddle with it a bit, but they seem to adjust, so far in every case. It is smaller than other cat ties and bow ties out there (in my opinion more proportionate to the cat) which may help with the comfort as well.
+I love these collars and I'm happy to answer any questions :)
+See customer photos here: http://www.chariots-afire-cats.tumblr.com
+
+The first picture features the blue polka dot bow tie.
+
+
+Care Instructions
+---
+
+Machine Wash
+Tumble Dry
+
+Handmade in the USA
+===
+")
+
+Listing.find(11).tags = [tags[1], tags[2], tags[3]]
+
+Image.create(listing_id: 11, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/bowtie1optimized.png", main_img: true)
+Image.create(listing_id: 11, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/bowtie2optimized.png")
+Image.create(listing_id: 11, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/bowtie3optimized.png")
+
+Review.create(
+  content: 
+  "
+  My cat is a ladies man
+  ----
+  #### You really want this. All the girl cats go me-wow!
+  ",
+  stars: 5,
+  listing_id: 11,
+  user_name: "Crazy Cat Lady",
+  user_id: 5
+)
+
+Shop.create(name: "MyWallStickers", user_id: 4, description: "Stickers!!!!!!", location: "Tennesse",
+policies: "
+Payment
+----
+
+Please contact me directly if you need a rush on the production of your order. Your order will ship USPS First Class/First Class international within the quoted time in the item listing. Priority 2-3 Day shipping upgrades are available for US orders only. These upgrades rush the ship time only, not the listed processing time. Tracking information provided in most cases. You may request insurance before purchase for a small fee. You will be notified upon shipment of your purchase. 
+
+Payment is required within 5 days. We accept PayPal, credit cards and gift cards. 9% sales tax will be added if you live in TN.
+
+Shipping
+---
+
+To US States: $6 
+To Puerto Rico: $8, 1-2 weeks shipping time 
+To Canada: $20, 1-2 weeks shipping time
+To UK: $20, 1-2 weeks shipping time
+To Western Europe : $22, 2+ weeks shipping time (Belgium, Denmark, France, Italy, Netherlands, Spain, + Switzerland)
+To Germany: $35, 2+ weeks shipping time
+To Rest of Europe: $30, 2+ weeks shipping time 
+To Australia & New Zealand: $25, 2+ weeks shipping time
+To Asia: $35, 2+ weeks shipping time
+To Middle East: $35, 2+ weeks shipping time
+To Africa: $35, 2+ weeks shipping time
+To Latin America: $35, 2+ weeks shipping time
+
+####IMPORTANT NOTE ABOUT INTERNATIONAL SHIPPING! The recipient is responsible for any custom fees or taxes if assessed by their country.
+
+Refunds and Exchanges
+---
+
+Our products are top notch and our customer service is truly divine! That said, you may return any unused/undamaged item within 30 days from the date of purchase. You are responsible for the shipping costs for returned items. You must, however, first contact us to let us know that reason for the return. Once we receive the unused/undamaged item, we will gladly but (let's be honest) sadly refund your credit card or PayPal account for the full amount minus the shipping charges and a $5 restocking fee. 
+
+In the event of a lost package, we’ll ship you another at no additional cost. 
+
+Additional Policies and FAQs
+---
+
+All designs and photographs are copyrighted by Michael Goins, Inc. with all rights reserved and may not be copied, reproduced, or used for publications without written permission.
+
+####FAQs
+Can I expedite the order?
+We can expedite orders if needed. Give us a call at 888-945-4443 and we will give you quotes for you shipping rate options.
+
+How do I track my order?
+Once it has shipped you will receive a Tracking Code via email. Many times this message goes to the Junk Mail folder, so check there if you haven’t received anything. Call us at 888-945-4443 if you cannot find your tracking code. 
+
+####STICKERS
+Can I purchase individual stickers from a kit?
+We are working to create mini sticker kits for all our themes, so if you don’t see what you are looking for today, check back again with us next week. 
+
+What type of stickers are they? And are they reusable? 
+Just peel and stick. Our wall stickers are repositionable, removable, and reusable. They are made from SafeCling™, an innovative fabric adhesive material (not vinyl) that sticks well to walls, is easy-to apply and easy-to-clean. It is virtually impossible to mess up and leaves no messy residue when you remove it from your walls. The fabric is crumple-free and tear-resistant. 
+
+How do I apply the stickers? I don’t want to mess them up. 
+No tools are necessary. It is really very easy. Just peel the sticker from the backing, place it on the wall, smoothing the sticker out as you work from one side to the other. You might need an extra hand for the larger stickers. If any part of the sticker gets stuck to the adhesive part, just gently separate it. 
+
+How do I save the wall stickers once I remove them from the wall?
+Return them to their original paper backing, roll and return it to its mailing tube. Make sure the tube is clean and free from debris. 
+
+Can I clean the wall stickers?
+Yes, just wipe them gently with a damp cloth. 
+
+How many times can I reapply the stickers?
+Many, many, many. As long as the adhesive side of the sticker remains free of dust and other debris, you’ll be able to reapply the stickers over and over again. Just be careful for the adhesive side not to touch carpet or fabric as this will lessen the adhesion substantially. 
+
+")
+
+Shop.find(6).tags = [tags[1], tags[2], tags[3], tags[4]]
+
+Image.create(shop_id: 6, url: "https://img1.etsystatic.com/004/0/13115649/iusa_75x75.20782193_ftm2.jpg")
+Image.create(shop_id: 6, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/mywallstickersbanner.jpg", shop_banner: true)
+
+Listing.create(shop_id: 6, name: "Sitting Cat Wall Sticker - Repositionable Floral Cat Wall Decal", price: 23, available: 217,
+description: "
+
+If you are proud of your title as \"crazy cat lady\", this beautiful cat sticker decal is perfect for you! Vibrant and unique, this mesmerizing sitting cat decal is colored with a rainbow of radiant colors in a funky floral pattern. The fun feline sticker wall design will look great in the bedroom, playroom, hallway, bathroom, kitchen and more and is adored by babies, young children, teens and grown-ups alike. Unlike vinyl decals, our wall stickers are made of an innovative fabric material that is ultra easy to apply – just peel and stick. These cat decals are removable, repostionable, layerable, tear-resistant and mess-free. You’ll love everything about this cat themed wall sticker, from the quality of the material, to the ease of application, to its funky and fun floral design!
+
+Available in the direction shown or reversed (*) and in 4 different sizes: 
+small (S/Sr*): 10\"w x 11\"h
+medium (M/Mr*): 14.5\"w x 16.5\"h
+large (L/Lr*): 22\"w x 24.5\"h
+extra large (XL/XLr*): 29.4\"w x 32.5\"h
+
+At a glance:
+- Colorful cat wall sticker / wall decal!
+- Great for cat lovers of all ages!
+- Coordinating name signs available! 
+- Mess-free and repositionable wall decal sticker
+- Available in multiple sizes and as shown or reversed*
+- No white edges – looks painted on the wall
+- So easy – just peel and stick
+- Leaves no residue when removed
+
+")
+
+Listing.find(12).tags = [tags[2], tags[3], tags[4]]
+
+Image.create(listing_id: 12, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/sittingcatwallstickeroptimized.png", main_img: true)
+Image.create(listing_id: 12, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/sittingcatwallsticker2optimized.png")
+
+Review.create(
+  content: 
+  "
+  I put these all over the house! Now my cats have more friends!
+  ----
+  ",
+  stars: 5,
+  listing_id: 13,
+  user_name: "Crazy Cat Lady",
+  user_id: 5
+)
+
+Review.create(
+  content: 
+  "
+  Awesome sticker
+  ",
+  stars: 5,
+  listing_id: 12,
+  user_name: "Danny",
+  user_id: 1
+)
+
+Review.create(
+  content: 
+  "
+  My cat didn't like the new sticker
+  ",
+  stars: 1,
+  listing_id: 12,
+  user_name: "Matt",
+  user_id: 3
+)
+
+Listing.create(shop_id: 6, name: "Cat Wall Sticker Trio - Set of 3 Stickers - Repositionable Cat Wall Decals in Flower Pattern", price: 23, available: 217,
+description: "
+
+Dazzling and colorful, you will never see anything like this wonderful cat sticker decal set. Anyone who is fond of cats will absolutely adore this cat wall decor! One of the cats stares with a piercing gaze, one stretches lazily, and one walking exploring his surroundings. They are designed with a rainbow of radiant colors in a funky floral pattern. The feline sticker wall design will look great in the bedroom, playroom, hallway, bathroom, kitchen and more and is adored by babies, young children, teens and
+grown-ups alike. Unlike vinyl decals, our wall stickers are made of an innovative fabric material that is ultra easy to apply – just peel and stick. These cat decals are removable, repostionable, layerable, tear-resistant and mess-free. You’ll love everything about this cat themed wall sticker, from the quality of the material, to the ease of application, to its funky and fun floral design! 
+
+Available in the direction shown or reversed (*) and in 4 different sizes: 
+small (S/Sr*): 10\"w x 11\"h
+medium (M/Mr*): 14.5\"w x 16.5\"h
+large (L/Lr*): 22\"w x 24.5\"h
+extra large (XL/XLr*): 29.4\"w x 32.5\"h
+
+At a glance:
+* Set of 3 decorative cat wall stickers / wall decals!
+* Great for cat lovers of all ages!
+* Coordinating name signs available! 
+* Mess-free and re-positionable wall decal sticker
+* Available in multiple sizes
+* No white edges – looks painted on the wall
+* So easy – just peel and stick
+* Leaves no residue when removed
+
+")
+
+Listing.find(13).tags = [tags[2], tags[3]]
+
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/triosticker1optimized.png", main_img: true)
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/triosticker2optimized.png")
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/triosticker3optimized.png")
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/triosticker4optimized.png")
+Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/triosticker5optimized.png")
+
+Review.create(
+  content: 
+  "
+  ### I LOVE CAT STICKERS
+  ",
+  stars: 5,
+  listing_id: 12,
+  user_name: "Crazy Cat Lady",
+  user_id: 5
+)
+
+Review.create(
+  content: 
+  "
+  Cool set of stickers
+  ",
+  stars: 4,
+  listing_id: 13,
+  user_name: "John",
+  user_id: 2
+)
+
+Listing.create(shop_id: 4, name: "Kitty Cat Shirt Cute Cats T-Shirt Women White T Shirts Size S M L XL", price: 16, available: 35, description:
 "
+Kitty Cat Shirt Cute Pet Animal Womens T Shirts Print Design Size S M L XL
 
-***Tends to run one size bigger***
+MEASUREMENTS
 
-50% Cotton/50% Polyester Pre-shrunk Fleece
+SIZE: Small
 
-Seamed 1x1 ribbed collar with spandex
+►Chest : 19\" Inches (Armpit to Armpit)
+►Length : 25.5\" Inches (Shoulder To Bottom)
 
-Concealed seam on cuffs")
-Image.create(listing_id: 11, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+SIZE: Medium
+
+►Chest : 19.5\" Inches (Armpit to Armpit)
+►Length : 27\" Inches (Shoulder To Bottom)
+
+SIZE: Large
+
+►Chest : 21\" Inches (Armpit to Armpit)
+►Length : 28\" Inches (Shoulder To Bottom)
+
+SIZE: Extra Large
+
+►Chest : 23\" Inches (Armpit to Armpit)
+►Length : 29\" Inches (Shoulder To Bottom)
+
+Best Quality fabric and printed screen.
+☆ Please check the above measurements carefully ☆
 
 
-Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
-"
+")
 
-***Tends to run one size bigger***
+Listing.find(14).tags = [tags[1], tags[3]]
 
-50% Cotton/50% Polyester Pre-shrunk Fleece
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/kittycatshirtoptimized.png", main_img: true)
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/kittycatshirt2optimized.png")
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/kittycatshirt3optimized.png")
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/kittycatshirt4optimized.png")
+Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/kittycatshirt5optimized.png")
 
-Seamed 1x1 ribbed collar with spandex
-
-Concealed seam on cuffs")
-Image.create(listing_id: 12, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
-
-Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
-"
-
-***Tends to run one size bigger***
-
-50% Cotton/50% Polyester Pre-shrunk Fleece
-
-Seamed 1x1 ribbed collar with spandex
-
-Concealed seam on cuffs")
-Image.create(listing_id: 13, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
-
-Listing.create(shop_id: 4, name: "Meowy Christmas", price: 17, available: 100, description:
-"
-
-***Tends to run one size bigger***
-
-50% Cotton/50% Polyester Pre-shrunk Fleece
-
-Seamed 1x1 ribbed collar with spandex
-
-Concealed seam on cuffs")
-Image.create(listing_id: 14, url: "https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/meowychristmasoptimized.png", main_img: true)
+Review.create(
+  content: 
+  "
+  My girlfriend loved it!
+  ",
+  stars: 5,
+  listing_id: 14,
+  user_name: "John",
+  user_id: 2
+)
 
 

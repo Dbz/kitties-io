@@ -1,0 +1,158 @@
+/*@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}*/
+
+/*@font-face {
+  font-family: 'Icomoon';
+  src:font-url('/assets/fonts/icomoon/icomoon.eot');
+  src:font-url('/assets/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    font-url('/assets/fonts/icomoon/icomoon.svg#icomoon') format('svg'),
+    font-url('/assets/fonts/icomoon/icomoon.woff') format('woff'),
+    font-url('/assets/fonts/icomoon/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url(font-path('icomoon.eot') + "?#iefix") format('embedded-opentype'),
+         url(font-path('icomoon.woff')) format('woff'), 
+         url(font-path('icomoon.ttf'))  format('truetype'),
+         url(font-path('icomoon.svg') + "#icomoon") format('svg');
+}
+
+/* General button style (reset) */
+#add-to-cart .btn {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#add-to-cart .btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-envelope:before {
+	content: "\e000";
+}
+
+.icon-cart:before {
+	content: "\e007";
+}
+
+.icon-cart-2:before {
+	content: "\e008";
+}
+
+.icon-heart:before {
+	content: "\e009";
+}
+
+
+/* Button 7 */
+#add-to-cart .btn-7 {
+	background: rgb(242, 208, 59);	
+	color: #777;
+	border-radius: 7px;
+	padding: 10px 60px 10px 90px;
+}
+
+/* Button 7a */
+#add-to-cart .btn-7a {
+	overflow: hidden;
+}
+
+#add-to-cart .btn-7a:before {
+	position: absolute;
+	left: 0;
+	width: 40%;
+	font-size: 160%;
+	line-height: 0.8;
+	color: #000;
+}
+
+#add-to-cart .btn-7a.btn-activated {
+	-webkit-animation: fadeOutText 0.5s;
+	-moz-animation: fadeOutText 0.5s;
+	animation: fadeOutText 0.5s;
+}
+
+#add-to-cart .btn-7a.btn-activated:before {
+	-webkit-animation: moveToRight 0.5s;
+	-moz-animation: moveToRight 0.5s;
+	animation: moveToRight 0.5s;
+}
+
+@-webkit-keyframes fadeOutText {
+	0% { color: transparent; }
+	80% { color: transparent; }
+	100% { color: #000; }
+}
+
+@-moz-keyframes fadeOutText {
+	0% { color: transparent; }
+	80% { color: transparent; }
+	100% { color: #000; }
+}
+
+@keyframes fadeOutText {
+	0% { color: transparent; }
+	80% { color: transparent; }
+	100% { color: #000; }
+}
+
+@-webkit-keyframes moveToRight {
+	80% { -webkit-transform: translateX(250%); }
+	81% { opacity: 1; -webkit-transform: translateX(250%); }
+	82% { opacity: 0; -webkit-transform: translateX(250%); }
+	83% { opacity: 0; -webkit-transform: translateX(-50%); }
+	84% { opacity: 1; -webkit-transform: translateX(-50%);  }
+	100% { -webkit-transform: translateX(0%); }
+}
+
+@-moz-keyframes moveToRight {
+	80% { -moz-transform: translateX(250%); }
+	81% { opacity: 1; -moz-transform: translateX(250%); }
+	82% { opacity: 0; -moz-transform: translateX(250%); }
+	83% { opacity: 0; -moz-transform: translateX(-50%); }
+	84% { opacity: 1; -moz-transform: translateX(-50%);  }
+	100% { -moz-transform: translateX(0%); }
+}
+
+@keyframes moveToRight {
+	80% { transform: translateX(250%); }
+	81% { opacity: 1; transform: translateX(250%); }
+	82% { opacity: 0; transform: translateX(250%); }
+	83% { opacity: 0; transform: translateX(-50%); }
+	84% { opacity: 1; transform: translateX(-50%);  }
+	100% { transform: translateX(0%); }
+}

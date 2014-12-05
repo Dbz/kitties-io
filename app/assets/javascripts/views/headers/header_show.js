@@ -7,19 +7,31 @@ Kitties.Views.Header = Backbone.View.extend({
 	initialize: function(options) {
 		this.listenTo(Kitties.cart, "sync", this.render);		
 		this.listenTo(Kitties.user, "sync", this.render);
-		this.listenTo(Kitties.cart, 'addOrder', this.addOrder);
+		
+	  // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+	  $('#cart-menu').on('show.bs.dropdown', function(e){
+	  			debugger
+	    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+	  });
+
+	  // ADD SLIDEUP ANIMATION TO DROPDOWN //
+	  $('#cart-menu').on('hide.bs.dropdown', function(e){
+	    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+	  });
+		
 	},
 	
 	events: {
 		"submit #search-wrapper": "search",
 		"click #cart": "cart",
 		"click .login": "openModal",
-		"click #logout": "logout"
+		"click #logout": "logout",
+		"show.bs.dropdown #cart-dropdown": "showCartMenu"
 	},
 	
-	addOrder: function (order) {
-		debugger
-		
+	showCartMenu: function(e) {
+		debugger;
+		this.$el.find('.dropdown-menu').first().stop(true, true).slideDown();
 	},
 	
 	logout: function(event) {

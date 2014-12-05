@@ -113,8 +113,16 @@ nav {
 
 /*				Cart Menu CSS				*/
 
+//.dropdown #cart-menu {
+//	visibility: hidden;
+//	transition: visibility 1s ease;
+//
+//}
+
+
 .dropdown:hover #cart-menu {
 	display: block;
+//	visibility: visible;
 }
 
 #cart-menu {
@@ -123,6 +131,10 @@ nav {
 
 #cart-orders-list {
 	list-style: none;
+	a {
+		text-decoration: none;
+		color: #707070;
+	}
 }
 
 .cart-shop-order {
