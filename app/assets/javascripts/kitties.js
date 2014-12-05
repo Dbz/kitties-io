@@ -18,4 +18,14 @@ $(document).ready(function(){
 	Kitties.cart.fetch();
 	
   Kitties.initialize();
+	
+	$('#auth-modal').on('hide.bs.modal', function(event) {
+		$('#main-content').removeClass('blur');
+		$('header').removeClass('blur');
+	});
+	
+	$('#auth-modal').on('show.bs.modal', function(event) {
+		$('#main-content').addClass('blur');
+		$('header').addClass('blur');
+	});
 });

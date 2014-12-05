@@ -93,6 +93,14 @@ body {
 	width: 500px;
 }
 
+.blur{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+
 /*				Footer				*/
 footer {
 	height: 200px;

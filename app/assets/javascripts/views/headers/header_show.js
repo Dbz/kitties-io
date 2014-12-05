@@ -8,7 +8,6 @@ Kitties.Views.Header = Backbone.View.extend({
 		this.listenTo(Kitties.cart, "sync", this.render);		
 		this.listenTo(Kitties.user, "sync", this.render);
 		this.listenTo(Kitties.cart, 'addOrder', this.addOrder);
-		header = this;
 	},
 	
 	events: {
