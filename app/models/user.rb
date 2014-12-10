@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_reader :password
   has_many :reviews
   has_one :image
+  has_one :cart
   
   validates :username, :session_token, presence: true
   validates :username, uniqueness: true

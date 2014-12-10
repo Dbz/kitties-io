@@ -30,7 +30,6 @@ Kitties.Views.Header = Backbone.View.extend({
 	},
 	
 	showCartMenu: function(e) {
-		debugger;
 		this.$el.find('.dropdown-menu').first().stop(true, true).slideDown();
 	},
 	
