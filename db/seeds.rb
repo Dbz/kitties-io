@@ -580,3 +580,4 @@ Review.create(
 )
 
 
+User.create(username: "guest", password: "guestguest");

@@ -3,42 +3,67 @@
 	<div class='form-group'>
 		<label for='username' class='col-sm-2 control-label'>Username</label>
 		<div class='col-sm-10'>
-			<input type='text' name='user[username]' id='username' class='form-control' place-holder='Enter Username'>
+			<input type='text' name='user[username]' class='form-control username' place-holder='Enter Username'>
 		</div>
 	</div>
 	<div class='form-group'>
 		<label for='password' class='col-sm-2 control-label'>Password</label>
 		<div class='col-sm-10'>
-			<input type='password' name='user[password]' id='username' class='form-control' place-holder='Password'>
+			<input type='password' name='user[password]' class='form-control password' place-holder='Password'>
 		</div>
 	</div>
 	<div class='auth-error'>
 		<span class='invalid-combination'>Invalid Username/Password</span>
 	</div>
 	<button type='submit' class='btn btn-primary'>Log In!</button>
+	<button type='submit' class='btn btn-info' id='guest-login'> Guest Log In</button>
 </form>
 
 <script type="text/javascript">
+
+$("form button[type=submit]").click(function() {
+    $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
+    $(this).attr("clicked", "true");
+});
+
 	$(function () {
 		$('#signin-form').on('submit', function (event) {
 			event.preventDefault();
-      $.ajax({
-      	url: '/api/sessions',
-				data: $(event.currentTarget).serialize(),
-				type: "POST",
-				success: function (data) {
-					$('#auth-modal').modal('hide')
-					window.Kitties.user = new Kitties.Models.User({ id: data.id });
-					window.Kitties.cart.fetch();
-				},
-				error: function (resp) {
-					if(~resp.responseJSON.indexOf("Invalid Username/Password"))
-						$('.invalid-combination').show();
-					$(event.currentTarget).on('submit', function() {
-						$('.invalid-combination').hide();
-					});
-				},
-      })
+			var button = $("button[type=submit][clicked=true]").attr('id');
+			if(button == "guest-login") {
+				var user = $('#signin-form').find('.username').val("");
+				var password = $('#signin-form').find('.password').val("");
+				var index = 0;
+				var interval = setInterval(function() {
+					user.val("guest".substring(0, index++))
+					if(index == 6)
+						clearInterval(interval);
+				}, 30);
+				var interval = setInterval(function() {
+					password.val("guestguest".substring(0, index++))
+					if(index == 12) {
+						clearInterval(interval);
+			      $.ajax({
+			      	url: '/api/sessions',
+							data: $('#signin-form').serialize(),
+							type: "POST",
+							success: function (data) {
+								$('#auth-modal').modal('hide')
+								window.Kitties.user = new Kitties.Models.User({ id: data.id });
+								window.Kitties.cart.fetch();
+							},
+							error: function (resp) {
+								if(~resp.responseJSON.indexOf("Invalid Username/Password"))
+									$('.invalid-combination').show();
+								$('#signin-form').on('submit', function() {
+									$('.invalid-combination').hide();
+								});
+							},
+			      });
+					}
+				}, 30);
+			}
+      
 		})
 	})
 </script>
