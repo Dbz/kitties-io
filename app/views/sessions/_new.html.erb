@@ -21,10 +21,30 @@
 
 <script type="text/javascript">
 
-$("form button[type=submit]").click(function() {
-    $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
-    $(this).attr("clicked", "true");
-});
+	$("form button[type=submit]").click(function() {
+	    $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
+	    $(this).attr("clicked", "true");
+	});
+	
+	function submit() {
+    $.ajax({
+    	url: '/api/sessions',
+			data: $('#signin-form').serialize(),
+			type: "POST",
+			success: function (data) {
+				$('#auth-modal').modal('hide')
+				window.Kitties.user = new Kitties.Models.User({ id: data.id });
+				window.Kitties.cart.fetch();
+			},
+			error: function (resp) {
+				if(~resp.responseJSON.indexOf("Invalid Username/Password"))
+					$('.invalid-combination').show();
+				$('#signin-form').on('submit', function() {
+					$('.invalid-combination').hide();
+				});
+			},
+    });
+	}
 
 	$(function () {
 		$('#signin-form').on('submit', function (event) {
@@ -43,25 +63,11 @@ $("form button[type=submit]").click(function() {
 					password.val("guestguest".substring(0, index++))
 					if(index == 12) {
 						clearInterval(interval);
-			      $.ajax({
-			      	url: '/api/sessions',
-							data: $('#signin-form').serialize(),
-							type: "POST",
-							success: function (data) {
-								$('#auth-modal').modal('hide')
-								window.Kitties.user = new Kitties.Models.User({ id: data.id });
-								window.Kitties.cart.fetch();
-							},
-							error: function (resp) {
-								if(~resp.responseJSON.indexOf("Invalid Username/Password"))
-									$('.invalid-combination').show();
-								$('#signin-form').on('submit', function() {
-									$('.invalid-combination').hide();
-								});
-							},
-			      });
+			      submit();
 					}
 				}, 30);
+			} else {
+				submit();
 			}
       
 		})
