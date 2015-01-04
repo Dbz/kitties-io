@@ -4,9 +4,9 @@ Kitties.io is an ecommerce marketplace for buying and selling all things cats. I
 
 It features
 
-* Authentication with sessions, salted and encrypted passwords using BCrypt, and Guest Login (click __Sign In__ on website)
+* Authentication with sessions, salted and encrypted passwords using BCrypt, and Guest Login (click __Sign__ __In__ on website)
 * Full site search and single shop search; Both generate a linkable URL
-* Homepage __Recent Favorites__ with dynamic content
+* Homepage __Recent__ __Favorites__ with dynamic content
 * Cart separates items by shop, with the ability to remove items or whole shops
 * Shop pages with search functionality
 * Listing pages with a carousel of item images, details, reviews, shop policies, and searchable tags
