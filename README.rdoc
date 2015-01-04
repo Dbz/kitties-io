@@ -1,28 +1,18 @@
-== README
+== Kitties.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kitties.io is an ecommerce marketplace for buying and selling all things cats. It is a clone of Etsy.
 
-Things you may want to cover:
+It features
 
-* Ruby version
++ Authentication with sessions, salted and encrypted passwords using BCrypt, and Guest Login (click **Sign In** on website)
++ Full site search and single shop search; Both generate a linkable URL
++ Homepage **Recent Favorites** with dynamic content
++ Cart separates items by shop, with the ability to remove items or whole shops
++ Shop pages with search functionality
++ Listing pages with a carousel of item images, details, reviews, shop policies, and searchable tags
 
-* System dependencies
+Technologies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* HTML5 + SCSS + Bootstrap
+* Javascript + jQuery + Backbone.js + Marionette.js
+* Ruby + Ruby on Rails
