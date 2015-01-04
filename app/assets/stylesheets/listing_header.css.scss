@@ -1,42 +1,42 @@
 #listing-shop-header {
-	padding: 15px 0px;
+  padding: 15px 0px;
 }
 #listing-shop-header-name {
-	float: left;
-	line-height: 86px;
-	margin-left: 20px;
-	font-weight: bold;
-	font-size: 30px;
-	a {
-		color: black;
-		text-decoration: none;
-	}
-	a:hover {
-		border-bottom: 1px solid #F2D03B;
-	}
+  float: left;
+  line-height: 86px;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 30px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: 1px solid #F2D03B;
+  }
 }
 #shop-details {
-	float: left;
+  float: left;
 }
 #listing-shop-items {
-	float: right;
+  float: right;
 }
 .listing-shop-header-img {
-	background: white;
-	border: 1px solid #ececec;
-	border-radius: 3px;
-	float: left;
-	margin-left: 20px;
-	img {
-		-webkit-transition: opacity .1s;
-		opacity: 1.0;
-		width: 85px;
-		height: 85px;
-		padding: 3px;
-		border-radius: 3px;
-	}
-	img:hover {
-		opacity: .8;
-		-webkit-transition: opacity .1s;
-	}
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 3px;
+  float: left;
+  margin-left: 20px;
+  img {
+    -webkit-transition: opacity .1s;
+    opacity: 1.0;
+    width: 85px;
+    height: 85px;
+    padding: 3px;
+    border-radius: 3px;
+  }
+  img:hover {
+    opacity: .8;
+    -webkit-transition: opacity .1s;
+  }
 }

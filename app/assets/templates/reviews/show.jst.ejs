@@ -1,39 +1,39 @@
 
 <div class='reviewer'>
-	<img src="<%= review.userImage() %>" class='user-img img-circle'>
-	<h6> Reviewed By </h6>
-	<h6 class='reviewer-name'><a> <%= review.escape('user_name') %></a></h6>
+  <img src="<%= review.userImage() %>" class='user-img img-circle'>
+  <h6> Reviewed By </h6>
+  <h6 class='reviewer-name'><a> <%= review.escape('user_name') %></a></h6>
 </div>
 
 <div class='review-data'>
-	<div class='review-header'>
-		<div class='review-stars'>
-			<% for(var x = review.get('stars'); x < 5; x++) { %>
-				<div class='star'>☆</div>
-			<% } %>
-			<% for(var x = 0; x < review.get('stars'); x++) { %>
-				<div class='star gold'>☆</div>
-			<% } %>
-		</div>
-				
-		<div class='review-date'>
-			<p> <%= review.date() %> </p>
-		</div>
-		
-		<div class='review-body'>
-			<p> <%= marked(review.escape('content')) %> </p>
-		</div>
-		
-		<div class='review-footer'>
-			<div class='review-image'>
-				<img src="<%= review.listing.images().first.url %>">
-			</div>
-			<div class='review-listing-name'>
-				<p> <%= review.listing.get('name') %> </p>
-			</div>
-		</div>
-		
-	</div>
+  <div class='review-header'>
+    <div class='review-stars'>
+      <% for(var x = review.get('stars'); x < 5; x++) { %>
+        <div class='star'>☆</div>
+      <% } %>
+      <% for(var x = 0; x < review.get('stars'); x++) { %>
+        <div class='star gold'>☆</div>
+      <% } %>
+    </div>
+        
+    <div class='review-date'>
+      <p> <%= review.date() %> </p>
+    </div>
+    
+    <div class='review-body'>
+      <p> <%= marked(review.escape('content')) %> </p>
+    </div>
+    
+    <div class='review-footer'>
+      <div class='review-image'>
+        <img src="<%= review.listing.images().first.url %>">
+      </div>
+      <div class='review-listing-name'>
+        <p> <%= review.listing.get('name') %> </p>
+      </div>
+    </div>
+    
+  </div>
 </div>
 
-				
+        

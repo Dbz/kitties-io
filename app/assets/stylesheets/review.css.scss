@@ -1,43 +1,43 @@
 .reviewer {
-	float: left;
-	padding-right: 10px;
-	img {
-		padding-bottom: 5px;
-	}
-	h6 {
-		margin: 0;
-	}
+  float: left;
+  padding-right: 10px;
+  img {
+    padding-bottom: 5px;
+  }
+  h6 {
+    margin: 0;
+  }
 }
 .review-body {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 .review-date {
-	p {
-		margin: 0;
-	}
-	width: 200px;
-	float: right;
+  p {
+    margin: 0;
+  }
+  width: 200px;
+  float: right;
 }
 .review-container {
-	border-bottom: 1px solid gray;
-	padding-top: 25px;
+  border-bottom: 1px solid gray;
+  padding-top: 25px;
 }
 .review-stars {
-	display: inline-block;
-	padding-left: 50px;
+  display: inline-block;
+  padding-left: 50px;
 }
 .star {
  float: right;
  padding: 0 2px;
 }
 .gold {
-	content: "\2605";
-	color: gold;
+  content: "\2605";
+  color: gold;
 }
 #related-items {
-	clear: both;
+  clear: both;
 }
 
 .review-footer {
-	clear:left;
+  clear:left;
 }

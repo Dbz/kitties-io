@@ -1,26 +1,26 @@
 <div id='shop-panel' class='panel panel-default'>
-	<div class='panel-heading center'>
-		<a href='/#shops/<%= shop.get('id') %>'>
-			<img src='<%= shop.image().get('url') %>' class='img-circle user-img'>
-		</a>
-		<h3 class='panel-title'> <%= shop.escape('name') %> </h3>
-		<h5> <%= shop.escape('location') %> </h5>
-	</div>
+  <div class='panel-heading center'>
+    <a href='/#shops/<%= shop.get('id') %>'>
+      <img src='<%= shop.image().get('url') %>' class='img-circle user-img'>
+    </a>
+    <h3 class='panel-title'> <%= shop.escape('name') %> </h3>
+    <h5> <%= shop.escape('location') %> </h5>
+  </div>
 
-	<div class='panel-body'>
-		<% shop.listings().each(function(listing) {  %>
-			<div class='listing-item-img-wrapper'>
-				<a href='/#listings/<%= listing.get('id') %>'>
-					<img src='<%= listing.get('url') %>'>
-				</a>
-				<div class='sidebar-item-text'>
-					<p><a href='/#listings/<%= listing.get('id') %>' class='sidebar-item-name'><%= truncate(listing.escape('name'), 14) %></a></p>
-					<p>
-						<span class='product-price no-underline'>$<%= listing.escape('price') %></span>
-						<span class='product-currency no-underline'>USD</span>
-					</p>
-				</div>
-			</div>
-		<% }) %>
-	</div>
+  <div class='panel-body'>
+    <% shop.listings().each(function(listing) {  %>
+      <div class='listing-item-img-wrapper'>
+        <a href='/#listings/<%= listing.get('id') %>'>
+          <img src='<%= listing.get('url') %>'>
+        </a>
+        <div class='sidebar-item-text'>
+          <p><a href='/#listings/<%= listing.get('id') %>' class='sidebar-item-name'><%= truncate(listing.escape('name'), 14) %></a></p>
+          <p>
+            <span class='product-price no-underline'>$<%= listing.escape('price') %></span>
+            <span class='product-currency no-underline'>USD</span>
+          </p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
 </div>

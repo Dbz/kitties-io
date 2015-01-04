@@ -2,146 +2,146 @@
 </div>
 
 <div id='shop-content' class='margins clearfix'>
-	<div id='left-content'>
-		<div id='image-viewer'>
-			<div class='carousel slide carousel-fade' data-ride='carousel' data-interval='false' id='listing-carousel'>
-				
-				<ol class='carousel-indicators'>
-					<% var len = listing.images().models.length; %>
-					<% if(len) { %>
-						<li data-target="#listing-carousel" data-slide-to="0" class='active'></li>
-					<% } %>
-					<% for(var x = 1; x < len; x++) { %>
-						<li data-target="#listing-carousel" data-slide-to="<%= x %>"></li>
-					<% } %>
-				</ol>
-					
-				<div class='carousel-inner'>
-					<% if(len) { %>
-						<div class='item active'>
-							<img src='<%= listing.mainImage().get('url') %>'>
-						</div>
-					<% } %>
-					<% _(listing.images().models).each(function(image) { %>
-						<% if(!image.get('main_img')) { %>
-							<div class='item'>
-								<img src='<%= image.get('url') %>'>
-							</div>
-						<% } %>
-					<% }); %>
-				</div>
-				
-				<a class='left carousel-control' href='#listing-carousel' data-slide='prev'>
-					<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
-				</a>
-				
-				<a class='right carousel-control' href='#listing-carousel' data-slide='next'>
-					<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
-				</a>
-				
-			</div>
-		</div>
-		
-		<div id='listing-tab-panel'>
-		
-			<ul class='nav nav-tabs'>
-				<li class='active'>
-					<a href='#listing-details' aria-controls='listing-details' data-toggle='tab'>
-						Details
-					</a>
-				</li>
-				<li>
-					<a href='#listing-reviews' aria-controls='listing-reviews' data-toggle='tab'>
-						<% var x = 0 %>
-						<% for(x = 0; x < listing.reviews().averageReview(); x++) { %>
-							<span class='gold'>☆</span>
-						<% } %>
-						<% for(; x < 5; x++) { %>
-							<span>☆</span>
-						<% } %>
-						<span> (<%= listing.reviews().length %>)</span>
-					</a>
-				</li>
-				<li>
-					<a href='#listing-policies' aria-controls='listing-policies' data-toggle='tab'>
-						Policies
-					</a>
-				</li>
-			</ul>
-		
-			<div class='tab-content'>
-				<div id='listing-details' class='tab-pane active fade in'>
-					<p class='center'> <%= marked(listing.escape('description')) %> </p>
-				</div>
-		
-				<div id='listing-reviews' class='tab-pane fade'>
-				</div>
-				
-				<div id='listing-policies' class='tab-pane fade'>
-					<p><%= marked(listing.shop().escape('policies')) %></p>
-				</div>
-			
-			</div>
-		</div>
-		
-	</div>
-	
-	<div id='right-content'>
-		<div class='panel-wrapper'>
-			<div id='item-panel' class='panel panel-default'>
-				<div class='panel-heading'>
-					<h4 class='bold' id='panel-listing-name'> <%= listing.escape('name') %> </h4>
-					<h4 class='bold'> $<%= listing.escape('price') %> <a class='product-currency no-underline'> USD </a> </h4>
-				</div>
-			
-				<div class='panel-body'>
-					<p class='bold underline'> Overview </p>
-					<ul id='overview'>
-						<li> Num Available: <%= listing.escape('available') %> </li>
-						<li> Feedback <span class='gold'><%= listing.reviews().models.length %></span> Reviews </li>
-					</ul>
-				</div>
-			
-				<div class='panel-footer'>
-					<form id='add-to-cart'>
-						<button type='submit' class='btn' id='cart-button' >Add to Cart</button>
-						<!-- <button class="btn btn-7 btn-7a icon-cart">Add To Cart</button> -->
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<div class='panel-wrapper' id='listing-shop-sidebar'>
-		</div>
-		
-	</div>
-	
+  <div id='left-content'>
+    <div id='image-viewer'>
+      <div class='carousel slide carousel-fade' data-ride='carousel' data-interval='false' id='listing-carousel'>
+        
+        <ol class='carousel-indicators'>
+          <% var len = listing.images().models.length; %>
+          <% if(len) { %>
+            <li data-target="#listing-carousel" data-slide-to="0" class='active'></li>
+          <% } %>
+          <% for(var x = 1; x < len; x++) { %>
+            <li data-target="#listing-carousel" data-slide-to="<%= x %>"></li>
+          <% } %>
+        </ol>
+          
+        <div class='carousel-inner'>
+          <% if(len) { %>
+            <div class='item active'>
+              <img src='<%= listing.mainImage().get('url') %>'>
+            </div>
+          <% } %>
+          <% _(listing.images().models).each(function(image) { %>
+            <% if(!image.get('main_img')) { %>
+              <div class='item'>
+                <img src='<%= image.get('url') %>'>
+              </div>
+            <% } %>
+          <% }); %>
+        </div>
+        
+        <a class='left carousel-control' href='#listing-carousel' data-slide='prev'>
+          <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+        </a>
+        
+        <a class='right carousel-control' href='#listing-carousel' data-slide='next'>
+          <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div id='listing-tab-panel'>
+    
+      <ul class='nav nav-tabs'>
+        <li class='active'>
+          <a href='#listing-details' aria-controls='listing-details' data-toggle='tab'>
+            Details
+          </a>
+        </li>
+        <li>
+          <a href='#listing-reviews' aria-controls='listing-reviews' data-toggle='tab'>
+            <% var x = 0 %>
+            <% for(x = 0; x < listing.reviews().averageReview(); x++) { %>
+              <span class='gold'>☆</span>
+            <% } %>
+            <% for(; x < 5; x++) { %>
+              <span>☆</span>
+            <% } %>
+            <span> (<%= listing.reviews().length %>)</span>
+          </a>
+        </li>
+        <li>
+          <a href='#listing-policies' aria-controls='listing-policies' data-toggle='tab'>
+            Policies
+          </a>
+        </li>
+      </ul>
+    
+      <div class='tab-content'>
+        <div id='listing-details' class='tab-pane active fade in'>
+          <p class='center'> <%= marked(listing.escape('description')) %> </p>
+        </div>
+    
+        <div id='listing-reviews' class='tab-pane fade'>
+        </div>
+        
+        <div id='listing-policies' class='tab-pane fade'>
+          <p><%= marked(listing.shop().escape('policies')) %></p>
+        </div>
+      
+      </div>
+    </div>
+    
+  </div>
+  
+  <div id='right-content'>
+    <div class='panel-wrapper'>
+      <div id='item-panel' class='panel panel-default'>
+        <div class='panel-heading'>
+          <h4 class='bold' id='panel-listing-name'> <%= listing.escape('name') %> </h4>
+          <h4 class='bold'> $<%= listing.escape('price') %> <a class='product-currency no-underline'> USD </a> </h4>
+        </div>
+      
+        <div class='panel-body'>
+          <p class='bold underline'> Overview </p>
+          <ul id='overview'>
+            <li> Num Available: <%= listing.escape('available') %> </li>
+            <li> Feedback <span class='gold'><%= listing.reviews().models.length %></span> Reviews </li>
+          </ul>
+        </div>
+      
+        <div class='panel-footer'>
+          <form id='add-to-cart'>
+            <button type='submit' class='btn' id='cart-button' >Add to Cart</button>
+            <!-- <button class="btn btn-7 btn-7a icon-cart">Add To Cart</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class='panel-wrapper' id='listing-shop-sidebar'>
+    </div>
+    
+  </div>
+  
 </div>
 
 <div class='margins' id='tags'>
-	<h3> Related Tags </h3>
-	
-	<% listing.tags().each(function(tag) { %>
-		<a href='#/search?q=<%= encodeURIComponent(tag.escape('name')) %>'>
-			<span class='listing-tag'> <%= tag.escape('name') %> </span>
-		</a>
-	<% }) %>
-	
+  <h3> Related Tags </h3>
+  
+  <% listing.tags().each(function(tag) { %>
+    <a href='#/search?q=<%= encodeURIComponent(tag.escape('name')) %>'>
+      <span class='listing-tag'> <%= tag.escape('name') %> </span>
+    </a>
+  <% }) %>
+  
 </div>
 <script>
-	var buttons7Click = Array.prototype.slice.call( document.querySelectorAll( '#btn-click button' ) ),
-		buttons9Click = Array.prototype.slice.call( document.querySelectorAll( 'button.btn-8g' ) ),
-		totalButtons7Click = buttons7Click.length,
-		totalButtons9Click = buttons9Click.length;
+  var buttons7Click = Array.prototype.slice.call( document.querySelectorAll( '#btn-click button' ) ),
+    buttons9Click = Array.prototype.slice.call( document.querySelectorAll( 'button.btn-8g' ) ),
+    totalButtons7Click = buttons7Click.length,
+    totalButtons9Click = buttons9Click.length;
 
-	buttons7Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
+  buttons7Click.forEach( function( el, i ) { el.addEventListener( 'click', activate, false ); } );
 
-	function activate() {
-		var self = this, activatedClass = 'btn-activated';
-		if( !classie.has( this, activatedClass ) ) {
-			classie.add( this, activatedClass );
-			setTimeout( function() { classie.remove( self, activatedClass ) }, 1000 );
-		}
-	}
+  function activate() {
+    var self = this, activatedClass = 'btn-activated';
+    if( !classie.has( this, activatedClass ) ) {
+      classie.add( this, activatedClass );
+      setTimeout( function() { classie.remove( self, activatedClass ) }, 1000 );
+    }
+  }
 
 </script>

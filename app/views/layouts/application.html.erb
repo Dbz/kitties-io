@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kitties</title>
-	<%= stylesheet_link_tag 'application', media: 'all' %>
+  <title>Kitties</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 
-		<%= javascript_include_tag 'application' %>
-		<%= csrf_meta_tags %>
-		
-		<link rel="icon" type="image/png" href="https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/lovetailsfavicon.png">
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    
+    <link rel="icon" type="image/png" href="https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/lovetailsfavicon.png">
 
-	</head>
-	
-	<body>
-		<header>
-		</header>
+  </head>
+  
+  <body>
+    <header>
+    </header>
 
-		<div id="main-content">
-			<%= yield %>
-		</div>
-		
-		<div class='modal fade' id='auth-modal'>
-			<div class='modal-dialog'>
-				<div class='modal-content'>
+    <div id="main-content">
+      <%= yield %>
+    </div>
+    
+    <div class='modal fade' id='auth-modal'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
 
-					<div class='modal-body'>
-							
-						<button type='button' class='close' data-dismiss='modal'>
-							<span aria-hidden='true'>&times;</span>
-							<span class='sr-only'>Close</span>
-						</button>
-						<ul class='nav nav-tabs'>
-							<li class='active'>
-								<a href='#sign-up-tab' data-toggle='tab'>Sign Up</a>
-							</li>
-							<li>
-								<a href='#sign-in-tab' data-toggle='tab'>Sign In</a>
-							</li>
-						</ul>
-						<br>
-						<div class='tab-content'>
-							<div class='tab-pane active' id='sign-up-tab'>
-								<%= render '/users/new' %>
-							</div>
-							
-							<div class='tab-pane' id='sign-in-tab'>
-								<%= render '/sessions/new' %>
-							</div>
-						</div>
-					</div>
+          <div class='modal-body'>
+              
+            <button type='button' class='close' data-dismiss='modal'>
+              <span aria-hidden='true'>&times;</span>
+              <span class='sr-only'>Close</span>
+            </button>
+            <ul class='nav nav-tabs'>
+              <li class='active'>
+                <a href='#sign-up-tab' data-toggle='tab'>Sign Up</a>
+              </li>
+              <li>
+                <a href='#sign-in-tab' data-toggle='tab'>Sign In</a>
+              </li>
+            </ul>
+            <br>
+            <div class='tab-content'>
+              <div class='tab-pane active' id='sign-up-tab'>
+                <%= render '/users/new' %>
+              </div>
+              
+              <div class='tab-pane' id='sign-in-tab'>
+                <%= render '/sessions/new' %>
+              </div>
+            </div>
+          </div>
 
-				</div>
-			</div>
-		</div>
-				
-	
-			<footer>
-				<div class='margins'>
-					<div class='row'>
-				
-						<div class='col-md-3'>
-							<h5 class='footer-title'> Turn your passion into a business</h5>
-							<ul>
-								<li><button class='btn'>Open a shop</button></li>
-								<li><a href="#">Seller Handbook</a></li>
-							</ul>
-						</div>
-				
-						<div class='col-md-3'>
-							<h5 class='footer-title'>Join the community</h5>
-							<ul>
-								<li><a href="http://www.dbz.rocks">Teams</a></li>
-								<li><a href="#">Upcoming Events</a></li>
-							</ul>
-						</div>
-				
-						<div class='col-md-3'>
-							<h5 class='footer-title'>Resources</h5>
-							<ul>
-								<li><a href="#">Discover and shop</a></li>
-								<li><a href="http://www.dbz.rocks">Blog</a></li>
-							</ul>
-						</div>
-				
-						<div class='col-md-3'>
-							<h5 class='footer-title'>Get to know us</h5>
-							<ul>
-								<li><a href="http://www.dbz.rocks">About</a></li>
-								<li><a href="http://www.dbz.rocks">Careers</a></li>
-							</ul>
-						</div>
-				
-					</div>
-				</div>
-			</footer>
+        </div>
+      </div>
+    </div>
+        
+  
+      <footer>
+        <div class='margins'>
+          <div class='row'>
+        
+            <div class='col-md-3'>
+              <h5 class='footer-title'> Turn your passion into a business</h5>
+              <ul>
+                <li><button class='btn'>Open a shop</button></li>
+                <li><a href="#">Seller Handbook</a></li>
+              </ul>
+            </div>
+        
+            <div class='col-md-3'>
+              <h5 class='footer-title'>Join the community</h5>
+              <ul>
+                <li><a href="http://www.dbz.rocks">Teams</a></li>
+                <li><a href="#">Upcoming Events</a></li>
+              </ul>
+            </div>
+        
+            <div class='col-md-3'>
+              <h5 class='footer-title'>Resources</h5>
+              <ul>
+                <li><a href="#">Discover and shop</a></li>
+                <li><a href="http://www.dbz.rocks">Blog</a></li>
+              </ul>
+            </div>
+        
+            <div class='col-md-3'>
+              <h5 class='footer-title'>Get to know us</h5>
+              <ul>
+                <li><a href="http://www.dbz.rocks">About</a></li>
+                <li><a href="http://www.dbz.rocks">Careers</a></li>
+              </ul>
+            </div>
+        
+          </div>
+        </div>
+      </footer>
 
-		</body>
-		</html>
+    </body>
+    </html>

@@ -1,63 +1,63 @@
-/*				Home Page			*/
+/*        Home Page      */
 #welcoming-display {
-	min-height: 500px;
-	background-image: url("https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/welcome-img.jpg");
-	background-size: 100%;
-	background-width: 100%;
-	margin-top: -9px;
+  min-height: 500px;
+  background-image: url("https://s3-us-west-1.amazonaws.com/spendyoursavingsimages/welcome-img.jpg");
+  background-size: 100%;
+  background-width: 100%;
+  margin-top: -9px;
 }
 #right-text {
-	float: right;
-	color: white;
-	font-weight: bold;
-	font-size: 30px;
-	max-width: 400px;
-	padding-top: 50px;
+  float: right;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  max-width: 400px;
+  padding-top: 50px;
 }
 #recent-favorites {
-	height: 600px;
-	color: #303030;
-	margin-bottom: 50px;
+  height: 600px;
+  color: #303030;
+  margin-bottom: 50px;
 }
 #catch-phrase {
-	color: #707070;
+  color: #707070;
 }
 
 #second-cat-img {
-	margin-top: -10px;
-	max-height: 500px;
-	width: 100%;
-	border-top: 2px solid #555;
-	border-bottom: 2px solid #EEE;
+  margin-top: -10px;
+  max-height: 500px;
+  width: 100%;
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #EEE;
 }
 #personal-statement {
-	img {
-		margin-top: -35px;
-		border: 2px solid #EEE;
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-	}
-	text-align: center;
-	height: 200px;
+  img {
+    margin-top: -35px;
+    border: 2px solid #EEE;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  text-align: center;
+  height: 200px;
 }
 
 #secure-happy {
-	margin-top: 60px;
-	margin-bottom: 60px;
-	height: 300px;
-	p {
-		font-size: 20px;
-		color: #888;
-		line-height: 1.4em;
-	}
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 300px;
+  p {
+    font-size: 20px;
+    color: #888;
+    line-height: 1.4em;
+  }
 }
 .home-img {
-	img {
-		border-radius: 4px;
-	  display: block;
-	  max-width:130px;
-	  max-height:95px;
-	  width: auto;
-	  height: auto;
-		margin: 0 auto;
-	}
+  img {
+    border-radius: 4px;
+    display: block;
+    max-width:130px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
 }

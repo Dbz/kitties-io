@@ -1,81 +1,81 @@
 div .favorite-item {
-	width: 340px;
-	.panel-heading {
-		background-color: white;
-		border: none;
-		padding: 5px 0;
-	}
+  width: 340px;
+  .panel-heading {
+    background-color: white;
+    border: none;
+    padding: 5px 0;
+  }
 }
 .favorite-item-img {
-	margin-left: 4px;
-	margin-right: 4px;
-	display: block;
-	width: 330px;
-	height: 250px;
-	object-fit: cover;
-	border-radius: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: block;
+  width: 330px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 .product-money {
-	float: right;
+  float: right;
 }
 img.other-seller-product {
-	display: block;
-	width: 100px;
-	height: 83px;
-	object-fit: cover;
-	opacity: 1.0;
-	-webkit-transition: opacity .1s ease-in-out;
+  display: block;
+  width: 100px;
+  height: 83px;
+  object-fit: cover;
+  opacity: 1.0;
+  -webkit-transition: opacity .1s ease-in-out;
 }
 img.other-seller-product:hover {
-	opacity: 0.5;
-	-webkit-transition: opacity .1s ease-in-out;
+  opacity: 0.5;
+  -webkit-transition: opacity .1s ease-in-out;
 }
 .img-border {
-	border: 1px solid #dddddd;
-	padding: 1px 2px;
-	padding-right: 1px;
-	border-radius: 3px;
-	img {
-		border-radius: 3px;
-	}
+  border: 1px solid #dddddd;
+  padding: 1px 2px;
+  padding-right: 1px;
+  border-radius: 3px;
+  img {
+    border-radius: 3px;
+  }
 }
 
 .all-seller-listings {
-	height: 83px;
-	width: 83px;
-	border: 1px solid #dddddd;
-	text-align: center;
-	line-height: 83px;
-	a p {
-		text-decoration: none;
-		color: black;
-	}
-	a:hover {
-		text-decoration: none;
-	}
+  height: 83px;
+  width: 83px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  line-height: 83px;
+  a p {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 .all-seller-listings:hover {
-	background: rgba(71, 217, 191, 0.2);
+  background: rgba(71, 217, 191, 0.2);
 }
 .seller-image img{
-	height: 80px;
-	width: 80px;
+  height: 80px;
+  width: 80px;
 }
 .seller-bio, .seller-bio:hover {
-	display: table-cell;
-	vertical-align: middle;
-	padding-left: 20px;
-	
-	color: #303030;
-	.seller-location {
-		margin-left: 10px;
-		text-align: center;
-	}
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 20px;
+  
+  color: #303030;
+  .seller-location {
+    margin-left: 10px;
+    text-align: center;
+  }
 }
 
 .featured-product-name, .featured-product-name:hover {
-	color: #666666;
+  color: #666666;
 }
 .favorite-item .panel-footer:hover {
-	background: #DFEFF5;
+  background: #DFEFF5;
 }

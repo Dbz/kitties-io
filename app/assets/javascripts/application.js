@@ -26,7 +26,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
-	
+  
 truncate = function(text, chars) {
-	return text.length > chars ? text.substring(0, chars).trim() + "..." : text;
+  return text.length > chars ? text.substring(0, chars).trim() + "..." : text;
 }

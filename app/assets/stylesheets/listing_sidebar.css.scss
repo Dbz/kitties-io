@@ -1,27 +1,27 @@
 .listing-item-img-wrapper {
-	display: inline-block;
-	border: 1px solid gray;
-	border-radius: 5px;
-	margin: 10px 10px 0 0;
-	width: 131px;
-	img {
-		width: 130px;
-		height: 100px;
-		padding: 3px;
-		border-radius: 6px;
-	}
-	p {
-		margin: 0px;
-		padding: 0px;
-	}
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 10px 10px 0 0;
+  width: 131px;
+  img {
+    width: 130px;
+    height: 100px;
+    padding: 3px;
+    border-radius: 6px;
+  }
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
 }
 .sidebar-item-text {
-	padding: 5px;
-	text-align: left;
+  padding: 5px;
+  text-align: left;
 }
 #shop-panel .panel-body {
-	text-align: center;
+  text-align: center;
 }
 .sidebar-item-name, .sidebar-item-name:hover {
-	color: #666666;
+  color: #666666;
 }

@@ -17,7 +17,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/*				Page CSS				*/
+/*        Page CSS        */
 .clearfix:after { content: "\00A0"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
 .clearfix{ display: inline-block;}
 html[xmlns] .clearfix { display: block;}
@@ -37,61 +37,61 @@ html, body {
 #main-content:after {
   content: "";
   display: block;
-  height: 200px; 	
+  height: 200px;   
 }
 
 *{
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .margins {
-	margin-left: 130px;
-	margin-right: 130px;
+  margin-left: 130px;
+  margin-right: 130px;
 }
 
 .center {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .underline {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 body {
-	background: #efefeb;
+  background: #efefeb;
 }
 
 .user-img {
-	height: 75px;
-	width: 75px;
+  height: 75px;
+  width: 75px;
 }
 
 .product-currency {
-	font-size: 11px;
-	color: green;
+  font-size: 11px;
+  color: green;
 }
 .product-price {
-	color: green;
+  color: green;
 }
 
 .white {
-	background: white;
+  background: white;
 }
 .red {
-	color: red;
+  color: red;
 }
 
-/*				Auth Modal				*/
+/*        Auth Modal        */
 
 #auth-modal .modal-dialog {
-	width: 500px;
+  width: 500px;
 }
 
 .blur{
@@ -104,38 +104,38 @@ body {
 
 
 .auth-error {
-	color: #a94442;
-	font-size: 12px;
-	width: 100%;
-	text-align: center;
-	margin-top: -10px;
-	span {
-		display: none;
-		padding-right: 10px;
-	}
+  color: #a94442;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+  span {
+    display: none;
+    padding-right: 10px;
+  }
 }
 
 .modal-body ul {
-	padding-left: 15px;
+  padding-left: 15px;
 }
 
-/*				Footer				*/
+/*        Footer        */
 footer {
-	height: 200px;
-	background: #003056;
-	color: white;
-//	position: absolute;
-//	bottom: 0;
-//	width: 100%;
+  height: 200px;
+  background: #003056;
+  color: white;
+//  position: absolute;
+//  bottom: 0;
+//  width: 100%;
 }
 .footer-title {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 footer li {
-	list-style: none;
-	padding-bottom: 10px;
+  list-style: none;
+  padding-bottom: 10px;
 }
 footer li a {
-	color: #47D9BF;
+  color: #47D9BF;
 }
 

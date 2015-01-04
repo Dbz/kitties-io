@@ -1,31 +1,31 @@
 #items-found {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .search-item-wrapper {
-	background: white;
-	display: inline-block;
-	border: 1px solid gray;
-	border-radius: 5px;
-	margin: 20px 20px 10px 10px;
-	width: 262px;
-	img {
-		width: 260px;
-		height: 200px;
-		padding: 6px;
-		border-radius: 6px;
-	}
-	a.search-item-shop-name {
-		color: #b2b2b2;
-	}
-	a.search-item-name {
-		color: #666666;
-	}
+  background: white;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 20px 20px 10px 10px;
+  width: 262px;
+  img {
+    width: 260px;
+    height: 200px;
+    padding: 6px;
+    border-radius: 6px;
+  }
+  a.search-item-shop-name {
+    color: #b2b2b2;
+  }
+  a.search-item-name {
+    color: #666666;
+  }
 }
 .search-item-text {
-	padding: 5px;
-	text-align: left;
+  padding: 5px;
+  text-align: left;
 }
 #search-items {
-	text-align: center;
+  text-align: center;
 }

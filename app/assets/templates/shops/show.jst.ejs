@@ -1,93 +1,93 @@
 <div class='margins row'>
-	<div class='row' id='shop-header'>
-		<div id='shop-banner' class='row'>
-			<img src='<%= shop.banner().escape('url') %>'>
-		</div>
-	</div>
-	
-	<br>
-	
-	<div id='shop-search' class='row'>
-	  <div class="col-lg-6 col-lg-offset-3">
-			<form id='shop-search-form'>
-		    <div class="input-group">
-		      <input type="text" class="form-control" id='shop-search-box' placeholder='Search in this shop!'>
-		      <span class="input-group-btn">
-		        <button class="btn btn-default" type="submit" id='shop-search-button'>Search</button>
-		      </span>
-		    </div>
-			</form>
-	  </div>	
-	</div>
-	
-	<div class='row'>
-		<div class='shop-sidebar col-md-3'>
-			<div class='panel panel-default'>
-				<div class='panel-heading'>
-					<h3 class='panel-title'><%= shop.get('name') %></h3>
-				</div>
-				
-				<div class='panel-body' id='shop-owner-panel'>
-					<p> <u>Shop Owner</u> </p>
-					<img src='<%= shop.user().image().get('url') %>' class='user-img' id='shop-owner-img'>
-					<br>
-					<span id='shop-owner-name'> <a><%= shop.user().get('username') %></a> </span>
-					<p> <%= shop.escape('location') %> </p>
-					<br>
-					<span><b>Have a question?</b></span>
-					<button class='btn btn-primary'>Contact Shop Owner</button>
-					<br>
-					</div>
-			</div>
-			<div class='panel panel-default'>
-				<div class='panel-heading'>
-					<h3 class='panel-title'>Shop Info</h3>
-				</div>
-				<div class='panel-body'>
-					<p> <a>About</a> </p>
-					<p> <a>Policies</a> </p>
-					<p> <a>Reviews</a> </p>
-					<button class='btn btn-danger'> Report </button>
-				</div>
-			</div>
-		</div>
-		
-		<div class='shop-items col-md-9'>
-			<% shop.listings().each(function(listing) { %>
-				<div class='shop-item col-md-4'>
-					<div class='shop-item-wrapper'>
-						<a href='/#listings/<%= listing.get('id') %>'>
-							<img src='<%= listing.mainImage().escape('url') %>'>
-						</a>
-						<div class='shop-item-text'>
-							<span>
-								<a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
-									<%= truncate(listing.escape('name'), 17) %>
-								</a>
-							</span>
-							<span class="product-price pull-right">
-								<span class='no-underline'>$<%= listing.escape('price') %></span>
-								<span class='product-currency no-underline'>USD</span>
-							</span>
-						</div>
-					</div>
-				</div>
-			<% }); %>
-		</div>
-		
-		<div class='row'>
-			<nav class='col-md-6 col-md-offset-3'>
-			  <ul class="pagination pagination-lg">
-			    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
-			    <li class='active'><a href="#">1</a></li>
-			    <li><a href="#">2</a></li>
-			    <li><a href="#">3</a></li>
-			    <li><a href="#">4</a></li>
-			    <li><a href="#">5</a></li>
-			    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
-			  </ul>
-			</nav>
-		</div>
-		
-	</div>
+  <div class='row' id='shop-header'>
+    <div id='shop-banner' class='row'>
+      <img src='<%= shop.banner().escape('url') %>'>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div id='shop-search' class='row'>
+    <div class="col-lg-6 col-lg-offset-3">
+      <form id='shop-search-form'>
+        <div class="input-group">
+          <input type="text" class="form-control" id='shop-search-box' placeholder='Search in this shop!'>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" id='shop-search-button'>Search</button>
+          </span>
+        </div>
+      </form>
+    </div>  
+  </div>
+  
+  <div class='row'>
+    <div class='shop-sidebar col-md-3'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'><%= shop.get('name') %></h3>
+        </div>
+        
+        <div class='panel-body' id='shop-owner-panel'>
+          <p> <u>Shop Owner</u> </p>
+          <img src='<%= shop.user().image().get('url') %>' class='user-img' id='shop-owner-img'>
+          <br>
+          <span id='shop-owner-name'> <a><%= shop.user().get('username') %></a> </span>
+          <p> <%= shop.escape('location') %> </p>
+          <br>
+          <span><b>Have a question?</b></span>
+          <button class='btn btn-primary'>Contact Shop Owner</button>
+          <br>
+          </div>
+      </div>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'>Shop Info</h3>
+        </div>
+        <div class='panel-body'>
+          <p> <a>About</a> </p>
+          <p> <a>Policies</a> </p>
+          <p> <a>Reviews</a> </p>
+          <button class='btn btn-danger'> Report </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class='shop-items col-md-9'>
+      <% shop.listings().each(function(listing) { %>
+        <div class='shop-item col-md-4'>
+          <div class='shop-item-wrapper'>
+            <a href='/#listings/<%= listing.get('id') %>'>
+              <img src='<%= listing.mainImage().escape('url') %>'>
+            </a>
+            <div class='shop-item-text'>
+              <span>
+                <a class='search-item-name' href='/#listings/<%= listing.get('id') %>'>
+                  <%= truncate(listing.escape('name'), 17) %>
+                </a>
+              </span>
+              <span class="product-price pull-right">
+                <span class='no-underline'>$<%= listing.escape('price') %></span>
+                <span class='product-currency no-underline'>USD</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    
+    <div class='row'>
+      <nav class='col-md-6 col-md-offset-3'>
+        <ul class="pagination pagination-lg">
+          <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+          <li class='active'><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </div>
 </div>

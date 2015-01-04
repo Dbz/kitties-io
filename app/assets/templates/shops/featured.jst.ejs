@@ -1,62 +1,62 @@
 <div class='panel panel-default favorite-item'>
-	<div class='panel-heading'>
-		<a href='#listings/<%= featuredProduct.get('id') %>'>
-			<img class="favorite-item-img" src='<%= featuredProduct.images().first().get('url') %>'>
-		</a>
-	</div>
-				
-	<div class='panel-body product-link'>
-		<a href='#listings/<%= featuredProduct.get('id') %>' class='featured-product-name'>
-			<%= truncate(featuredProduct.get('name'), 35) %>
-		</a>
-		<div class='product-money'>
-			<span class='product-price no-underline'> $<%= featuredProduct.get('price') %> </span>
-			<span class='product-currency no-underline'> USD </span>
-		</div>
-	</div>
-				
-	<div class='panel-body'>
-		<div class='row'>
-			<% products.forEach(function(product){ %>
-				<div class='col-md-4'>
-					<a href='#listings/<%= product.get('id') %>'>
-						<img class='other-seller-product img-border' src='<%= product.images().first().get('url') %>'>
-					</a>
-				</div>
-			<% }) %>
-			<div class='col-md-4'>
-				<div class='all-seller-listings'>
-					<a href='#shops/<%= shop.get('id') %>'>
-						<p> <%= shop.listings().length %> Products </p>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<a href='#shops/<%= shop.get('id') %>'>
-		<div class='panel-footer'>
-			<div style='display:table;'>
-				<div style='display:table-cell;vertical-align:middle'>
-					<div class='seller-image'>
-						<img class='img-circle user-img' src="<%= shop.image().get('url') %>">
-					</div>
-				</div>
-				<div style='display:table-cell;vertical-align:middle' class='seller-bio'>
-					<span id='seller-location'> <%= shop.get('location') %> </span>
-					<br>
-					<span>
-						<% var x = 0 %>
-						<% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
-							<span class='gold'>☆</span>
-						<% } %>
-						<% for(; x < 5; x++) { %>
-							<span>☆</span>
-						<% } %>
-						<span> <%= shop.reviews().length %> Reviews </span>
-					</span>
-				</div>
-			</div>
-		</div>
-	</a>
+  <div class='panel-heading'>
+    <a href='#listings/<%= featuredProduct.get('id') %>'>
+      <img class="favorite-item-img" src='<%= featuredProduct.images().first().get('url') %>'>
+    </a>
+  </div>
+        
+  <div class='panel-body product-link'>
+    <a href='#listings/<%= featuredProduct.get('id') %>' class='featured-product-name'>
+      <%= truncate(featuredProduct.get('name'), 35) %>
+    </a>
+    <div class='product-money'>
+      <span class='product-price no-underline'> $<%= featuredProduct.get('price') %> </span>
+      <span class='product-currency no-underline'> USD </span>
+    </div>
+  </div>
+        
+  <div class='panel-body'>
+    <div class='row'>
+      <% products.forEach(function(product){ %>
+        <div class='col-md-4'>
+          <a href='#listings/<%= product.get('id') %>'>
+            <img class='other-seller-product img-border' src='<%= product.images().first().get('url') %>'>
+          </a>
+        </div>
+      <% }) %>
+      <div class='col-md-4'>
+        <div class='all-seller-listings'>
+          <a href='#shops/<%= shop.get('id') %>'>
+            <p> <%= shop.listings().length %> Products </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <a href='#shops/<%= shop.get('id') %>'>
+    <div class='panel-footer'>
+      <div style='display:table;'>
+        <div style='display:table-cell;vertical-align:middle'>
+          <div class='seller-image'>
+            <img class='img-circle user-img' src="<%= shop.image().get('url') %>">
+          </div>
+        </div>
+        <div style='display:table-cell;vertical-align:middle' class='seller-bio'>
+          <span id='seller-location'> <%= shop.get('location') %> </span>
+          <br>
+          <span>
+            <% var x = 0 %>
+            <% for(x = 0; x < shop.reviews().averageReview(); x++) { %>
+              <span class='gold'>☆</span>
+            <% } %>
+            <% for(; x < 5; x++) { %>
+              <span>☆</span>
+            <% } %>
+            <span> <%= shop.reviews().length %> Reviews </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>
 </div>
